@@ -18,6 +18,7 @@ gem "slim-rails"
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "pry-rails"
+  gem "rspec-rails", "~> 3.8"
 end
 
 group :development do
@@ -29,9 +30,11 @@ group :development do
 end
 
 group :test do
-  gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "chromedriver-helper"
+  gem "shoulda-matchers", "~> 3.0", require: false
+  gem "database_cleaner", "~> 1.5"
+  gem "faker"
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
