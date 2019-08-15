@@ -15,6 +15,9 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "slim-rails"
 gem "devise"
+gem "bootstrap", "~> 4.3.1"
+gem "jquery-rails"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

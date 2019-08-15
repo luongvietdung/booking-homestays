@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title
+      | BookingHomestays
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "manager/application", media: "all"
+    = javascript_include_tag "manager/application"
+  body#page-top
+    .wrapper.row
+      .col-md-3.left-menu
+        = render "shared/manager/left_menu"
+      #content-wrapper.d-flex.flex-column.col-md-9
+        #content
+          = render "shared/manager/top"
+          .container-fluid
+            .main_content
+              = yield
+            = render "shared/manager/footer"

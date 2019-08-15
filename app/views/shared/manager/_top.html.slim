@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+  form.d-none.d-sm-inline-block.form-inline.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+    .input-group
+      input.form-control.bg-light.border-0.small aria-describedby="basic-addon2" aria-label="Search" placeholder=("Search for...") type="text" /
+      .input-group-append
+        button.btn.btn-primary type="button"
+          i.fa.fa-search.fa-sm
+  ul.navbar-nav.ml-auto
+    li.nav-item.dropdown.no-arrow
+      = link_to "#", id: "userDropdown", class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}, aria: {expanded: false, haspopup: true} do
+        span.mr-2.d-none.d-lg-inline.text-gray-600.small Valerie Luna
+        img.img-profile.rounded-circle /
+      .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in aria-labelledby="userDropdown"
+        = link_to "#", class: "dropdown-item", data: {target: "#logoutModal", toggle: "modal"} do
+          i.fa.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+          | Logout
