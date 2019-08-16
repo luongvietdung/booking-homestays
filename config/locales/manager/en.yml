@@ -1,0 +1,10 @@
+en:
+  manager:
+    favorite_spaces:
+      create:
+        success: "Create successfully!!!"
+      new:
+        name: "Name"
+        create: "Create"
+      index:
+        new: "New"  
