@@ -1,0 +1,8 @@
+- flash.each do |name, message|
+  div class=("alert alert-#{name}") 
+    - if Array === message
+      ul
+        - message.each do |msg|
+          li= msg
+    - else
+      = message
