@@ -1,0 +1,10 @@
+- if flash.present?
+  #flash
+    javascript:
+      | <haml_silent>       if flash[:success]
+      | </haml_silent><haml_block>        toastr.success("#{flash[:success]}")
+      | </haml_block><haml_silent>       if flash[:warning]
+      | </haml_silent><haml_block>        toastr.warning("#{flash[:warning]}")
+      | </haml_block><haml_silent>       if flash[:danger]
+      | </haml_silent><haml_block>        toastr.error("#{flash[:danger]}")
+      | </haml_block
