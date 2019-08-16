@@ -5,6 +5,7 @@ table
   - @favorite_spaces.each do |favorite|
     tr
       td= favorite.name
-      td= link_to 'Edit', edit_manager_favorite_space_path(favorite)
+      td= link_to "Edit |", edit_manager_favorite_space_path(favorite)
+      td= link_to "Destroy", manager_favorite_space_path(favorite), method: :delete, data: { confirm: "Are you sure?"}
 br/
-= link_to 'New Product', new_manager_favorite_space_path
+= link_to "New Product", new_manager_favorite_space_path

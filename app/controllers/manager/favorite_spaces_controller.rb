@@ -2,7 +2,7 @@
 
 module Manager
   class FavoriteSpacesController < BaseController
-    before_action :find_favorite_space, only: %i[index edit update]
+    before_action :find_favorite_space, only: %i[index edit update destroy]
 
     def index
       @favorite_spaces = FavoriteSpace.order("created_at DESC")
@@ -32,6 +32,12 @@ module Manager
       else
         flash[:error] = @favorite_space.errors.full_messages
         render :edit
+      end
+    end
+
+    def destroy
+      if @favorite_space.destroy
+        redirect_to manager_favorite_spaces_path, notice: "Destroy successfully!!!"
       end
     end
 
