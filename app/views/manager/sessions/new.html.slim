@@ -1,0 +1,27 @@
+.row.justify-content-center
+  .col-xl-10.col-lg-12.col-md-9
+    .card.o-hidden.border-0.shadow-lg.my-5
+      .card-body.p-0
+        .row
+          .col-lg-6.d-none.d-lg-block.bg-login-image
+          .col-lg-6
+            .p-5
+              .text-center
+                h1.h4.text-gray-900.mb-4 Welcome Back!
+              = form_for(resource, as: resource_name, url: session_path(resource_name), class: "user") do |f|
+                .form-group
+                  = f.label :email
+                  = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user", placeholder: "Enter Email Address...", id: "exampleInputEmail"
+                .form-group
+                  = f.label :password
+                  = f.password_field :password, autocomplete: "current-password", class: "form-control form-control-user", placeholder: "Password", id: "exampleInputPassword"
+                - if devise_mapping.rememberable?
+                  .form-group
+                    .custom-control.custom-checkbox.small
+                      = f.check_box :remember_me, id: "customCheck", class: "custom-control-input"
+                      = f.label :remember_me, class: "custom-control-label", style: "padding: 2px", for: "customCheck"
+                    .actions
+                      = f.submit "Log in", class: "btn btn-primary btn-user btn-block custom-btn-login"
+                    .text-center
+                      - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+                        = link_to "Forgot your password?", new_password_path(resource_name), class: "small"
