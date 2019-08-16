@@ -16,6 +16,7 @@ module Manager
       if @favorite_space.save
         redirect_to manager_favorite_spaces_path, flash: { success: t(".success") }
       else
+        flash[:error] = @favorite_space.errors.full_messages
         render :new
       end
     end
