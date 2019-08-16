@@ -1,0 +1,12 @@
+ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+  = link_to manager_root_path, class: "sidebar-brand d-flex align-items-center justify-content-center" do
+    .sidebar-brand-icon.rotate-n-15
+      i.fas.fa-laugh-wink
+    .sidebar-brand-text.mx-3
+      | SB Admin
+      sup 2
+  hr.sidebar-divider.my-0/
+  li.nav-item.active
+    = link_to manager_root_path, class: "nav-link" do
+      i.fas.fa-fw.fa-tachometer-alt
+      span Dashboard
