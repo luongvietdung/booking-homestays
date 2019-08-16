@@ -1,0 +1,9 @@
+h1 Listing favorite space
+table
+  tr
+    th Name
+  - @favorite_spaces.each do |favorite|
+    tr
+      td= favorite.name
+br/
+= link_to t(".new"), new_manager_favorite_space_path
