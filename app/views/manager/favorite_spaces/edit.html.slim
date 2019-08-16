@@ -1,0 +1,7 @@
+= form_for [:manager, @favorite_space] do |f|
+  .field
+    = f.label t.("name")
+    = f.text_field :name, class: "form-control"
+  br
+  .field
+    = f.submit t.("update"), class: "btn btn-primary"
