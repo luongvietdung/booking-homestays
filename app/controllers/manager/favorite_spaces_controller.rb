@@ -37,9 +37,7 @@ module Manager
     end
 
     def destroy
-      if @favorite_space.destroy
-        redirect_to manager_favorite_spaces_path, flash: { success: t(".success") }
-      end
+      redirect_to manager_favorite_spaces_path, flash: { success: t(".success") } if @favorite_space.destroy
     end
 
     private
