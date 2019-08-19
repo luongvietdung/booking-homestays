@@ -1,0 +1,15 @@
+en:
+  manager:
+    locations:
+      form:
+        name: "Name"
+        submit: "Save changes"
+      new:
+        add: "Add Locations"
+        title: "New locations"
+      create:
+        success: "Create locations successfully!"
+        danger: "Create locations has problem!"
+      edit:
+        edit: "Edit Locations"
+        title: "Edit locations"

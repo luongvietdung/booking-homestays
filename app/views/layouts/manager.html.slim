@@ -15,7 +15,7 @@ html
         #content
           = render "shared/manager/top"
           .container-fluid
+            = render "layouts/flashmessages"
             .main_content
-              = render "shared/manager/flash_messages"
               = yield
               = render "shared/manager/footer"

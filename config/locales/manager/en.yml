@@ -23,4 +23,7 @@ en:
       create:
         success: "Create locations successfully!"
         danger: "Create locations has problem!"
-        edit: "Edit"  
+        edit: "Edit Location"
+      update:
+        success: "Update locations successfully!"
+        danger: "Update locations has problem!"
