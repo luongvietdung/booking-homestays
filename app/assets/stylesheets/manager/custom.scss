@@ -22,3 +22,82 @@ body.sidebar-toggled {
 #error_explanation {
   color: red;
 }
+
+#title-user{
+  text-align: center;
+}
+
+.header-user th{
+  text-align: center;
+  background-color: mediumspringgreen;
+}
+
+.data-user td{
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Green */
+.success {
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Blue */
+.info {
+  color: dodgerblue;
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  color: red;
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.default {
+  color: black;
+}
+
+.default:hover {
+  background: deepskyblue;
+}
+
+.create_admin{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 33px;
+  margin: 17px;
+  border-radius: 5px;
+}

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :locations
     resources :favorite_spaces
+    resources :admins
   end
 end

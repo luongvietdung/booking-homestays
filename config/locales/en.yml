@@ -2,4 +2,11 @@ en:
   layouts:
     manager:
       title: "Booking Homestays"
-
+  hello: "Hello world"
+  messages:
+    success:
+      admins:
+        create: "Create success!"
+    failed:
+      admins:
+        create: "Create failed!"
