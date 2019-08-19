@@ -11,6 +11,4 @@ nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
         span.mr-2.d-none.d-lg-inline.text-gray-600.small Valerie Luna
         img.img-profile.rounded-circle /
       .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in aria-labelledby="userDropdown"
-        = link_to "#", class: "dropdown-item", data: {target: "#logoutModal", toggle: "modal"} do
-          i.fa.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
-          | Logout
+        = link_to "Logout", destroy_admin_session_path, method: :delete, class: "dropdown-item"

@@ -18,6 +18,7 @@ gem "devise"
 gem "bootstrap", "~> 4.3.1"
 gem "jquery-rails"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
+gem "toastr-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
