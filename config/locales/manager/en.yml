@@ -7,4 +7,14 @@ en:
         name: "Name"
         create: "Create"
       index:
-        new: "New"  
+        new: "New"
+    locations:
+      form:
+        name: "Name"
+        submit: "Save changes"
+      new:
+        add: "Add locations"
+        title: "New locations"
+      create:
+        success: "Create locations successfully!"
+        danger: "Create locations has problem!"
