@@ -4,7 +4,6 @@ en:
   layouts:
     manager:
       title: "Booking Homestays"
-
   messages:
     success:
       admins:
@@ -32,4 +31,4 @@ en:
         list: List Rooms
         create_room: Create Rooms
         manager_admin: Manager admins
-  hello: "Hello world"
+        location: "Manager Locations"

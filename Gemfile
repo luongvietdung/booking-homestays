@@ -19,6 +19,9 @@ gem "bootstrap", "~> 4.3.1"
 gem "jquery-rails"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 gem "toastr-rails"
+gem "kaminari", "~> 1.1", ">= 1.1.1"
+gem "bootstrap4-kaminari-views"
+gem "config", "~> 2.0"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
