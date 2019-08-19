@@ -2,13 +2,8 @@
 
 module Manager
   class FavoriteSpacesController < BaseController
-<<<<<<< HEAD
-    
-    before_action :favorite_space, only: %i[edit update]
+    before_action :favorite_space, only: %i[edit update destroy]
 
-=======
-    before_action :find_favorite_spaces, only: %i[edit update destroy]
->>>>>>> #130: Destroy favorites
     def index
       @favorite_spaces = FavoriteSpace.order("created_at DESC")
     end
@@ -46,11 +41,7 @@ module Manager
       params.require(:favorite_space).permit(:name)
     end
 
-<<<<<<< HEAD
     def favorite_space
-=======
-    def find_favorite_spaces
->>>>>>> #129: Edit space favorites
       @favorite_space = FavoriteSpace.find(params[:id])
     end
   end

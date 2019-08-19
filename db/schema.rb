@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2019_08_18_023255) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.decimal "cost", precision: 8, scale: 2
+    t.decimal "cleaning_fee", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

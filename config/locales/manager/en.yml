@@ -16,7 +16,6 @@ en:
         update: "Update"
       index:
         new: "New"
-<<<<<<< HEAD
     locations:
       form:
         name: "Name"
@@ -28,8 +27,15 @@ en:
         success: "Create locations successfully!"
         danger: "Create locations has problem!"
         edit: "Edit"  
-=======
         edit: "Back"
         destroy: "Destroy"
         edit: "Edit"
->>>>>>> #130: Destroy favorites
+    prices:
+      create:
+        success: "Create successfully!!!"
+      update:
+        success: "Update successfully!!!"
+      new:
+        create: "Create"
+      edit:
+        update: "Update"
