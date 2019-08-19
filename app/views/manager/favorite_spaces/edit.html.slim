@@ -1,0 +1,6 @@
+= form_for [:manager, @favorite_space] do |f|
+  = render "shared/manager/error_messages", object: @favorite_space
+  = f.label t(".name")
+  = f.text_field :name, class: "form-control"
+  br
+  = f.submit t(".update"), class: "btn btn-primary"

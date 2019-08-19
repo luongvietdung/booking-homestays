@@ -5,5 +5,6 @@ table
   - @favorite_spaces.each do |favorite|
     tr
       td= favorite.name
+      td = link_to "Edit", edit_manager_favorite_space_path(favorite)
 br/
 = link_to t(".new"), new_manager_favorite_space_path
