@@ -1,0 +1,10 @@
+tr
+  td
+    = room.name
+  td
+    = room.location.name
+  td
+    = room.type_room
+  td.action
+    = link_to t(".edit"), edit_manager_room_path(room),
+      class: "action btn btn-outline-info"

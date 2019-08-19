@@ -1,5 +1,7 @@
 en:
   please_choose_one: please choose one
+  sure: "Are you sure?"
+
   layouts:
     manager:
       title: "Booking Homestays"
@@ -12,11 +14,32 @@ en:
         create: "Create failed!"
   manager:
     rooms:
-      create_room: "Thanks you to create room"
+      create_room: "Thank you to create room"
       can't_create: "can not create room"
       don't_have_location: "Don't have location, Please Create Location"
+      update_success: Update Success!
+      update_fail: Update Failed
+      deleted_success: Deleted success
       new:
         create_room: Create Room
+      edit:
+        edit_room: Edit Rooms
+        save: Save
+      room:
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        description: Description
+        room: Rooms
+        utility: Utilities
+        image: Images
+        guest: Guest
+        bed_room: Bed Rooms
+        bath_room: Bath Rooms
+        acreage: Acreage
+        address: Address
+        type_room: Type Rooms
+
   shared:
     manager:
       left_menu:
