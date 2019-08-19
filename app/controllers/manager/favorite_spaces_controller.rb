@@ -2,6 +2,7 @@
 
 module Manager
   class FavoriteSpacesController < BaseController
+    
     before_action :favorite_space, only: %i[edit update]
 
     def index
@@ -37,7 +38,11 @@ module Manager
       params.require(:favorite_space).permit(:name)
     end
 
+<<<<<<< HEAD
     def favorite_space
+=======
+    def find_favorite_spaces
+>>>>>>> #129: Edit space favorites
       @favorite_space = FavoriteSpace.find(params[:id])
     end
   end
