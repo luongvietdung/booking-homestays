@@ -89,3 +89,9 @@ en:
         update: "Update"
         destroy: "Destroy"
         edit: "Edit"
+      update:
+        success: "Update successfully!!!"
+      new:
+        create: "Create"
+      edit:
+        update: "Update"
