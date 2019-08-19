@@ -3,6 +3,8 @@
 //= require jquery3
 //= require bootstrap
 //= require toastr
+//= require datatable
+//= require manager/custom
 
 /*global toastr*/
 toastr.options = {

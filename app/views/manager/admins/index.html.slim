@@ -1,0 +1,14 @@
+= link_to "Create", new_manager_admin_path, remote: true, class: "btn-success create_admin"
+h2#title-user All admins
+table#admin_table.table.table-striped.table-bordered style=("width: 100%")
+  thead
+    tr.header-user
+      th Id
+      th Name
+      th Email
+      th Address
+      th Type
+      th Action
+  tbody
+    = render @admins
+#admin-modal.modal.fade

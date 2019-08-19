@@ -24,6 +24,7 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "pry-rails"
   gem "rspec-rails", "~> 3.8"
+  gem "faker"
 end
 
 group :development do
@@ -39,7 +40,6 @@ group :test do
   gem "chromedriver-helper"
   gem "shoulda-matchers", "~> 3.0", require: false
   gem "database_cleaner", "~> 1.5"
-  gem "faker"
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]

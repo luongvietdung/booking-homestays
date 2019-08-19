@@ -1,0 +1,7 @@
+- if @admin.errors.present?
+  |
+    $("#message_errors").html("#{j(render 'shared/manager/error_messages', object: @admin)}");
+    toastr.error("#{flash[:danger]}");
+- else
+  |
+    location.reload();
