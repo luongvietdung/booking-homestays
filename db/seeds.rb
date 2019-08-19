@@ -48,7 +48,6 @@ end
   FavoriteSpace.create! name: favorite_space
 end
 
-
 20.times do |price|
   price = rand(1..999999)
   Price.create!(cost: price,
@@ -80,4 +79,8 @@ end
     bed_room: bed_room,
     bath_room: bath_room,
     price_id: price)
+end
+
+["Wifi","May Giat", "Tu Lanh", "Ho Boi", "Dieu Hoa"].each do |utility|
+  Utility.create! name: utility
 end

@@ -16,4 +16,8 @@ module ManagersHelper
   def select_favorite_space
     FavoriteSpace.all.map { |f| [f.name, f.id] }
   end
+
+  def set_utilities
+    Utility.sort_by_name
+  end
 end

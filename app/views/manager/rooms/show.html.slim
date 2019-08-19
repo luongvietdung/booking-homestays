@@ -50,6 +50,8 @@
           = @room.type_room
     #menu2.tab-pane.fade
       h3 = t ".utility"
+      - @room_utilities.each do |room_utility|
+        = room_utility.name
     #menu3.tab-pane.fade
       h3 = t ".image"
       - @room.room_images.each do |img|

@@ -44,6 +44,14 @@ en:
         acreage: Acreage
         address: Address
         type_room: Type Rooms
+      form:
+        save: Save
+    utilities:
+      create_utility: Create Success
+      create_fail: can not create utility
+      new:
+        create_utility: Create
+
   shared:
     manager:
       left_menu:
