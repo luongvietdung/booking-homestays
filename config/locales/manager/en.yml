@@ -32,3 +32,15 @@ en:
         danger: "Update locations has problem!"
         edit: "Edit"  
         destroy: "Destroy"
+    prices:
+      create:
+        success: "Create successfully!!!"
+      new:
+        create: "Create"
+      index:
+        new: "New"
+        listing_prices: "Listing prices"
+        cost: "Cost"
+        cleaning: "Cleaning fee"
+        costs: "%{cost} $"
+        cleanings: "%{cleaning} $"

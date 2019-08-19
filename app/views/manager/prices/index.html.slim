@@ -1,0 +1,11 @@
+h1 = t(".listing_prices")
+table.text-center
+  tr
+    th = t(".cost")
+    th = t(".cleaning")
+  - @prices.each do |price|
+    tr
+      td = t(".costs", cost: price.cost)
+      td = t(".cleanings", cleaning: price.cleaning_fee)
+br/
+= link_to t(".new"), new_manager_price_path
