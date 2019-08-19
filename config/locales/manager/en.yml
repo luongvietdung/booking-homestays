@@ -31,6 +31,4 @@ en:
         success: "Update locations successfully!"
         danger: "Update locations has problem!"
         edit: "Edit"  
-        edit: "Back"
         destroy: "Destroy"
-        edit: "Edit"
