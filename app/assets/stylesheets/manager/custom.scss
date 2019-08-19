@@ -101,3 +101,43 @@ body.sidebar-toggled {
   margin: 17px;
   border-radius: 5px;
 }
+
+.create-room{
+  margin: 30px 0;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+i.fa.fa-caret-down {
+    padding-left: 10px;
+}
+
+.dropdown-container {
+  display: none;
+  padding: 0 62px 0 62px;
+  background-color: #262626;
+}
+
+#drlayout{
+  text-decoration: none;
+}
+
+#dlayout{
+  text-decoration: none;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_16_013302) do
+ActiveRecord::Schema.define(version: 2019_08_16_042328) do
 
   create_table "favorite_spaces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 2019_08_16_013302) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "location_id"
+    t.string "name"
+    t.string "address"
+    t.decimal "rate_point", precision: 10
+    t.string "description"
+    t.integer "guest"
+    t.integer "type_room", default: 0
+    t.decimal "acreage", precision: 10
+    t.integer "bed_room"
+    t.integer "bath_room"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_rooms_on_location_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,4 +64,6 @@ ActiveRecord::Schema.define(version: 2019_08_16_013302) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rooms", "locations"
+  add_foreign_key "rooms", "users"
 end

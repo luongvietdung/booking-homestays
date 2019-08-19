@@ -1,8 +1,10 @@
 en:
+  please_choose_one: please choose one
+
   layouts:
     manager:
       title: "Booking Homestays"
-  hello: "Hello world"
+
   messages:
     success:
       admins:
@@ -10,3 +12,23 @@ en:
     failed:
       admins:
         create: "Create failed!"
+
+  manager:
+    rooms:
+      create_room: "Thanks you to create room"
+      can't_create: "can not create room"
+      don't_have_location: "Don't have location, Please Create Location"
+      new:
+        create_room: Create Room
+
+  shared:
+    manager:
+      left_menu:
+        admin_manager: Admin Manager
+        dashboard: Dashboard
+        manager: Manager
+        location: Locations
+        room: Rooms
+        list: List Rooms
+        create_room: Create Rooms
+        manager_admin: Manager admins

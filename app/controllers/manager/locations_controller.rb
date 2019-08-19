@@ -23,8 +23,7 @@ module Manager
     def create
       @location = Location.new location_params
       if @location.save
-        flash[:success] = t ".success"
-        redirect_to manager_locations_path
+        redirect_to manager_locations_path, flash: { success: t(".success") }
       else
         flash.now[:danger] = t ".danger"
         render :new
