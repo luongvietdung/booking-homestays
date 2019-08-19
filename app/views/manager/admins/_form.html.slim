@@ -2,7 +2,7 @@
   .modal-content
     = form_for [:manager, @admin], remote: true, html: { style: "display:inline;" } do |f|
       .modal-body
-        h3 New Admin
+        h3 = yield(:title)
         #message_errors
         .form-group
           = f.label :name, class: "control-label"
