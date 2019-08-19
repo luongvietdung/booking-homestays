@@ -5,6 +5,11 @@ table
   - @favorite_spaces.each do |favorite|
     tr
       td= favorite.name
+<<<<<<< HEAD
       td = link_to t(".edit"), edit_manager_favorite_space_path(favorite)
+=======
+      td = link_to t(".edit |"), edit_manager_favorite_space_path(favorite)
+      td = link_to t(".destroy"), manager_favorite_space_path(favorite), method: :delete, data: { confirm: "Are you sure?" }
+>>>>>>> #130: Destroy favorites
 br/
 = link_to t(".new"), new_manager_favorite_space_path

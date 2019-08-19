@@ -5,14 +5,18 @@ en:
         success: "Create successfully!!!"
       update:
         success: "Update successfully!!!"
+      destroy:
+        success: "Destroy successfully!!!"
       new:
         name: "Name"
         create: "Create"
+        back: "Back"
       edit:
         name: "Name"
         update: "Update"
       index:
         new: "New"
+<<<<<<< HEAD
     locations:
       form:
         name: "Name"
@@ -24,3 +28,8 @@ en:
         success: "Create locations successfully!"
         danger: "Create locations has problem!"
         edit: "Edit"  
+=======
+        edit: "Back"
+        destroy: "Destroy"
+        edit: "Edit"
+>>>>>>> #130: Destroy favorites

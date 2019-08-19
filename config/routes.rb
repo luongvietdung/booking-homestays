@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   namespace :manager do
     root "dashboard#index"
+<<<<<<< HEAD
     resources :locations
+=======
+>>>>>>> #130: Destroy favorites
     resources :favorite_spaces
   end
 end
