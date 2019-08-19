@@ -5,9 +5,12 @@ en:
         success: "Create successfully!!!"
       update:
         success: "Update successfully!!!"
+      destroy:
+        success: "Destroy successfully!!!"
       new:
         name: "Name"
         create: "Create"
+        back: "Back"
       edit:
         name: "Name"
         update: "Update"
@@ -27,3 +30,5 @@ en:
       update:
         success: "Update locations successfully!"
         danger: "Update locations has problem!"
+        edit: "Edit"  
+        destroy: "Destroy"
