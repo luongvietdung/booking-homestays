@@ -3,7 +3,7 @@
 //= require jquery3
 //= require bootstrap
 //= require toastr
-//= require datatable
+//= require manager/datatable
 //= require manager/custom
 
 /*global toastr*/

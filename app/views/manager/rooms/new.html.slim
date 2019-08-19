@@ -1,34 +1,3 @@
-h1 = t(".create_room")
-= form_for [:manager, @room] do |f|
-  = render "shared/manager/error_messages", object: @room
-
-  = f.label :name, class: "col-form-label"
-  = f.text_field :name, class: "form-control", required: true
-
-  = f.label :locations, class: "col-form-label"
-  = f.select :location_id, options_for_select(build_location_for_rooms), {include_blank: t("please_choose_one")},
-    {class: "form-control", required: true}
-
-  = f.label :address, class: "col-form-label"
-  = f.text_field :address, class: "form-control", required: true
-
-  = f.label :guest, class: "col-form-label"
-  = f.number_field :guest, class: "form-control", required: true
-
-  = f.label :acreage, class: "col-form-label"
-  = f.text_field :acreage, class: "form-control", required: true
-
-  = f.label :bed_room, class: "col-form-label"
-  = f.number_field :bed_room, class: "form-control", required: true
-
-  = f.label :bath_room, class: "col-form-label"
-  = f.number_field :bath_room, class: "form-control", required: true
-
-  = f.label :description, class: "col-form-label"
-  = f.text_area :description, class: "form-control", required: true
-
-  = f.label :type_room, class: "col-form-label"
-  = f.select :type_room, options_for_select(select_of_types),
-    {include_blank: t("please_choose_one")}, {class: "form-control", required: true}
-
-  = f.submit t(".create_room"), class: "create-room btn btn-outline-primary"
+- provide(:title, t(".create_room"))
+- provide(:button_text, t(".create_room"))
+= render "form"
