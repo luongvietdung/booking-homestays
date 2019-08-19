@@ -2,7 +2,7 @@
 
 module Manager
   class PricesController < BaseController
-    before_action :price, only: %i[edit update]
+    before_action :price, only: %i[edit update destroy]
 
     def index
       @prices = Price.newest
@@ -29,6 +29,10 @@ module Manager
       else
         render :edit
       end
+    end
+
+    def destroy
+      redirect_to manager_prices_path, flash: { success: t(".success") } if @price.destroy
     end
 
     private

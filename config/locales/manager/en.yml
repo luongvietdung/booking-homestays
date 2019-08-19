@@ -105,6 +105,8 @@ en:
         success: "Create successfully!!!"
       update:
         success: "Update successfully!!!"
+      destroy:
+        success: "Destroy successfully!!!"
       new:
         create: "Create"
       edit:
