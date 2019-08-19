@@ -2,6 +2,8 @@
 
 module Manager
   class FavoriteSpacesController < BaseController
+    before_action :favorite_space, only: %i[edit update]
+
     def index
       @favorite_spaces = FavoriteSpace.order("created_at DESC")
     end
@@ -19,10 +21,24 @@ module Manager
       end
     end
 
+    def edit; end
+
+    def update
+      if @favorite_space.update_attributes(favorite_space_params)
+        redirect_to manager_favorite_spaces_path, flash: { success: t(".success") }
+      else
+        render :edit
+      end
+    end
+
     private
 
     def favorite_space_params
       params.require(:favorite_space).permit(:name)
+    end
+
+    def favorite_space
+      @favorite_space = FavoriteSpace.find(params[:id])
     end
   end
 end

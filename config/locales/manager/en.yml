@@ -3,9 +3,14 @@ en:
     favorite_spaces:
       create:
         success: "Create successfully!!!"
+      update:
+        success: "Update successfully!!!"
       new:
         name: "Name"
         create: "Create"
+      edit:
+        name: "Name"
+        update: "Update"
       index:
         new: "New"
     locations:
@@ -18,3 +23,4 @@ en:
       create:
         success: "Create locations successfully!"
         danger: "Create locations has problem!"
+        edit: "Edit"  
