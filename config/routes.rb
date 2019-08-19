@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   namespace :manager do
     root "dashboard#index"
     resources :locations
-    resources :favorite_spaces, only: %i[index new create edit update]
+    resources :favorite_spaces
   end
 end
