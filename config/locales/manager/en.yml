@@ -53,8 +53,6 @@ en:
     prices:
       create:
         success: "Create successfully!!!"
-      new:
-        create: "Create"
       index:
         new: "New"
         listing_prices: "Listing prices"
@@ -89,3 +87,9 @@ en:
         success: "Update location successfully!"
         danger: "Update location has problem!"
         edit: "Edit"
+      update:
+        success: "Update successfully!!!"
+      new:
+        create: "Create"
+      edit:
+        update: "Update"
