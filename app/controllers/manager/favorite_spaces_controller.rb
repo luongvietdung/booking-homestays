@@ -2,7 +2,7 @@
 
 module Manager
   class FavoriteSpacesController < BaseController
-    before_action :favorite_space, only: %i[edit update]
+    before_action :favorite_space, only: %i[edit update destroy]
 
     def index
       @favorite_spaces = FavoriteSpace.order("created_at DESC")
