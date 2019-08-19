@@ -87,4 +87,5 @@ en:
         create: "Create"
       edit:
         update: "Update"
+        destroy: "Destroy"
         edit: "Edit"
