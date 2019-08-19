@@ -1,4 +1,4 @@
-= form_for @location, url: url do |f|
+= form_for [:manager, @location] do |f|
   = render "shared/manager/error_messages", object: f.object
   .form-group
     = f.label t ".name", class: "control-label"
