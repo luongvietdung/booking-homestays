@@ -30,7 +30,7 @@ en:
       update:
         success: "Update locations successfully!"
         danger: "Update locations has problem!"
-        edit: "Edit"  
+        edit: "Edit"
         destroy: "Destroy"
     prices:
       create:
@@ -44,3 +44,27 @@ en:
         cleaning: "Cleaning fee"
         costs: "%{cost} $"
         cleanings: "%{cleaning} $"
+    admins:
+      admin:
+        edit: "Edit"
+        delete: "Delete"
+      edit:
+        edit_admin: "Edit Admin"
+        update: "Update"
+      new:
+        new_admin: "New Admin"
+        create: "Create"
+      form:
+        cancel: "Cancel"
+  messages:
+    success:
+      admins:
+        create: "Create success!"
+        update: "Updated admin %{id} succeeded"
+    failed:
+      admins:
+        create: "Create failed!"
+        update: "Update admin %{id} failed"
+    notice:
+      admins:
+        not_edit: "Not edit admin %{id}"
