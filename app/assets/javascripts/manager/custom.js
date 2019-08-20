@@ -8,3 +8,16 @@ $(document).ready(function(){
     ]
   });
 });
+
+
+$(document).ready(function() {
+    $(".dropdown-btn").click( function(e) {
+      $(this).toggleClass('active');
+      var dropdownContent = $(this).next();
+      if (dropdownContent.css('display') === 'block') {
+        dropdownContent.css('display', 'none');
+      } else {
+        dropdownContent.css('display', 'block');
+      }
+    });
+});

@@ -3,21 +3,30 @@ ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordio
     .sidebar-brand-icon.rotate-n-15
       i.fa.fa-laugh-wink
     .sidebar-brand-text.mx-3
-      | Admin Manager
+      = t ".admin_manager"
   hr.sidebar-divider.my-0/
   li.nav-item.active
     = link_to manager_root_path, class: "nav-link" do
       i.fa.fa-fw.fa-tachometer-alt
-      span Dashboard
+      span = t ".dashboard"
   hr.sidebar-divider.my-0/
   .sidebar-heading
-    | Manager
+    = t ".manager"
   li.nav-item
     = link_to manager_locations_path, class: "nav-link collapsed" do
       i.fa.fa-fw.fa-tachometer-alt
-      span Locations
+      span = t ".location"
+  li.nav-item.sidenav
+    .dropdown-btn.nav-link.collapsed
+      i.fa.fa-fw.fa-tachometer-alt
+      span = t ".room"
+      i.fa.fa-caret-down
+    .dropdown-container
+      = link_to t(".list"), manager_rooms_path, id: "drlayout"
+      = link_to t(".create_room"), new_manager_room_path, id: "dlayout"
+
   hr.sidebar-divider.my-0/
   li.nav-item
     = link_to manager_admins_path, class: "nav-link collapsed" do
       i.fa.fa-user.fa-tachometer-alt
-      span Manager admins
+      span = t ".manager_admin"
