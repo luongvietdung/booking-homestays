@@ -7,7 +7,7 @@ module Manager
     def index
       @prices = Price.newest
     end
-    
+
     def new
       @price = Price.new
     end
