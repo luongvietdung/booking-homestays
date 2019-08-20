@@ -10,5 +10,5 @@ tr.data-user
   td
     = admin.type
   td id="admin-#{admin.id}"
-    = link_to "Edit", edit_manager_admin_path(admin), remote: true, class: "btn info"
-    = link_to "Delete", "#", class: "btn danger"
+    = link_to t(".edit"), edit_manager_admin_path(admin), remote: true, class: "btn info"
+    = link_to t(".delete"), "#", class: "btn danger"

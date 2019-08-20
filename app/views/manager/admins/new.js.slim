@@ -1,3 +1,6 @@
 |
   $("#admin-modal").html("#{j(render 'new')}");
   $("#admin-modal").modal("show")
+  $(".preview").change(function() {
+    readURL(this, '#img_prev');
+  });

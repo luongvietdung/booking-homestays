@@ -32,3 +32,4 @@ en:
         list: List Rooms
         create_room: Create Rooms
         manager_admin: Manager admins
+  hello: "Hello world"
