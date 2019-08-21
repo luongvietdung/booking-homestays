@@ -2,7 +2,8 @@
 
 module Manager
   class AdminsController < BaseController
-    before_action :load_admin, only: %i[edit update]
+    before_action :check_default_admin
+    before_action :load_admin, only: %i[edit update destroy]
 
     def index
       @admins = Admin.all
@@ -36,6 +37,15 @@ module Manager
       end
     end
 
+    def destroy
+      if !@admin.flag? && @admin.destroy
+        flash[:success] = t("messages.success.admins.delete", id: @admin.id.to_s)
+      else
+        flash[:danger] = t("messages.failed.admins.delete", id: @admin.id.to_s)
+      end
+      redirect_to manager_admins_path
+    end
+
     private
 
     def load_admin
@@ -55,6 +65,12 @@ module Manager
           format.js { flash[:danger] = t("messages.failed.admins.update", id: admin.id.to_s) }
         end
       end
+    end
+
+    def check_default_admin
+      return if current_admin.flag?
+
+      raise ActionController::RoutingError.new(params[:path])
     end
   end
 end
