@@ -28,9 +28,8 @@ module Manager
     def edit; end
 
     def update
-      @admin.not_update_password = true if admin_params[:password].blank? && admin_params[:password_confirmation].blank?
-      @admin.assign_attributes admin_params
-      if @admin.changed?
+      support_update(@admin)
+      if @admin.changed? || !params[:admin][:avatar].blank?
         update_admin @admin
       else
         flash[:notice] = t("messages.notice.admins.not_edit", id: @admin.id.to_s)
@@ -70,7 +69,12 @@ module Manager
     def check_default_admin
       return if current_admin.flag?
 
-      raise ActionController::RoutingError.new(params[:path])
+      raise ActionController::RoutingError, params[:path]
+    end
+
+    def support_update(admin)
+      admin.not_update_password = true if admin_params[:password].blank? && admin_params[:password_confirmation].blank?
+      admin.assign_attributes admin_params
     end
   end
 end

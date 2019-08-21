@@ -1,14 +1,14 @@
-= link_to "Create", new_manager_admin_path, remote: true, class: "btn-success create_admin"
-h2#title-user All admins
+= link_to t(".create"), new_manager_admin_path, remote: true, class: "btn-success create_admin"
+h2#title-user = t(".all_admin")
 table#admin_table.table.table-striped.table-bordered style=("width: 100%")
   thead
     tr.header-user
-      th Id
-      th Name
-      th Email
-      th Address
-      th Type
-      th Action
+      th = t(".id")
+      th = t(".name")
+      th = t(".email")
+      th = t(".address")
+      th = t(".type")
+      th = t(".action")
   tbody
     = render @admins
 #admin-modal.modal.fade
