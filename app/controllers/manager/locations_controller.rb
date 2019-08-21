@@ -2,7 +2,11 @@
 
 module Manager
   class LocationsController < BaseController
-    before_action :load_location, only: %i[edit update]
+    before_action :load_location, only: %i[edit update destroy]
+
+    def index
+      @locations = Location.newest.page(params[:page]).per Settings.location_per
+    end
 
     def new
       @location = Location.new
@@ -23,6 +27,15 @@ module Manager
     def create
       @location = Location.new location_params
       if @location.save
+        redirect_to manager_locations_path, flash: { success: t(".success") }
+      else
+        flash.now[:danger] = t ".danger"
+        render :new
+      end
+    end
+
+    def destroy
+      if @location.destroy
         redirect_to manager_locations_path, flash: { success: t(".success") }
       else
         flash.now[:danger] = t ".danger"
