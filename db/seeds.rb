@@ -35,3 +35,7 @@ end
                address: address,
                confirmed_at: Time.now)
 end
+
+["CĂN HỘ CHUNG CƯ","NHÀ RIÊNG", "CĂN HỘ STUDIO", "KHÁC", "BIỆT THỰ"].each do |favorite_space|
+  FavoriteSpace.create! name: favorite_space
+end

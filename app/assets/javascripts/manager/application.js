@@ -7,6 +7,7 @@
 //= require datatable
 //= require manager/custom
 //= require cocoon
+//= require select2
 
 /*global toastr*/
 toastr.options = {

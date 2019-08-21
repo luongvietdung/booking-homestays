@@ -20,6 +20,7 @@ en:
       form:
         name: "Name"
         submit: "Save changes"
+        favorite: "Favorite Spaces"
       new:
         add: "Add Locations"
         title: "New locations"
