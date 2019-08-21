@@ -7,5 +7,6 @@ table.text-center
     tr
       td = t(".costs", cost: price.cost)
       td = t(".cleanings", cleaning: price.cleaning_fee)
+      td = link_to t(".edit"), edit_manager_price_path(price)
 br/
 = link_to t(".new"), new_manager_price_path

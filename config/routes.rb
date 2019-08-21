@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     resources :locations
     resources :favorite_spaces
     resources :admins
-    resources :prices, only: %i[index new create]
+    resources :prices
   end
 end
