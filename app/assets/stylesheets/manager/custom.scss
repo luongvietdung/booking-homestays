@@ -6,13 +6,11 @@ footer.sticky-footer {
     font-size: 0.8rem;
   }
 }
-
 body.sidebar-toggled {
   footer.sticky-footer {
     width: 100%;
   }
 }
-
 .navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion {
   width: 100%!important;
   background: #2F4F4F;
@@ -153,6 +151,20 @@ i.fa.fa-caret-down {
   padding: 3px;
 }
 
+#error_explanation {
+  color: red;
+}
+#content {
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+}
+.sticky-footer.bg-white {
+  border-top: 1px solid #858796;
+}
+.wrapper {
+  width: 100%;
+}
+
 /*******Locations*******/
 .link-to-edit:hover {
   text-decoration: none;
@@ -160,4 +172,10 @@ i.fa.fa-caret-down {
 }
 .link-to-edit {
   color: #A9A9A9;
+}
+.edit-location {
+  margin-bottom: 10px;
+}
+.btn_right {
+  float: right;
 }

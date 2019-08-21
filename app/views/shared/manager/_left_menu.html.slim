@@ -23,7 +23,6 @@ ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordio
       = link_to t(".list"), manager_rooms_path, id: "drlayout"
       = link_to t(".create_room"), new_manager_room_path, id: "dlayout"
   - if current_admin.flag?
-    hr.sidebar-divider.my-0/
     li.nav-item
       = link_to manager_admins_path, class: "nav-link collapsed" do
         i.fa.fa-user.fa-tachometer-alt
