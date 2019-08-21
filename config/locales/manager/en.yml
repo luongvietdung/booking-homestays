@@ -20,13 +20,31 @@ en:
       form:
         name: "Name"
         submit: "Save changes"
+        favorite: "Favorite Spaces"
+        select_favorite: "Select favorite..."
+        new: "New favorite spaces"
       new:
-        add: "Add locations"
+        add: "Add Locations"
         title: "New locations"
+      edit:
+        edit: "Edit Locations"
+        title: "Edit locations"
+        add: "Add locations"
       create:
         success: "Create locations successfully!"
         danger: "Create locations has problem!"
-        edit: "Edit Location"
+      index:
+        title: "Locations"
+        new_location: "New Locations"
+        key: "#"
+        name: "Name"
+        action: "Action"
+      location:
+        delete: "Delete"
+        sure: "Are you sure?"
+      destroy:
+        success: "Delete location successfully!"
+        danger: "Delete location has problem!"
       update:
         success: "Update locations successfully!"
         danger: "Update locations has problem!"
@@ -68,3 +86,5 @@ en:
     notice:
       admins:
         not_edit: "Not edit admin %{id}"
+        success: "Update location successfully!"
+        danger: "Update location has problem!"

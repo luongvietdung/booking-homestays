@@ -1,0 +1,7 @@
+tr
+  td
+    = location_counter.next
+  td
+    = link_to location.name, edit_manager_location_path(location), class: "link-to-edit"
+  td
+    = link_to t(".delete"), manager_location_path(location), class: "btn btn-danger", method: :delete, data: {confirm: t(".sure")}
