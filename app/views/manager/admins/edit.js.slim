@@ -1,0 +1,11 @@
+|
+  $("#admin-modal").html("#{j(render 'edit')}");
+  $("#admin-modal").modal("show")
+  $(".preview").change(function() {
+    readURL(this, '#img_prev');
+  });
+  $(".toggle").css('display', 'none');
+  $(".show").on('click', function(){
+    $(".toggle").toggle();
+    $(this).text( $(this).text() == 'More' ? "Hide" : "More");
+  });
