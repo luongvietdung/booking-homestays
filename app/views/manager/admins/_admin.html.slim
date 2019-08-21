@@ -11,4 +11,6 @@ tr.data-user
     = admin.type
   td id="admin-#{admin.id}"
     = link_to t(".edit"), edit_manager_admin_path(admin), remote: true, class: "btn info"
-    = link_to t(".delete"), "#", class: "btn danger"
+    - unless admin.flag?
+      = link_to t(".delete"), manager_admin_path(admin), method: :delete, \
+        data: { confirm: "You sure?" }, class: "btn danger"

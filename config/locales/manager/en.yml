@@ -77,19 +77,12 @@ en:
       admins:
         create: "Create success!"
         update: "Updated admin %{id} succeeded"
+        delete: "Delete admin %{id} succeeded"
     failed:
       admins:
         create: "Create failed!"
         update: "Update admin %{id} failed"
+        delete: "Delete admin %{id} failed"
     notice:
       admins:
         not_edit: "Not edit admin %{id}"
-        success: "Update location successfully!"
-        danger: "Update location has problem!"
-        edit: "Edit"
-      update:
-        success: "Update successfully!!!"
-      new:
-        create: "Create"
-      edit:
-        update: "Update"

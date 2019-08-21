@@ -2,7 +2,14 @@
 Admin.create!(email: "admin@gmail.com",
               name: "AdminBot",
               password: "123123",
-              address: "Admin page!")
+              address: "Admin page!",
+              flag: true)
+
+Member.create!(email: "member@gmail.com",
+              name: "MemberBot",
+              password: "123123",
+              address: "Member page!")
+
 50.times do |n|
   name = Faker::Name.name
   email = "admin#{n+1}@example.com"
