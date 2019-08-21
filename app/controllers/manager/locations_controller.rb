@@ -16,8 +16,7 @@ module Manager
 
     def update
       if @location.update_attributes location_params
-        flash[:success] = t ".success"
-        redirect_to manager_locations_path
+        redirect_to manager_locations_path, success: t(".success")
       else
         flash.now[:danger] = t ".danger"
         render :edit
@@ -27,7 +26,7 @@ module Manager
     def create
       @location = Location.new location_params
       if @location.save
-        redirect_to manager_locations_path, flash: { success: t(".success") }
+        redirect_to manager_locations_path, success: t(".success")
       else
         flash.now[:danger] = t ".danger"
         render :new
@@ -36,11 +35,11 @@ module Manager
 
     def destroy
       if @location.destroy
-        redirect_to manager_locations_path, flash: { success: t(".success") }
+        flash[:success] = t ".success"
       else
         flash.now[:danger] = t ".danger"
-        render :new
       end
+      redirect_to manager_locations_path
     end
 
     private

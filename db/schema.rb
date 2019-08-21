@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 2019_08_20_001559) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "location_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_areas_on_location_id"
+  end
+
   create_table "favorite_spaces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -86,6 +94,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_001559) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "areas", "locations"
   add_foreign_key "rooms", "locations"
   add_foreign_key "rooms", "users"
 end
