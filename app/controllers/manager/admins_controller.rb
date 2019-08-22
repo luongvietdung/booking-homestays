@@ -70,7 +70,7 @@ module Manager
     def check_default_admin
       return if current_admin.flag?
 
-      raise ActionController::RoutingError.new(params[:path])
+      raise ActionController::RoutingError, params[:path]
     end
   end
 end

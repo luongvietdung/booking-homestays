@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions" }
 
   namespace :manager do
-    root "prices#index"
-
-    resources :favorite_spaces, only: %i[index new create]
     resources :rooms
+    root "dashboard#index"
     resources :locations
     resources :favorite_spaces
     resources :admins

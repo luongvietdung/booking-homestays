@@ -14,6 +14,14 @@ ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordio
     = link_to manager_locations_path, class: "nav-link collapsed" do
       i.fa.fa-map-marker
       span = t ".location"
+  li.nav-item
+    = link_to manager_prices_path, class: "nav-link collapsed" do
+      i.fa.fa-usd 
+      span = t ".prices"
+  li.nav-item
+    = link_to manager_favorite_spaces_path, class: "nav-link collapsed" do
+      i.fa.fa-thumbs-o-up
+      span = t ".favorite-spaces"
   li.nav-item.sidenav
     .dropdown-btn.nav-link.collapsed
       i.fa.fa-home

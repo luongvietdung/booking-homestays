@@ -47,13 +47,18 @@ en:
     prices:
       create:
         success: "Create successfully!!!"
+      update:
+        success: "Update successfully!!!"
+      destroy:
+        success: "Destroy successfully!!!"
       index:
         new: "New"
         listing_prices: "Listing prices"
-        cost: "Cost"
-        cleaning: "Cleaning fee"
-        costs: "%{cost} $"
-        cleanings: "%{cleaning} $"
+        destroy: "Destroy"
+        sale: "Sale"
+        code: "Code"
+        total: "Total"
+        action: "Action"
     admins:
       admin:
         edit: "Edit"

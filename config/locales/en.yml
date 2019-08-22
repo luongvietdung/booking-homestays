@@ -32,3 +32,5 @@ en:
         create_room: Create Rooms
         manager_admin: Manager admins
         location: "Manager Locations"
+        prices: "Manager Prices & Vouchers"
+        favorite-space: "Manager Favorite Spaces"
