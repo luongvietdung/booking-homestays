@@ -1,12 +1,33 @@
 h1 = t(".listing_prices")
-table.text-center
-  tr
-    th = t(".cost")
-    th = t(".cleaning")
-  - @prices.each do |price|
+table.table.text-center
+  thead
     tr
-      td = t(".costs", cost: price.cost)
-      td = t(".cleanings", cleaning: price.cleaning_fee)
-      td = link_to t(".edit"), edit_manager_price_path(price)
+      th = t(".cost")
+      th = t(".cleaning")
+      th = t(".sale")
+      th = t(".code")
+      th = t(".total")
+      th = t(".action")
+  tbody
+    - @prices.each do |price|
+      tr
+        td = t(".costs", cost: price.cost)
+        td = t(".cleanings", cleaning: price.cleaning_fee) 
+        td 
+          - price.bills.each do |price_bill|  
+            = number_to_percentage(price_bill.voucher.sale, precision: 0) 
+            br
+        td
+          - price.bills.each do |price_bill|   
+            = price_bill.voucher.code
+            br
+        td
+          - price.bills.each do |price_bill|  
+            - if price_bill.voucher.code.present?
+              = bill_vouchers(price_bill)
+            br
+        td
+          = link_to t(".edit"), edit_manager_price_path(price)
+          = link_to t(".destroy"), manager_price_path(price), method: :delete, data: { confirm: "Are you sure?" }
 br/
 = link_to t(".new"), new_manager_price_path

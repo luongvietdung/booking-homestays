@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2019_08_21_084727) do
     t.index ["location_id"], name: "index_areas_on_location_id"
   end
 
+  create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "voucher_id"
+    t.bigint "price_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["price_id"], name: "index_bills_on_price_id"
+    t.index ["voucher_id"], name: "index_bills_on_voucher_id"
+  end
+
   create_table "favorite_spaces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -55,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_084727) do
 
   create_table "prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.decimal "cost", precision: 8, scale: 2
-    t.decimal "cleaning_fee", precision: 8, scale: 2
+    t.decimal "cleaning_fee", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,6 +85,12 @@ ActiveRecord::Schema.define(version: 2019_08_21_084727) do
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_rooms_on_location_id"
     t.index ["user_id"], name: "index_rooms_on_user_id"
+    
+  create_table "prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.decimal "cost", precision: 8, scale: 2
+    t.decimal "cleaning_fee", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,6 +107,14 @@ ActiveRecord::Schema.define(version: 2019_08_21_084727) do
     t.boolean "flag", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vouchers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "code"
+    t.decimal "sale", precision: 10
+    t.datetime "date_off"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

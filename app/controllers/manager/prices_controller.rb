@@ -2,7 +2,7 @@
 
 module Manager
   class PricesController < BaseController
-    before_action :price, only: %i[edit update]
+    before_action :price, only: %i[edit update destroy]
 
     def index
       @prices = Price.newest
@@ -10,6 +10,7 @@ module Manager
 
     def new
       @price = Price.new
+      @price.vouchers.build
     end
 
     def create
@@ -31,10 +32,14 @@ module Manager
       end
     end
 
+    def destroy
+      redirect_to manager_prices_path, flash: { success: t(".success") } if @price.destroy
+    end
+
     private
 
     def price_params
-      params.require(:price).permit(:cost, :cleaning_fee)
+      params.require(:price).permit(:cost, :cleaning_fee, vouchers_attributes: %i[id code sale date_off _destroy])
     end
 
     def price

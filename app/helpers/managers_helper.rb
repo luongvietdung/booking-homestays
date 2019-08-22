@@ -8,4 +8,8 @@ module ManagersHelper
   def build_location_for_rooms
     Location.sort_by_name.map { |l| [l.name, l.id] }
   end
+
+  def bill_vouchers(price_bill)
+    (price_bill.price.cost - ((price_bill.price.cost * price_bill.voucher.sale) / 100)) + price_bill.price.cleaning_fee
+  end
 end

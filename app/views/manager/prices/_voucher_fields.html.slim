@@ -1,0 +1,13 @@
+.nested-fields
+  h3.text-center Voucher
+  = f.hidden_field :_destroy, as: :hidden
+  = f.label :code
+  = f.text_field :code, class: "form-control"
+  br
+  = f.label :sale
+  = f.number_field :sale, step: :any, class: "form-control"
+  br
+  = f.label :date_off
+  = f.datetime_field :date_off, class: "form-control"
+  = link_to_remove_association t(".remove-voucher"), f
+  br
