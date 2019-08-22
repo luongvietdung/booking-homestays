@@ -1,16 +1,12 @@
-= form_for [:manager, @member], html: { style: "display:inline;" } do |f|
+= form_for [:manager, member], html: { style: "display:inline;" } do |f|
   h3 style="text-align: center" = yield(:title)
-  - if @member.errors.any?
+  - if member.errors.any?
     #error_explanation
-      .alert.alert-danger
-        = t(".error", count: "#{pluralize(@member.errors.count, "error")}")
+      = render "shared/manager/error_messages", object: member
   hr
   .form-group.row
     .col-md-3
-      - if @member.avatar.attached?
-        = image_tag @member.avatar, class: "avatar-default-member", id: "img_member_prev"
-      - else
-        = image_tag "defaultavatar.jpeg", class: "avatar-default-member", id: "img_member_prev"
+      = avatar_member member
 
     = f.file_field :avatar, class: "form-control preview_member col-md-8", id: "custom_field_file"
   .form_group

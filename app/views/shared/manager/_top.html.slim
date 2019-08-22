@@ -6,8 +6,8 @@ nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
         button.btn.btn-primary type="button"
           i.fa.fa-search.fa-sm
   .custom-dropdown
-    = link_to("#", class: "account") do
-      span = current_admin.name
+    = link_to("#", class: "account", title: "#{current_admin.name}", "data-toggle": "tooltip") do
+      span = truncate(current_admin.name, length: 10)
       - if current_admin.avatar.attached?
         = image_tag current_admin.avatar, class: "profile-circle"
       - else

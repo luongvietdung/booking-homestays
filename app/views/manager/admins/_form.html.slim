@@ -1,16 +1,13 @@
 .modal-dialog
   .modal-content
-    = form_for [:manager, @admin], remote: true, html: { style: "display:inline;" } do |f|
+    = form_for [:manager, admin], remote: true, html: { style: "display:inline;" } do |f|
       .modal-body
         h3 style="text-align: center" = yield(:title)
         #message_errors
         hr
         .form-group.row[style="padding: 25px"]
           .col-sm-3
-            - if @admin.avatar.attached?
-              = image_tag @admin.avatar, class: "avatar-default", id: "img_prev"
-            - else
-              = image_tag "defaultavatar.jpeg", class: "avatar-default", id: "img_prev"
+            = avatar_admin admin
           .prev.col-sm-9
             = f.file_field :avatar, class: "form-control preview"
         .form-group
@@ -30,7 +27,7 @@
             = f.label :password_confirmation, class: "control-label"
             = f.password_field :password_confirmation, class: "form-control"
       .modal-footer
-        - unless @admin.new_record?
+        - unless admin.new_record?
           button.show.btn.btn-link type="button" style="color: inherit;" More
         = f.submit yield(:btn_name), class: "btn btn-primary"
         = link_to t(".cancel"), "#", class: "btn btn-danger", data: {dismiss: "modal"}

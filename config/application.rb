@@ -18,30 +18,5 @@ module BookingHomestays
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
-
-    ActionView::Base.field_error_proc = proc { |html_tag, instance|
-      html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
-
-      form_fields = %w[textarea input select]
-
-      elements = Nokogiri::HTML::DocumentFragment.parse(html_tag).css "label, " + form_fields.join(", ")
-
-      elements.each do |e|
-        next unless form_fields.include?(e.node_name)
-
-        errors = [instance.error_message].flatten
-                                         .uniq
-                                         .collect do |error|
-          "#{e.attributes['name']
-                                .value.scan(/\[(.*?)\]/)
-                                .flatten[0]
-                                .humanize} #{error}"
-        end
-        html = %(<div class="field_with_errors">#{html_tag}</div>
-          <small class="form-text error-text">&nbsp;#{errors.join(', ')}</small>).html_safe
-      end
-
-      html
-    }
   end
 end
