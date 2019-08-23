@@ -1,6 +1,5 @@
 en:
   please_choose_one: please choose one
-
   layouts:
     manager:
       title: "Booking Homestays"
@@ -11,7 +10,6 @@ en:
     failed:
       admins:
         create: "Create failed!"
-
   manager:
     rooms:
       create_room: "Thanks you to create room"
@@ -19,7 +17,6 @@ en:
       don't_have_location: "Don't have location, Please Create Location"
       new:
         create_room: Create Room
-
   shared:
     manager:
       left_menu:

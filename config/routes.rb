@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     resources :favorite_spaces
     resources :rooms
     resources :admins
+    resources :members
     resources :prices
     resources :locations do
-      resources :areas
+      resources :areas, only: %i[new create]
     end
-    resources :members
+    resources :areas, except: %i[new create] do
+      resources :address
+    end
   end
 end

@@ -29,7 +29,11 @@ en:
       edit:
         edit: "Edit Locations"
         title: "Edit locations"
-        new_area: "New Areas"
+        area: "Areas"
+        key: "#"
+        name: "Name"
+        action: "Action"
+        new_area: "New Area"
       index:
         title: "Locations"
         new_location: "New Locations"
@@ -51,6 +55,9 @@ en:
         new: "New Areas"
         btn: "×"
         close: "Close"
+      area:
+        delete: "Delete"
+        sure: "Are you sure?"
     prices:
       create:
         success: "Create successfully!!!"
@@ -74,10 +81,6 @@ en:
         create: "Create"
       form:
         cancel: "Cancel"
-    areas:
-      create:
-        success: "Create area successfully!"
-        danger: "Create area has problem!"
       index:
         create: "Create"
         all_admin: "All admins"
@@ -87,6 +90,18 @@ en:
         address: "Address"
         type: "Type"
         action: "Action"
+    areas:
+      create:
+        success: "Create area successfully!"
+        danger: "Create area has problem!"
+      edit:
+        title: "Edit Areas"
+        title: "Edit Areas"
+        name: "Name"
+        save: "Save Changes"
+      update:
+        success: "Update area successfully!"
+        danger: "Update area has problem!"
     members:
       form:
         error: "The form contains %{count}."
