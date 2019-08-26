@@ -184,6 +184,7 @@ i.fa.fa-caret-down {
 .link-to-edit {
   color: #A9A9A9;
 }
+
 .edit-location {
   margin-bottom: 10px;
 }
@@ -301,4 +302,29 @@ img.profile-circle {
 
 a.account:hover {
   text-decoration: none;
+}
+
+.new-price {
+  float: right;
+}
+
+.price {
+  float: right;
+}
+
+.voucher {
+  border: 1px solid #cbd4d4;
+  padding: 0 15px;
+}
+
+.fa-times-circle {
+  font-size: 20px !important;
+  padding: 10px 0 !important;
+  color: darkslategrey !important;
+  float: right;
+}
+
+.add_fields {
+  color: darkslategrey;
+  text-decoration: none !important;
 }

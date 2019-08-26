@@ -22,6 +22,7 @@ gem "toastr-rails"
 gem "kaminari", "~> 1.1", ">= 1.1.1"
 gem "bootstrap4-kaminari-views"
 gem "config", "~> 2.0"
+gem "cocoon"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

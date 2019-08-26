@@ -1,0 +1,20 @@
+h2.text-center
+  - @prices.each do |price|
+      tr
+        td = number_to_currency(price.cost)
+        td = number_to_currency(price.cleaning_fee) 
+        td 
+          - price.bills.each do |price_bill|  
+            = number_to_percentage(price_bill.voucher.sale, precision: 0) 
+            br
+        td
+          - price.bills.each do |price_bill|   
+            = price_bill.voucher.code
+            br
+        td
+          - price.bills.each do |price_bill|  
+            = number_to_currency(bill_vouchers(price_bill))
+            br
+        td
+          = link_to t(".edit"), edit_manager_price_path(price), class: "btn btn-primary"
+          = link_to t(".destroy"), manager_price_path(price), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

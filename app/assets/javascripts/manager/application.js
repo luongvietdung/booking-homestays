@@ -6,6 +6,7 @@
 //= require toastr
 //= require datatable
 //= require manager/custom
+//= require cocoon
 
 /*global toastr*/
 toastr.options = {
