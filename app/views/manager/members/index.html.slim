@@ -1,4 +1,4 @@
-= link_to t(".create"), new_manager_member_path, class: "btn-primary create_user"
+= link_to t(".create"), new_manager_member_path, remote:true, class: "btn-primary create_user"
 h2#title-user
   = t ".all_member"
 table#member_table.table.table-striped.table-bordered style=("width: 100%")
@@ -8,7 +8,8 @@ table#member_table.table.table-striped.table-bordered style=("width: 100%")
       th = t(".name")
       th = t(".email")
       th = t(".address")
-      th = t(".type")
+      th = t(".access")
       th = t(".action")
-  tbody
+  tbody.data-member
     = render @members
+#member-modal.modal.fade

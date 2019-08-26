@@ -35,3 +35,19 @@ en:
         logout: "Logout"
         settings: "Settings"
         profile: "Profile"
+  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        admin:
+          attributes:
+            avatar:
+              not_valid: "wrong format or size is too big"
+              format: "wrong format"
+              size: "is too big"
+        member:
+          attributes:
+            avatar:
+              not_valid: "wrong format or size is too big"
+              format: "wrong format"
+              size: "is too big"

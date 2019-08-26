@@ -80,6 +80,8 @@ en:
       admin:
         edit: "Edit"
         delete: "Delete"
+        updated: "Edited %{time}"
+        created: "Created %{time}"
       edit:
         edit_admin: "Edit Admin"
         update: "Update"
@@ -95,7 +97,7 @@ en:
         name: "Name"
         email: "Email"
         address: "Address"
-        type: "Type"
+        access: "Access"
         action: "Action"
     areas:
       create:
@@ -119,6 +121,8 @@ en:
       member:
         edit: "Edit"
         delete: "Delete"
+        updated: "Edited %{time}"
+        created: "Created %{time}"
       index:
         create: "Create"
         all_member: "All members"
@@ -126,19 +130,24 @@ en:
         name: "Name"
         email: "Email"
         address: "Address"
-        type: "Type"
+        access: "Access"
         action: "Action"
       new:
         create: "Create"
         new_member: "New Member"
+      edit:
+        update: "Update"
+        edit_member: "Edit Member"
   messages:
     success:
       admins:
         create: "Create succeeded!"
-        update: "Updated admin %{id} succeeded"
+        update: "Update admin %{id} succeeded"
         delete: "Delete admin %{id} succeeded"
       members:
         create: "Create succeeded!"
+        delete: "Delete member %{id} succeeded"
+        update: "Update member %{id} succeeded"
     failed:
       admins:
         create: "Create failed!"
@@ -146,7 +155,11 @@ en:
         delete: "Delete admin %{id} failed"
       members:
         create: "Create failed!"
+        delete: "Delete member %{id} failed"
+        update: "Update member %{id} failed"
     notice:
       admins:
         not_edit: "Not edit admin %{id}"
         not_default_admin: "You can not delete default admin!"
+      members:
+        not_edit: "Not edit member %{id}"

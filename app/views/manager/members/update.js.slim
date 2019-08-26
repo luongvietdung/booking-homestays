@@ -1,0 +1,14 @@
+- if @member.errors.present?
+  |
+    $("#message_member_errors").html("#{j(render 'shared/manager/error_messages', object: @member)}");
+    toastr.error("#{flash[:danger]}");
+    $(".modal").animate({scrollTop : 0},500);
+- elsif flash[:notice]
+  |
+    $("#member-modal").modal("hide")
+    toastr.info("#{flash[:notice]}");
+- elsif flash[:success]
+  |
+    $("#member-modal").modal("hide")
+    $(".data-member").html("#{j(render @members)}")
+    toastr.success("#{flash[:success]}");

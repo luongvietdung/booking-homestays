@@ -13,6 +13,7 @@ $(document).ready(function(){
   $('#admin_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
+    "aaSorting": [],
     "columnDefs": [
       { "orderable": false, "targets": [5] },
     ]
@@ -21,6 +22,7 @@ $(document).ready(function(){
   $('#member_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
+    "aaSorting": [],
     "columnDefs": [
       { "orderable": false, "targets": [5] },
     ]
@@ -42,10 +44,9 @@ $(document).ready(function(){
 
   $('#admin-prices').DataTable({
     scrollY: 500,
-    "order": [[ 0, 'DESC' ]],
     "pageLength": 25,
     "columnDefs": [
-      { "orderable": false, "targets": [5] },
+      { "orderable": false, "targets": [4] },
     ]
   });
 
