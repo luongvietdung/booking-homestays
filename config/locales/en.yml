@@ -30,5 +30,12 @@ en:
         room: Rooms
         list: List Rooms
         create_room: Create Rooms
-        manager_admin: Manager admins
         location: "Manager Locations"
+        manager_admin: "Manager admins"
+        manager_member: "Manager members"
+        user: "User"
+      top:
+        logout: "Logout"
+        settings: "Settings"
+        profile: "Profile"
+  hello: "Hello world"

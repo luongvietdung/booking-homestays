@@ -10,6 +10,7 @@ module Manager
 
     def new
       @price = Price.new
+      @price.vouchers.build
     end
 
     def create
@@ -38,7 +39,7 @@ module Manager
     private
 
     def price_params
-      params.require(:price).permit(:cost, :cleaning_fee)
+      params.require(:price).permit(:cost, :cleaning_fee, vouchers_attributes: %i[id code sale date_off _destroy])
     end
 
     def price

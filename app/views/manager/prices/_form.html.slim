@@ -1,4 +1,5 @@
 = form_for [:manager, @price] do |price|
+  h2.text-center Price
   = render "shared/manager/error_messages", object: @price
   = price.label :cost
   = price.number_field :cost, step: :any, class: "form-control", placeholder: "$"
@@ -6,4 +7,10 @@
   = price.label :Cleaning
   = price.number_field :cleaning_fee, step: :any, class: "form-control", placeholder: "$"
   br/
-  = price.submit class: "btn btn-primary"
+  = price.fields_for(:vouchers) do |voucher|
+      = render "voucher_fields", f: voucher
+  .links
+    = link_to_add_association "+ Add voucher", price, :vouchers
+  div.btn-prices
+    = price.submit class: "btn btn-primary price"
+    = link_to "Back", manager_prices_path, class: "btn btn-outline-secondary price"

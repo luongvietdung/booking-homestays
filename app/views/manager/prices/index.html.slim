@@ -1,13 +1,13 @@
-h1 = t(".listing_prices")
-table.text-center
-  tr
-    th = t(".cost")
-    th = t(".cleaning")
-  - @prices.each do |price|
+h2 = t(".listing_prices")
+table#admin-prices.table.table-striped.table-bordered.text-center style=("width: 100%")
+  = link_to t(".new"), new_manager_price_path, class: "btn btn-primary new-price"
+  thead
     tr
-      td = t(".costs", cost: price.cost)
-      td = t(".cleanings", cleaning: price.cleaning_fee)
-      td = link_to t(".edit"), edit_manager_price_path(price)
-      td= link_to t(".destroy"), manager_price_path(price), method: :delete, data: { confirm: "Are you sure?" }
-br/
-= link_to t(".new"), new_manager_price_path
+      th = t(".cost")
+      th = t(".cleaning")
+      th = t(".sale")
+      th = t(".code")
+      th = t(".total")
+      th = t(".action")
+  tbody
+    = render @prices

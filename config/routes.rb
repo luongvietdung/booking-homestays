@@ -4,17 +4,16 @@ Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions" }
 
   namespace :manager do
-    root "prices#index"
-
+    resources :rooms
+    root "dashboard#index"
+    resources :locations
     resources :favorite_spaces
     resources :rooms
     resources :admins
     resources :prices
-
     resources :locations do
       resources :areas
     end
-
-    resources :areas, only: %i[index update edit destroy]
+    resources :members
   end
 end

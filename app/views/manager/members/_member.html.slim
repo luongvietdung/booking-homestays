@@ -1,0 +1,14 @@
+tr.data-user
+  td
+    = member.id
+  td
+    = member.name
+  td
+    = member.email
+  td
+    = member.address
+  td
+    = member.type
+  td
+    = link_to t(".edit"), "#", class: "btn info"
+    = link_to t(".delete"), "#" , class: "btn danger"

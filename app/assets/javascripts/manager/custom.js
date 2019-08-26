@@ -12,11 +12,22 @@ function readURL(f, previewId) {
 $(document).ready(function(){
   $('#admin_table').DataTable({
     scrollY: 500,
-    "order": [[ 0, 'DESC' ]],
     "pageLength": 25,
     "columnDefs": [
       { "orderable": false, "targets": [5] },
     ]
+  });
+
+  $('#member_table').DataTable({
+    scrollY: 500,
+    "pageLength": 25,
+    "columnDefs": [
+      { "orderable": false, "targets": [5] },
+    ]
+  });
+
+  $(".preview_member").change(function() {
+    readURL(this, '#img_member_prev');
   });
 
   $(".dropdown-btn").click( function(e) {
@@ -28,4 +39,39 @@ $(document).ready(function(){
       dropdownContent.css('display', 'block');
     }
   });
+
+  $('#admin-prices').DataTable({
+    scrollY: 500,
+    "order": [[ 0, 'DESC' ]],
+    "pageLength": 25,
+    "columnDefs": [
+      { "orderable": false, "targets": [5] },
+    ]
+  });
+});
+
+$(document).ready(function() {
+  $(".account").click(function() {
+    var getID=$(this).attr('id');
+    if(getID==1) {
+      $(".custom-submenu").hide();
+      $(this).attr('id', '0');
+    }
+    else {
+      $(".custom-submenu").show();
+      $(this).attr('id', '1');
+    }
+  });
+  $(".custom-submenu").mouseup(function() {
+    return false
+  });
+  $(".account").mouseup(function() {
+    return false
+  });
+  $(document).mouseup(function() {
+    $(".custom-submenu").hide();
+    $(".account").attr('id', '');
+  });
+
+  $('[data-toggle="tooltip"]').tooltip();
 });

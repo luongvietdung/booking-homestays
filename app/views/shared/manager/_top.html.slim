@@ -5,9 +5,18 @@ nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
       .input-group-append
         button.btn.btn-primary type="button"
           i.fa.fa-search.fa-sm
-  .nav-item.dropdown.no-arrow
-    = link_to "#", id: "userDropdown", class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}, aria: {expanded: false, haspopup: true} do
-      span.mr-2.d-none.d-lg-inline.text-gray-600.small Valerie Luna
-      img.img-profile.rounded-circle /
-    .dropdown-menu-right.shadow.animated--grow-in aria-labelledby="userDropdown"
-      .li = link_to "Logout", destroy_admin_session_path, method: :delete, class: "dropdown-item"
+  .custom-dropdown
+    = link_to("#", class: "account", title: "#{current_admin.name}", "data-toggle": "tooltip") do
+      span = truncate(current_admin.name, length: 10)
+      - if current_admin.avatar.attached?
+        = image_tag current_admin.avatar, class: "profile-circle"
+      - else
+        = image_tag "defaultavatar.jpeg", class: "profile-circle"
+    .custom-submenu[style="display: none; "]
+      ul.custom-root
+        li
+          = link_to t(".profile"), "#"
+        li
+          = link_to t(".settings"), "#"
+        li
+          = link_to t(".logout"), destroy_admin_session_path, method: :delete
