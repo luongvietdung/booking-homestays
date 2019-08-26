@@ -66,6 +66,9 @@ en:
         code: "Code"
         total: "Total"
         action: "Action"
+      form:
+        title: "Price"
+        add-voucher: "+ Add voucher"
     admins:
       admin:
         edit: "Edit"
