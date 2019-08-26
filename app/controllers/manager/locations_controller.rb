@@ -12,10 +12,13 @@ module Manager
       @location = Location.new
     end
 
-    def edit; end
+    def edit
+      @area = @location.areas.build
+      @areas = @location.areas.newest.page(params[:page]).per Settings.location_per
+    end
 
     def update
-      if @location.update_attributes location_params
+      if @location.update location_params
         redirect_to manager_locations_path, success: t(".success")
       else
         flash.now[:danger] = t ".danger"

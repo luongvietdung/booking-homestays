@@ -1,0 +1,7 @@
+tr
+  td
+    = area_counter.next
+  td
+    = link_to area.name, edit_manager_area_path(area), class: "link-to-edit"
+  td
+    = link_to t(".delete"), manager_area_path(area), class: "btn btn-danger", method: :delete, data: {confirm: t(".sure")}

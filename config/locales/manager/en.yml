@@ -29,6 +29,7 @@ en:
       edit:
         edit: "Edit Locations"
         title: "Edit locations"
+        new_area: "New Areas"
       index:
         title: "Locations"
         new_location: "New Locations"
@@ -44,6 +45,12 @@ en:
       update:
         success: "Update location successfully!"
         danger: "Update location has problem!"
+      new_area:
+        save: "Save Changes"
+        name: "Enter name..."
+        new: "New Areas"
+        btn: "×"
+        close: "Close"
     prices:
       create:
         success: "Create successfully!!!"
@@ -67,6 +74,10 @@ en:
         create: "Create"
       form:
         cancel: "Cancel"
+    areas:
+      create:
+        success: "Create area successfully!"
+        danger: "Create area has problem!"
   messages:
     success:
       admins:

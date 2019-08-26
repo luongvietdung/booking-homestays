@@ -1,8 +1,24 @@
 - provide :title, t(".title")
 .row
-  .col-md-12
+  .col-md-12.edit-location
     .card
       .card-header
         h4.card-title= t ".edit"
       .card-body
         = render "form"
+.row
+  .col-md-12
+    .card
+      .card-header
+        h4.card-title
+          = t ".new_area"
+          = link_to t(".new_area"), "#", class: "btn btn-primary btn-xs right btn_right", data: {toggle: "modal", target: "#myModal"}
+      .card-body.load-area
+        table.table.table-hover.table-striped
+          thead
+            th= t ".key"
+            th= t ".name"
+            th= t ".action"
+          tbody
+            = render partial: "area", collection: @areas
+= render "new_area", area: @area

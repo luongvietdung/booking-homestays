@@ -1,0 +1,7 @@
+- if @area.errors.present?
+  | $("#message_errors").html("#{j(render 'shared/manager/error_messages', object: @area)}");
+    toastr.error("#{flash[:danger]}");
+- else
+  | $('#area_name').val('');
+    $('.load-area').load(location.href + ' .load-area');
+    toastr.success("#{flash[:success]}");

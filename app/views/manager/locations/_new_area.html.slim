@@ -1,0 +1,16 @@
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title = t ".new"
+        = button_tag t(".btn"), class: "close", data: {dismiss: "modal"}, type: "button"
+      .modal-body
+        = form_for :area, url: manager_location_areas_path(@location), remote: true do |f|
+          #message_errors
+          = f.hidden_field :location_id, value: @location.id
+          .form-group
+            = f.text_field :name, class: "form-control", placeholder: t(".name")
+          .form-group
+            = f.submit t(".save"), class: "btn btn-primary"
+      .modal-footer
+        = button_tag t(".close"), class: "btn btn-danger", data: {dismiss: "modal"}, type: "button"

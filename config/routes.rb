@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   namespace :manager do
     root "prices#index"
 
-    resources :favorite_spaces, only: %i[index new create]
-    resources :rooms
-    resources :locations
     resources :favorite_spaces
+    resources :rooms
     resources :admins
     resources :prices
+
+    resources :locations do
+      resources :areas
+    end
+
+    resources :areas, only: %i[index update edit destroy]
   end
 end
