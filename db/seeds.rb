@@ -21,3 +21,15 @@ Member.create!(email: "member@gmail.com",
                password_confirmation: password,
                address: address)
 end
+
+50.times do |n|
+  name = Faker::Name.name
+  email = "member#{n+1}@example.com"
+  password = "123123"
+  address= ["DaNang", "HaNoi", "SaiGon", "CanTho", "HaiPhong", "KhanhHoa"].sample
+  Member.create!(name: name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               address: address)
+end

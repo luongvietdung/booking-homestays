@@ -22,8 +22,14 @@ ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordio
     .dropdown-container
       = link_to t(".list"), manager_rooms_path, id: "drlayout"
       = link_to t(".create_room"), new_manager_room_path, id: "dlayout"
-  - if current_admin.flag?
-    li.nav-item
-      = link_to manager_admins_path, class: "nav-link collapsed" do
-        i.fa.fa-user.fa-tachometer-alt
-        span = t ".manager_admin"
+  li.nav-item.sidenav
+    .dropdown-btn.nav-link.collapsed
+      i.fa.fa-user
+      span = t ".user"
+      i.fa.fa-caret-down
+    .dropdown-container
+      - if current_admin.flag?
+        = link_to manager_admins_path, class: "nav-link collapsed" do
+          span = t ".manager_admin"
+      = link_to manager_members_path, class: "nav-link collapsed" do
+        span = t ".manager_member"

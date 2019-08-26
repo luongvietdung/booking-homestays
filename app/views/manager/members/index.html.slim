@@ -1,0 +1,14 @@
+= link_to t(".create"), new_manager_member_path, class: "btn-primary create_user"
+h2#title-user
+  = t ".all_member"
+table#member_table.table.table-striped.table-bordered style=("width: 100%")
+  thead
+    tr.header-user
+      th = t(".id")
+      th = t(".name")
+      th = t(".email")
+      th = t(".address")
+      th = t(".type")
+      th = t(".action")
+  tbody
+    = render @members

@@ -10,11 +10,9 @@ Rails.application.routes.draw do
     resources :rooms
     resources :admins
     resources :prices
-
     resources :locations do
       resources :areas
     end
-
-    resources :areas, only: %i[index update edit destroy]
+    resources :members
   end
 end

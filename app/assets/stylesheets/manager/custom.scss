@@ -21,13 +21,22 @@ body.sidebar-toggled {
   color: red;
 }
 
-#title-user{
+#title-user {
   text-align: center;
+  color: black;
+  font-family: "Press Start 2P";
+}
+
+#title-user:hover{
+  color: #007bff;
 }
 
 .header-user th{
   text-align: center;
-  background-color: mediumspringgreen;
+}
+
+.header-user th:hover{
+  color: #007bff;
 }
 
 .data-user td{
@@ -91,13 +100,14 @@ body.sidebar-toggled {
   background: deepskyblue;
 }
 
-.create_admin{
+.create_user {
   cursor: pointer;
   display: inline-block;
   font-size: 20px;
   padding: 10px 33px;
   margin: 17px;
   border-radius: 5px;
+  text-decoration: none !important;
 }
 
 .create-room{
@@ -132,21 +142,21 @@ i.fa.fa-caret-down {
   background-color: #262626;
 }
 
-#drlayout{
+#drlayout {
   text-decoration: none;
 }
 
-#dlayout{
+#dlayout {
   text-decoration: none;
 }
 
-.avatar-default{
+.avatar-default {
   height: 90px;
   width: 90px;
   border-radius: 50%;
 }
 
-#admin_avatar{
+#admin_avatar {
   margin-top: 27px;
   padding: 3px;
 }
@@ -170,6 +180,7 @@ i.fa.fa-caret-down {
   text-decoration: none;
   color: #4e73df;
 }
+
 .link-to-edit {
   color: #A9A9A9;
 }
@@ -178,4 +189,116 @@ i.fa.fa-caret-down {
 }
 .btn_right {
   float: right;
+}
+
+.align-button {
+  margin-left: 42%;
+  margin-top: 5%;
+}
+
+#custom_field_file {
+  margin-top: 3%;
+  padding: 3px;
+}
+
+.avatar-default-member {
+  height: 160px;
+  width: 160px;
+  margin-left: 16%;
+}
+
+.custom-dropdown {
+  color: #555;
+  margin: 3px -22px 0 0;
+  width: 143px;
+  position: relative;
+  height: 17px;
+  text-align:left;
+}
+
+.custom-submenu {
+  position: absolute;
+  z-index: 100;
+  width: 135px;
+  display: none;
+  margin-left: 10px;
+  padding: 40px 0 5px;
+  border-radius: 6px;
+}
+
+.custom-dropdown  li a {
+color: #555555;
+display: block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+.custom-dropdown li a:hover{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+
+a.account {
+  font-size: 12px;
+  line-height: 16px;
+  color: #555;
+  position: absolute;
+  z-index: 110;
+  display: block;
+  padding: 11px 0 0 20px;
+  height: 28px;
+  width: 121px;
+  margin: -11px 0 0 -10px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.custom-root {
+  list-style: none;
+  font-size: 11px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  background: #fff;
+  padding: 10px 0 10px 0;
+  border-radius: 5px 5px 5px 5px;
+  margin: 11px 8px 0px -15px
+}
+
+.custom-root:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  color: #ffffff;
+  top: 44px;
+  left: 77px;
+}
+
+.profile-circle {
+  width: 45px;
+  height: 44px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 2px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  vertical-align: middle;
+}
+
+img.profile-circle {
+  margin: 0px 64px;
+  margin-top: -41px;
+}
+
+a.account:hover {
+  text-decoration: none;
 }
