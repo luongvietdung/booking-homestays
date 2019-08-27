@@ -2,9 +2,7 @@
 
 class Area < ApplicationRecord
   belongs_to :location
-  has_many :address, dependent: :destroy
-
-  scope :newest, -> { order created_at: :desc }
+  has_many :addresses, dependent: :destroy
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

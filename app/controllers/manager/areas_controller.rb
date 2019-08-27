@@ -16,7 +16,10 @@ module Manager
       end
     end
 
-    def edit; end
+    def edit
+      @address = @area.addresses.build
+      @addresses = @area.addresses.newest.page(params[:page]).per Settings.address_per
+    end
 
     def update
       if @area.update area_params

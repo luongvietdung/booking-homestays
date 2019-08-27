@@ -21,4 +21,5 @@
             th= t ".action"
           tbody
             = render partial: "area", collection: @areas
+        = paginate @areas, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
 = render "new_area", area: @area

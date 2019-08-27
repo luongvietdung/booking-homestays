@@ -12,3 +12,20 @@
             = f.text_field :name, class: "form-control", required: true
 
           = f.submit t(".save"), class: "btn btn-primary"
+.row
+  .col-md-12
+    .card
+      .card-header
+        h4.card-title
+          = t ".address"
+          = link_to t(".address"), "#", class: "btn btn-primary btn-xs right btn_right", data: {toggle: "modal", target: "#myModal"}
+      .card-body.load-address
+        table.table.table-hover.table-striped
+          thead
+            th= t ".key"
+            th= t ".name"
+            th= t ".action"
+          tbody
+          = render partial: "address", collection: @addresses
+        = paginate @addresses, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
+= render "new_address", address: @address

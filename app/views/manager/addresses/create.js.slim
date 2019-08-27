@@ -1,0 +1,7 @@
+- if @address.errors.present?
+  | $("#message_errors").html("#{j(render 'shared/manager/error_messages', object: @address)}");
+    toastr.error("#{flash[:danger]}");
+- else
+  | $('#address_name').val('');
+    $('.load-address').load(location.href + ' .load-address');
+    toastr.success("#{flash[:success]}");

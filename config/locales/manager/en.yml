@@ -108,12 +108,24 @@ en:
         title: "Edit Areas"
         name: "Name"
         save: "Save Changes"
+        key: "#"
+        name: "Name"
+        action: "Action"
+        address: "New Address"
       update:
         success: "Update area successfully!"
         danger: "Update area has problem!"
       destroy:
         success: "Destroy area successfully!"
         danger: "Destroy area has problem!"
+      new_address:
+        save: "Save Changes"
+        new: "New Address"
+        enter_name: "Enter name..."
+        close: "Close"
+        btn: "×"
+      address:
+        delete: "Delete"
     members:
       form:
         error: "The form contains %{count}."
@@ -138,6 +150,10 @@ en:
       edit:
         update: "Update"
         edit_member: "Edit Member"
+    addresses:
+      create:
+        success: "Create address successfully!"
+        danger: "Create address has problem!"
   messages:
     success:
       admins:
