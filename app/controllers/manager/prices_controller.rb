@@ -22,9 +22,7 @@ module Manager
       end
     end
 
-    def edit
-      @price.vouchers.build
-    end
+    def edit; end
 
     def update
       if @price.update(price_params)
