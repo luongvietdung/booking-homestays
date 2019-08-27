@@ -2,6 +2,7 @@
 
 class Area < ApplicationRecord
   belongs_to :location
+  has_many :address, dependent: :destroy
 
   scope :newest, -> { order created_at: :desc }
 
