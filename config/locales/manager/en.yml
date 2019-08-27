@@ -88,6 +88,10 @@ en:
         create: "Create"
       form:
         cancel: "Cancel"
+    areas:
+      create:
+        success: "Create area successfully!"
+        danger: "Create area has problem!"
       index:
         create: "Create"
         all_admin: "All admins"
@@ -97,12 +101,7 @@ en:
         address: "Address"
         type: "Type"
         action: "Action"
-    areas:
-      create:
-        success: "Create area successfully!"
-        danger: "Create area has problem!"
       edit:
-        title: "Edit Areas"
         title: "Edit Areas"
         name: "Name"
         save: "Save Changes"

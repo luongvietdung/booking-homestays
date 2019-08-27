@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     resources :areas, except: %i[new create] do
       resources :address
     end
+    resources :areas
+    resources :members
   end
 end
