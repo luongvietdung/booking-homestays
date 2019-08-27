@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions" }
-
+  
   namespace :manager do
     root "admins#index"
     resources :favorite_spaces
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       resources :areas, only: %i[new create]
     end
     resources :areas, except: %i[new create]
-    resources :areas
     resources :members
   end
 end

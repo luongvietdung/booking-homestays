@@ -69,6 +69,7 @@ en:
         new: "New"
         listing_prices: "Listing prices"
         destroy: "Destroy"
+        cost: "Cost"
         sale: "Sale"
         code: "Code"
         total: "Total"
