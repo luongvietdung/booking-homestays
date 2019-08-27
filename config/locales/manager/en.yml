@@ -109,6 +109,9 @@ en:
       update:
         success: "Update area successfully!"
         danger: "Update area has problem!"
+      destroy:
+        success: "Destroy area successfully!"
+        danger: "Destroy area has problem!"
     members:
       form:
         error: "The form contains %{count}."

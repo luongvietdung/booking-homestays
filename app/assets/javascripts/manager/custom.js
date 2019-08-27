@@ -48,9 +48,7 @@ $(document).ready(function(){
       { "orderable": false, "targets": [5] },
     ]
   });
-});
 
-$(document).ready(function() {
   $(".account").click(function() {
     var getID=$(this).attr('id');
     if(getID==1) {
@@ -62,12 +60,15 @@ $(document).ready(function() {
       $(this).attr('id', '1');
     }
   });
+
   $(".custom-submenu").mouseup(function() {
     return false
   });
+
   $(".account").mouseup(function() {
     return false
   });
+
   $(document).mouseup(function() {
     $(".custom-submenu").hide();
     $(".account").attr('id', '');
