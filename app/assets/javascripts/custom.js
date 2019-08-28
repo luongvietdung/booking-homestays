@@ -15,7 +15,8 @@ $(document).ready(function() {
 
   $('#search-rooms').autocomplete({
     source:  "/autocomplete.json",
-    select: function(){
+    select: function(event, ui){
+      $("input#search-rooms").val(ui.item.value);
       $(this).closest('form').trigger('submit');
     }
   });
