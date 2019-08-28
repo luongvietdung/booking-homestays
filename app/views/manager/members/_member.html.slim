@@ -2,13 +2,21 @@ tr.data-user
   td
     = member.id
   td
+    - if member.avatar.attached?
+      = image_tag member.avatar, class: "show-avatar-index"
+    - else
+      = image_tag "defaultavatar.jpeg", class: "show-avatar-index"
     = member.name
   td
     = member.email
   td
     = member.address
   td
-    = member.type
+    - if member.created_at < member.updated_at
+      = t(".updated", time: time_ago_in_words(member.updated_at))
+    - else
+      = t(".created", time: time_ago_in_words(member.created_at))
   td
-    = link_to t(".edit"), "#", class: "btn info"
-    = link_to t(".delete"), "#" , class: "btn danger"
+    = link_to t(".edit"), edit_manager_member_path(member), remote: true, class: "btn info align-btn"
+    = link_to t(".delete"), manager_member_path(member), method: :delete, \
+      data: { confirm: "You sure?" }, class: "btn danger align-btn"

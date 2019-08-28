@@ -7,8 +7,8 @@ table#admin_table.table.table-striped.table-bordered style=("width: 100%")
       th = t(".name")
       th = t(".email")
       th = t(".address")
-      th = t(".type")
+      th = t(".access")
       th = t(".action")
-  tbody
+  tbody.data-admin
     = render @admins
 #admin-modal.modal.fade

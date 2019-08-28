@@ -1,1 +1,4 @@
 location_per: 10
+max_size: 5_242_880
+file_path: image/
+time_out: 30

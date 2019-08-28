@@ -2,15 +2,22 @@ tr.data-user
   td
     = admin.id
   td
+    - if admin.avatar.attached?
+      = image_tag admin.avatar, class: "show-avatar-index"
+    - else
+      = image_tag "defaultavatar.jpeg", class: "show-avatar-index"
     = admin.name
   td
     = admin.email
   td
     = admin.address
   td
-    = admin.type
+    - if admin.created_at < admin.updated_at
+      = t(".updated", time: time_ago_in_words(admin.updated_at))
+    - else
+      = t(".created", time: time_ago_in_words(admin.created_at))
   td id="admin-#{admin.id}"
-    = link_to t(".edit"), edit_manager_admin_path(admin), remote: true, class: "btn info"
+    = link_to t(".edit"), edit_manager_admin_path(admin), remote: true, class: "btn info align-btn"
     - unless admin.flag?
       = link_to t(".delete"), manager_admin_path(admin), method: :delete, \
-        data: { confirm: "You sure?" }, class: "btn danger"
+        data: { confirm: "You sure?" }, class: "btn danger align-btn"

@@ -1,0 +1,6 @@
+|
+  $("#member-modal").html("#{j(render 'new')}");
+  $("#member-modal").modal("show")
+  $(".preview_member").change(function() {
+    readURL(this, '#img_member_prev');
+  });

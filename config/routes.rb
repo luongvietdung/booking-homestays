@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions" }
 
   namespace :manager do
-    root "admins#index"
+    root "members#index"
     resources :favorite_spaces
     resources :rooms
     resources :admins

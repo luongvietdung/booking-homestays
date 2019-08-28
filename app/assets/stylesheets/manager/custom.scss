@@ -200,9 +200,9 @@ i.fa.fa-caret-down {
 }
 
 .avatar-default-member {
-  height: 160px;
-  width: 160px;
-  margin-left: 16%;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
 }
 
 .custom-dropdown {
@@ -224,7 +224,7 @@ i.fa.fa-caret-down {
   border-radius: 6px;
 }
 
-.custom-dropdown  li a {
+.custom-dropdown li a {
 color: #555555;
 display: block;
 font-family: arial;
@@ -299,6 +299,23 @@ img.profile-circle {
 
 a.account:hover {
   text-decoration: none;
+}
+
+#member_avatar {
+  margin-top: 27px;
+  padding: 3px;
+}
+
+.show-avatar-index {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -4px;
+}
+
+.align-btn{
+  padding: 0.1rem .75rem !important;
 }
 
 .new-price {
