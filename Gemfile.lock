@@ -125,6 +125,8 @@ GEM
     faker (2.1.2)
       i18n (>= 0.8)
     ffi (1.11.1)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
     globalid (0.4.2)
@@ -325,6 +327,7 @@ DEPENDENCIES
   database_cleaner (~> 1.5)
   devise
   faker
+  figaro
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
   jbuilder (~> 2.5)
   jquery-rails

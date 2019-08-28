@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :admins, controllers: { sessions: "manager/sessions" }
+  devise_for :admins, controllers: { sessions: "manager/sessions", passwords: "manager/passwords" }
 
   namespace :manager do
     root "members#index"

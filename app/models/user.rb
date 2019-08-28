@@ -10,7 +10,6 @@ class User < ApplicationRecord
   validates :address, presence: true, length: { maximum: 255 }
   validates :type, presence: true
   validate :avatar_validate, if: -> { avatar.attached? }
-
   has_one_attached :avatar
 
   def timeout_in

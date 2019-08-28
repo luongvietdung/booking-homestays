@@ -50,11 +50,9 @@ module Manager
 
     def update_admin(admin)
       if admin.save && admin.update_avatar(params[:admin][:avatar])
-        flash.now[:success] =
-          t("messages.success.admins.update", id: admin.id)
+        flash.now[:success] = t("messages.success.admins.update", id: admin.id)
       else
-        flash.now[:danger] =
-          t("messages.failed.admins.update", id: admin.id)
+        flash.now[:danger] = t("messages.failed.admins.update", id: admin.id)
       end
     end
 
