@@ -9,6 +9,20 @@ function readURL(f, previewId) {
   }
 }
 
+function previewImages() {
+
+  var $preview = $('#preview').empty();
+  if (this.files) $.each(this.files, readAndPreview);
+
+  function readAndPreview(i, file) {
+    var reader = new FileReader();
+    $(reader).on("load", function() {
+      $preview.append($("<img/>", {src:this.result, height:150, width:150}));
+    });
+    reader.readAsDataURL(file);
+  }
+}
+
 $(document).ready(function(){
   $('#admin_table').DataTable({
     scrollY: 500,
@@ -76,4 +90,7 @@ $(document).ready(function(){
   });
 
   $('[data-toggle="tooltip"]').tooltip();
+
+  $('.preview-image').on("change", previewImages);
 });
+

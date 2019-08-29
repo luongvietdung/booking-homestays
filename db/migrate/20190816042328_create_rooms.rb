@@ -6,7 +6,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :address
       t.decimal :rate_point
-      t.string :description
+      t.text :description
       t.integer :guest
       t.integer :type_room, default: 0
       t.decimal :acreage

@@ -24,6 +24,8 @@ gem "bootstrap4-kaminari-views"
 gem "config", "~> 2.0"
 gem "cocoon"
 gem "figaro"
+gem "carrierwave", "~> 0.10.0"
+gem "mini_magick", "~> 4.3"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
