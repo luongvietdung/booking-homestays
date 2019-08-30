@@ -1,0 +1,15 @@
+.account
+  .text-center
+    h1.h4.text-gray-900.mb-2
+      = t ".title"
+    p.mb-4
+      = t ".description"
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: "user") do |f|
+    = render "shared/manager/error_messages", object: resource
+    .form-group
+      = f.label :email, class: "control-label"
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user"
+    .actions
+      = f.submit t(".reset_btn"), class: "btn btn-primary btn-user btn-block"
+  .text-center
+    = link_to t(".login_link"), new_member_session_path, class: "small"

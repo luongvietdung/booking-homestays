@@ -14,18 +14,16 @@ module Manager
 
     def create
       @admin = Admin.new admin_params
-      @admin.avatar = params[:admin][:avatar]
       if @admin.save
         flash.now[:success] = t "messages.success.admins.create"
       else
-        @admin.avatar.purge_later
         flash.now[:danger] = t "messages.failed.admins.create"
       end
     end
 
     def update
       support_update @admin
-      if @admin.changed? || !params[:admin][:avatar].blank?
+      if @admin.changed?
         update_admin @admin
       else
         flash.now[:notice] = t("messages.notice.admins.not_edit", id: @admin.id)
@@ -45,11 +43,11 @@ module Manager
 
     def admin_params
       params.require(:admin).permit :email, :name, :address,
-                                    :password, :password_confirmation
+                                    :password, :password_confirmation, :avatar
     end
 
     def update_admin(admin)
-      if admin.save && admin.update_avatar(params[:admin][:avatar])
+      if admin.save
         flash.now[:success] = t("messages.success.admins.update", id: admin.id)
       else
         flash.now[:danger] = t("messages.failed.admins.update", id: admin.id)
@@ -69,7 +67,6 @@ module Manager
 
     def destroy_admin(admin)
       if !admin.flag? && admin.destroy
-        admin.avatar.purge_later
         flash[:success] = t("messages.success.admins.delete", id: admin.id)
       else
         flash[:danger] = t("messages.failed.admins.delete", id: admin.id)

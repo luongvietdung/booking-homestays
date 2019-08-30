@@ -7,16 +7,16 @@ module ApplicationHelper
   end
 
   def avatar_member(member)
-    if member.avatar.attached?
-      image_tag member.avatar, class: "avatar-default-member", id: "img_member_prev"
+    if member.avatar?
+      image_tag member.avatar.url, class: "avatar-default-member", id: "img_member_prev"
     else
       image_tag "defaultavatar.jpeg", class: "avatar-default-member", id: "img_member_prev"
     end
   end
 
   def avatar_admin(admin)
-    if admin.avatar.attached?
-      image_tag admin.avatar, class: "avatar-default", id: "img_prev"
+    if admin.avatar?
+      image_tag admin.avatar.url, class: "avatar-default", id: "img_prev"
     else
       image_tag "defaultavatar.jpeg", class: "avatar-default", id: "img_prev"
     end

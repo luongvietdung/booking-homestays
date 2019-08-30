@@ -1,0 +1,19 @@
+.account
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      = f.label :email, class: "control-label"
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user", placeholder: "Enter Email Address...", id: "exampleInputEmail"
+    .form-group
+      = f.label :password, class: "control-label"
+      = f.password_field :password, autocomplete: "current-password", class: "form-control form-control-user", placeholder: "Password", id: "exampleInputPassword"
+    - if devise_mapping.rememberable?
+      .form-group
+        .custom-control.custom-checkbox.small
+          = f.check_box :remember_me, id: "customCheck", class: "custom-control-input"
+          = f.label :remember_me, class: "custom-control-label", style: "padding: 2px", for: "customCheck"
+        .actions
+          = f.submit t(".login_btn"), class: "btn btn-primary btn-user btn-block custom-btn-login"
+        .text-center
+            = link_to t(".forgot_link"), new_password_path(resource_name), class: "small"
+            br
+            = link_to t(".signup_link"), new_member_registration_path, class: "small"

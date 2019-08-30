@@ -24,7 +24,7 @@ gem "bootstrap4-kaminari-views"
 gem "config", "~> 2.0"
 gem "cocoon"
 gem "figaro"
-gem "carrierwave", "~> 0.10.0"
+gem "carrierwave"
 gem "mini_magick", "~> 4.3"
 
 group :development, :test do

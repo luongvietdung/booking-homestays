@@ -14,8 +14,7 @@ class Voucher < ApplicationRecord
   def date_off_after_time_now
     return if date_off.blank?
 
-    if date_off.strftime("%m/%d/%Y %T") < Time.now.strftime("%m/%d/%Y %T")
-      errors.add(:date_off, "must be bigger than the current time")
-    end
+    return errors.add(:date_off, "must be bigger than the current time") if
+      date_off.strftime("%m/%d/%Y %T") < Time.now.strftime("%m/%d/%Y %T")
   end
 end

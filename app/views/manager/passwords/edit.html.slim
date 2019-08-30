@@ -8,23 +8,23 @@
             .p-5
               .text-center
                 h1.h4.text-gray-900.mb-2
-                  | Change your password
+                  = t ".title"
                 p.mb-4
-                  | Now, You can enter a new password for your account!
+                  = t ".description"
               = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
                 = render "shared/manager/error_messages", object: resource
                 = f.hidden_field :reset_password_token
                 .form-group
-                  = f.label :password, "New password"
+                  = f.label :password, t(".pass_new"), class: "control-label"
                   - if @minimum_password_length
                     em
-                      | (#{@minimum_password_length} characters minimum)
+                      = t ".valid_pass", num: "#{@minimum_password_length}"
                     br/
-                  = f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control"
+                  = f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control form-control-user"
                 .form-group
-                  = f.label :password_confirmation, "Confirm new password"
-                  = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+                  = f.label :password_confirmation, t(".pass_confirm"), class: "control-label"
+                  = f.password_field :password_confirmation, autocomplete: "off", class: "form-control form-control-user"
                 .actions
-                  = f.submit "Change my password", class: "btn btn-primary btn-block"
+                  = f.submit t(".change_btn"), class: "btn btn-primary btn-user btn-block"
               .text-center
-                = link_to "Already have an account? Login!", new_admin_session_path
+                = link_to t(".login_link"), new_admin_session_path, class: "small"

@@ -1,0 +1,13 @@
+nav
+  = link_to "", root_path, class: "logo"
+  ul
+    li = link_to "item1", "#"
+    - if member_signed_in?
+      li = link_to t(".signout"), destroy_member_session_path, method: :delete
+    - else
+      li = link_to t(".signup"), new_member_registration_path
+      li = link_to t(".signin"), new_member_session_path
+    li = link_to "item4", "#"
+header
+  .headline
+    .inner

@@ -3,6 +3,10 @@ en:
   sure: "Are you sure?"
 
   layouts:
+    header:
+      signup: "Sign Up"
+      signin: "Sign In"
+      signout: "Sign Out"
     manager:
       title: "Booking Homestays"
   messages:
@@ -58,7 +62,41 @@ en:
         logout: "Logout"
         settings: "Settings"
         profile: "Profile"
+    view_content:
+      welcome_title: "Sign up for more promotions and benefits"
+      welcome_des: "Swift, convenient, and safe. Sign up now for more interests."
+      lux_title: "Coin"
+      lux_des: "Earn Coins for each successful booking and use them for your next trips."
+      smart_title: "Smart functions"
+      smart_des: "Check-in and check your receipts offline. Refund faster and change calendar easier."
+      simple_title: "Simple payment"
+      simple_des: "Save card information in My Cards, much safer and convenient for the next payment."
+      promo_title: "New promotions every day"
+      promo_des: "Update promotions from Booking and choose great accommodation at your budget."
   hello: "Hello world"
+  sessions:
+    new_form:
+      login_btn: "Log in"
+      forgot_link: "Forgot your password?"
+      signup_link: "Sign Up"
+  registrations:
+    new_form:
+      title: "Sign Up"
+      valid_pass: "(%{num} characters minimum)"
+      signup_btn: "Sign up"
+      login_link: "Login"
+  passwords:
+    new_form:
+      title: "Forgot Your Password?"
+      description: "We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!"
+      reset_btn: "Reset Password"
+      login_link: "Already have an account? Login!"
+    edit_form:
+      title: "Change your password"
+      description: "Now, You can enter a new password for your account!"
+      valid_pass: "(%{num} characters minimum)"
+      change_btn: "Change my password"
+      login_link: "Already have an account? Login!"
   activerecord:
     errors:
       models:
