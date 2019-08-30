@@ -1,7 +1,6 @@
 en:
   please_choose_one: please choose one
   sure: "Are you sure?"
-
   layouts:
     header:
       signup: "Sign Up"
@@ -44,7 +43,6 @@ en:
         acreage: Acreage
         address: Address
         type_room: Type Rooms
-
   shared:
     manager:
       left_menu:

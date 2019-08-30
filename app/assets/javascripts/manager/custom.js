@@ -92,5 +92,9 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 
   $('.preview-image').on("change", previewImages);
-});
 
+  $('.address-edit').click(function() {
+    $('.name_address').val($(this).data('address-name'));
+    $('#edit_address').attr('action', $(this).data('address-url'));
+  });
+});
