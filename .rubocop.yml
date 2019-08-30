@@ -22,6 +22,7 @@ AllCops:
     - 'db/migrate/*.rb'
     - 'db/*.rb'
     - 'bin/**/*'
+    - 'config/environments/*.rb'
 
 Style/Documentation:
   Enabled: false

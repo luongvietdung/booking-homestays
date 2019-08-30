@@ -2,8 +2,8 @@ tr.data-user
   td
     = member.id
   td
-    - if member.avatar.attached?
-      = image_tag member.avatar, class: "show-avatar-index"
+    - if member.avatar?
+      = image_tag member.avatar.url, class: "show-avatar-index"
     - else
       = image_tag "defaultavatar.jpeg", class: "show-avatar-index"
     = member.name

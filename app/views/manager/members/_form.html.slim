@@ -7,10 +7,7 @@
         hr
         .form-group.row[style="padding: 25px"]
           .col-sm-3
-            - if member.avatar.attached?
-              = image_tag member.avatar, class: "avatar-default-member", id: "img_member_prev"
-            - else
-              = image_tag "defaultavatar.jpeg", class: "avatar-default-member", id: "img_member_prev"
+            = avatar_member member
           .prev.col-sm-9
             = f.file_field :avatar, class: "form-control preview_member"
         .form-group

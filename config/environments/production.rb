@@ -67,19 +67,14 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { :host => "example.host.com" }
+  config.action_mailer.default_url_options = { host: "example.host.com" }
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    :address              => ENV["ADDRESS"],
-    :port                 => 587,
-    :domain               => ENV["DOMAIN"],
-    :user_name            => ENV["GMAIL_USERNAME"],
-    :password             => ENV["GMAIL_PASSWORD"],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    address: ENV["ADDRESS"], port: 587, domain: ENV["DOMAIN"], user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"], authentication: "plain", enable_starttls_auto: true
   }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

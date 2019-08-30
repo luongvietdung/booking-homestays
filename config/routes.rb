@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions", passwords: "manager/passwords" }
+  devise_for :members, controllers: { registrations: "registrations", sessions: "sessions", passwords: "passwords" }
 
   namespace :manager do
     root "members#index"
@@ -13,8 +14,9 @@ Rails.application.routes.draw do
     resources :locations do
       resources :areas, only: %i[new create]
     end
-    resources :areas, except: %i[new create]do
+    resources :areas, except: %i[new create] do
       resources :addresses, only: %i[new create]
     end
   end
+  root "home#index"
 end

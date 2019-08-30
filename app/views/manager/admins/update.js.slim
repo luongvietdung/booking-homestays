@@ -12,3 +12,6 @@
     $("#admin-modal").modal("hide")
     $(".data-admin").html("#{j(render @admins)}")
     toastr.success("#{flash[:success]}");
+  - if current_admin.id == @admin.id
+    |
+      $('#load-current').attr("src","#{@admin.avatar}");

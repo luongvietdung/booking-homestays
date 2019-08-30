@@ -1,0 +1,43 @@
+.welcome
+  .container.container--sm
+    .row
+      .col-md-7.col-xs-12
+        h1.welcome__title
+          = t ".welcome_title"
+        p.welcome__desc
+          = t ".welcome_des"
+.section
+  .main-content.main-content-sm
+    .row.cusrow
+      .col-md-8.col-xs-12.last-xs.first-md.cus-col
+        .row.cus-row-img
+          .col-md-6.col-sm-6.col-xs-12
+            .media
+              = image_tag("coins@2x.png", size: "65x70")
+              h3.media__title
+                = t ".lux_title"
+              p.media__content.m--0
+                = t ".lux_des"
+          .col-md-6.col-sm-6.col-xs-12
+            .media
+              = image_tag("top-sales@2x.png", size: "55x70")
+              h3.media__title
+                = t ".smart_title"
+              p.media__content.m--0
+                = t ".smart_des"
+          .col-md-6.col-sm-6.col-xs-12
+            .media
+              = image_tag("wallet@2x.png", size: "60x70")
+              h3.media__title
+                = t ".simple_title"
+              p.media__content.m--0
+                = t ".simple_des"
+          .col-md-6.col-sm-6.col-xs-12
+            .media
+              = image_tag("backpack@2x.png", size: "55x70")
+              h3.media__title
+                = t ".promo_title"
+              p.media__content.m--0
+                = t ".promo_des"
+      .col-md-4.col-xs-12.first-xs
+        = yield_content

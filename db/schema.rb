@@ -71,12 +71,10 @@ ActiveRecord::Schema.define(version: 2019_08_28_005029) do
   end
 
   create_table "prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "room_id"
     t.decimal "cost", precision: 8, scale: 2
     t.decimal "cleaning_fee", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_prices_on_room_id"
   end
 
   create_table "room_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,15 +83,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_005029) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_room_images_on_room_id"
-  end
-
-  create_table "room_utilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "room_id"
-    t.bigint "utility_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_room_utilities_on_room_id"
-    t.index ["utility_id"], name: "index_room_utilities_on_utility_id"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -123,17 +112,12 @@ ActiveRecord::Schema.define(version: 2019_08_28_005029) do
     t.string "name"
     t.string "address"
     t.string "type"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "flag", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "utilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "vouchers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -147,9 +131,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_005029) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "areas"
   add_foreign_key "areas", "locations"
-  add_foreign_key "prices", "rooms"
-  add_foreign_key "room_utilities", "rooms"
-  add_foreign_key "room_utilities", "utilities"
   add_foreign_key "rooms", "locations"
   add_foreign_key "rooms", "users"
 end

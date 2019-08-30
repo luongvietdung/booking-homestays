@@ -8,8 +8,8 @@ nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
   .custom-dropdown
     = link_to("#", class: "account", title: "#{current_admin.name}", "data-toggle": "tooltip", "data-placement": "left") do
       span = truncate(current_admin.name, length: 10)
-      - if current_admin.avatar.attached?
-        = image_tag current_admin.avatar, class: "profile-circle"
+      - if current_admin.avatar?
+        = image_tag current_admin.avatar.url, class: "profile-circle", id: "load-current"
       - else
         = image_tag "defaultavatar.jpeg", class: "profile-circle"
     .custom-submenu[style="display: none; "]
