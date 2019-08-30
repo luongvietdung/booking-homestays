@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 2019_09_03_072038) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "room_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_images_on_room_id"
+  end
+
   create_table "location_favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "location_id"
     t.bigint "favorite_space_id"
@@ -97,6 +105,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_072038) do
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "location_id"
+    t.bigint "price_id"
+    t.bigint "favorite_space_id"
     t.string "name"
     t.string "address"
     t.decimal "rate_point", precision: 10
@@ -108,7 +118,9 @@ ActiveRecord::Schema.define(version: 2019_09_03_072038) do
     t.integer "bath_room"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["favorite_space_id"], name: "index_rooms_on_favorite_space_id"
     t.index ["location_id"], name: "index_rooms_on_location_id"
+    t.index ["price_id"], name: "index_rooms_on_price_id"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
@@ -145,6 +157,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_072038) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "areas"
   add_foreign_key "areas", "locations"
+  add_foreign_key "images", "rooms"
   add_foreign_key "location_favorites", "favorite_spaces"
   add_foreign_key "location_favorites", "locations"
   add_foreign_key "rooms", "locations"

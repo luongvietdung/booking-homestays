@@ -2,9 +2,11 @@
 
 Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions", passwords: "manager/passwords" }
-  devise_for :members, controllers: { registrations: "registrations",
-    sessions: "sessions", passwords: "passwords", confirmations: "confirmations" }
+  devise_for :members, controllers: { registrations: "registrations", sessions: "sessions", passwords: "passwords" }
+  root "home#index"
+  get "favorite_spaces/:id", to: "home#show"
 
+  resources :favorite_spaces, only: [:show]
   namespace :manager do
     root "members#index"
     resources :favorite_spaces
@@ -12,12 +14,16 @@ Rails.application.routes.draw do
     resources :admins
     resources :members
     resources :prices
+
     resources :locations do
-      resources :areas, only: %i[new create]
+      resources :areas, except: %i[destroy edit update]
     end
-    resources :areas, except: %i[new create] do
-      resources :addresses, only: %i[new create]
+
+    resources :areas, only: %i[edit update destroy] do
+      resources :addresses, except: %i[destroy edit update]
     end
+
+    resources :addresses, only: %i[destroy edit update]
   end
   root "home#index"
 end

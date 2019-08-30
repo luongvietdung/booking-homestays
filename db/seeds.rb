@@ -39,3 +39,30 @@ end
 ["CĂN HỘ CHUNG CƯ","NHÀ RIÊNG", "CĂN HỘ STUDIO", "KHÁC", "BIỆT THỰ"].each do |favorite_space|
   FavoriteSpace.create! name: favorite_space
 end
+  
+["LOCATION TEST 01", "LOCATION TEST 02", "LOCATION TEST 03", "LOCATION TEST 04"].each do |location|
+  Location.create! name: location
+end
+
+20.times do |price|
+  price = rand(1..999999)
+  Price.create!(cost: price,
+                cleaning_fee: price)
+end
+
+20.times do |f|
+  5.times do |n|
+    name = Faker::Name.name
+    address = Faker::Address.country
+    Room.create!(name: name,
+                  address: address,
+                  guest: 1,
+                  bed_room: rand(1..5),
+                  bath_room: rand(1..5),
+                  type_room: rand(0..1),
+                  location_id: rand(1..4),
+                  user_id: 1,
+                  favorite_space_id: n+1,
+                  price_id: rand(1..20))
+  end
+end

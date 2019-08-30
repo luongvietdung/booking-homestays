@@ -1,17 +1,13 @@
 .bs-example
   ul.nav.nav-tabs
     li.nav-item
-      = link_to "#home", class: "nav-link active", data:{toggle: "tab"} do
-        = t ".description"
+      a.nav-link.active data-toggle="tab" href="#home"  = t ".description"
     li
-      = link_to "#menu1", class: "nav-link", data:{toggle: "tab"} do
-        = t ".room"
+      a.nav-link data-toggle="tab" href="#menu1"  = t ".room"
     li
-      = link_to "#menu2", class: "nav-link", data:{toggle: "tab"} do
-        = t ".utility"
+      a.nav-link data-toggle="tab" href="#menu2"  = t ".utility"
     li
-      = link_to "#menu3", class: "nav-link", data:{toggle: "tab"} do
-        = t ".image"
+      a.nav-link data-toggle="tab" href="#menu3"  = t ".image"
   .tab-content
     #home.tab-pane.fade.show.active
       h3 = @room.name

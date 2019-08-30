@@ -10,12 +10,23 @@ en:
       new:
         name: "Name"
         create: "Create"
-        back: "Back"
+        add: "New Favorite Spaces"
+        title: "New Favorite Spaces"
       edit:
         name: "Name"
         update: "Update"
+        title: "Edit Favorite Spaces"
+        add: "Edit Favorite Spaces"
+        save: "Save Changes"
       index:
-        new: "New"
+        new: "New Favorite Spaces"
+        key: "#"
+        name: "Name"
+        action: "Action"
+        title: "Favorite Spaces"
+      favorite_space:
+        delete: "Delete"
+        sure: "Are you sure?"
     locations:
       form:
         name: "Name"
@@ -59,6 +70,43 @@ en:
       area:
         delete: "Delete"
         sure: "Are you sure?"
+    areas:
+      create:
+        success: "Create area successfully!"
+        error: "Create area has problem!"
+      edit:
+        title: "Edit Areas"
+        name: "Name"
+        submit: "Save Changes"
+        address: "Address"
+        new_address: "New Address"
+        key: "#"
+        name: "Name"
+        action: "Action"
+      update:
+        success: "Update area successfully!"
+        danger: "Update area has problem!"
+      destroy:
+        success: "Destroy area successfully!"
+        danger: "Destroy area has problem!"
+      new_address:
+        new: New Address
+        save: "Save Changes"
+        enter_name: "Enter address..."
+      address:
+        delete: "Delete"
+        sure: "Are you sure?"
+      edit_address:
+        edit: "Edit Address"
+        save: "Save Changes"
+        close: "Close"
+    addresses:
+      create:
+        success: "Create address successfully!"
+        danger: "Create address has problem!"
+      update:
+        success: "Update address successfully!"
+        danger: "Update address has problem!"
     prices:
       create:
         success: "Create successfully!!!"
@@ -70,6 +118,7 @@ en:
         new: "New"
         listing_prices: "Listing prices"
         destroy: "Destroy"
+        cost: "Cost"
         sale: "Sale"
         code: "Code"
         total: "Total"
@@ -91,6 +140,10 @@ en:
         create: "Create"
       form:
         cancel: "Cancel"
+    areas:
+      create:
+        success: "Create area successfully!"
+        danger: "Create area has problem!"
       index:
         create: "Create"
         all_admin: "All admins"
@@ -100,12 +153,7 @@ en:
         address: "Address"
         access: "Access"
         action: "Action"
-    areas:
-      create:
-        success: "Create area successfully!"
-        danger: "Create area has problem!"
       edit:
-        title: "Edit Areas"
         title: "Edit Areas"
         name: "Name"
         save: "Save Changes"
@@ -202,3 +250,8 @@ en:
         not_default_admin: "You can not delete default admin!"
       members:
         not_edit: "Not edit member %{id}"
+  home:
+    index:
+      extra-bold: "Nghĩ lễ đến đâu giảm sâu đến đó."
+      description: "Lễ này bạn đi đâu, Group đều giảm sâu đến đó,mức giảm lên tới 25%. Chớp lấy cơ hội, đặt ngay để có chuyến đi tiết kiệm nhất."
+
