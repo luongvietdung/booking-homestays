@@ -39,8 +39,7 @@
         - if builder.object.image?
           = image_tag builder.object.image.thumb.url, class: "thumb-image"
           = link_to_remove_association "", builder, class: "nested-image btn"
-    = f.file_field :image, multiple: true, name: "room_images[image][]",
-      class: "form-control preview-image", presence: true
+        - else
+          = builder.file_field :image, multiple: true, name: "room_images[image][]",
+            class: "form-control preview-image", presence: true
     #preview
-  .submit
-    = f.submit yield(:button_title), class: "create-room btn btn-outline-primary"

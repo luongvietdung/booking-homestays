@@ -26,6 +26,6 @@
             th= t ".name"
             th= t ".action"
           tbody
-          = render partial: "address", collection: @addresses
-        = paginate @addresses, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
+            = render partial: "address", collection: @addresses
+= paginate @addresses, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
 = render "new_address", address: @address

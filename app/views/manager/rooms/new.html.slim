@@ -1,3 +1,6 @@
 - provide(:button_title,t(".create_room") )
 h1 = t(".create_room")
-= render "form"
+= form_for [:manager, @room] do |f|
+  = render "form", f: f
+  .submit
+    = f.submit yield(:button_title), class: "create-room btn btn-outline-primary"
