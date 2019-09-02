@@ -41,7 +41,7 @@ header {
   animation: fade-in 0.75s 0.25s ease-in forwards;
 }
 
-nav {
+.custom-nav {
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -384,13 +384,13 @@ $offWhite: #e9eaea;
 }
 
 @media (min-width: 992px) {
-  .container div div {
+  .title-welcome {
     flex-basis: 58.33333%;
     max-width: 58.33333%;
   }
 }
 
-.container div div {
+.title-welcome {
   flex-basis: 100%;
   max-width: 100%;
 }
@@ -569,4 +569,73 @@ h1, h2, h3, h4, h5, h6 {
 
 #error_explanation {
   color: red;
+}
+
+.custom-avatar-drop {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+#show-dropdown {
+  position: relative;
+  height: 52px;
+}
+
+#hidden-dropdown {
+  visibility: hidden;
+  position: absolute;
+  background-color: #222;
+  box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  transition: .1s;
+  opacity: 0;
+  margin-left: 20px;
+  margin-top: 27px;
+  width: 104%
+}
+
+#hidden-dropdown a:hover {
+  color: #999;
+}
+
+#show-dropdown:hover #hidden-dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.custom-col-3 {
+  width: 23%;
+  float: left;
+}
+
+.personal-info {
+  float: left;
+  margin-left: 15px;
+}
+
+.img-circle {
+  margin-top: 9px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.label-profile {
+  text-align: center;
+}
+
+.form-profile {
+  width: 100%;
+}
+
+.align-attr {
+  margin-top: 18px;
+}
+
+.margin-btn .btn {
+  margin: 10px;
+}
+
+.preview-edit-profile {
+  padding: 3px;
 }

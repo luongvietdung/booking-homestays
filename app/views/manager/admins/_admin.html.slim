@@ -2,10 +2,7 @@ tr.data-user
   td
     = admin.id
   td
-    - if admin.avatar?
-      = image_tag admin.avatar.url, class: "show-avatar-index"
-    - else
-      = image_tag "defaultavatar.jpeg", class: "show-avatar-index"
+    = image_tag admin.avatar.url, class: "show-avatar-index"
     = admin.name
   td
     = admin.email
