@@ -6,3 +6,8 @@
 //= require bootstrap
 //= require custom
 //= require toastr
+
+/*global toastr*/
+toastr.options = {
+  "timeOut": "1500",
+}

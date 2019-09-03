@@ -8,7 +8,8 @@ Admin.create!(email: "admin@gmail.com",
 Member.create!(email: "member@gmail.com",
               name: "MemberBot",
               password: "123123",
-              address: "Member page!")
+              address: "Member page!",
+              confirmed_at: Time.now)
 
 50.times do |n|
   name = Faker::Name.name
@@ -31,5 +32,6 @@ end
                email: email,
                password: password,
                password_confirmation: password,
-               address: address)
+               address: address,
+               confirmed_at: Time.now)
 end

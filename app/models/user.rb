@@ -3,7 +3,8 @@
 class User < ApplicationRecord
   attr_accessor :not_update_password
 
-  devise :registerable, :database_authenticatable, :recoverable, :rememberable, :validatable, :timeoutable
+  devise :registerable, :database_authenticatable, :recoverable, :rememberable,
+    :validatable, :timeoutable
   has_many :rooms
 
   validates :name, presence: true, length: { maximum: 45 }

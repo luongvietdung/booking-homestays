@@ -2,7 +2,8 @@
 
 Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: "manager/sessions", passwords: "manager/passwords" }
-  devise_for :members, controllers: { registrations: "registrations", sessions: "sessions", passwords: "passwords" }
+  devise_for :members, controllers: { registrations: "registrations",
+    sessions: "sessions", passwords: "passwords", confirmations: "confirmations" }
 
   namespace :manager do
     root "members#index"

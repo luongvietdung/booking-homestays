@@ -412,3 +412,11 @@ td.action{
 .control-label{
   font-weight: 700;
 }
+
+#member_table td{
+  word-break: break-word;
+}
+
+#admin_table td{
+  word-break: break-word;
+}

@@ -2,4 +2,5 @@
 
 class Member < User
   scope :newest, -> { order updated_at: :desc }
+  devise :confirmable
 end

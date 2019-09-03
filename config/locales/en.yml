@@ -80,6 +80,7 @@ en:
       login_btn: "Log in"
       forgot_link: "Forgot your password?"
       signup_link: "Sign Up"
+      resend_mail: "Resend confirmation mail?"
   registrations:
     new_form:
       title: "Sign Up"
@@ -96,6 +97,7 @@ en:
       more: "More"
       update: "Update"
       back: "Back"
+      wait_confirm: "Currently waiting confirmation for: %{unconfirm}"
   passwords:
     new_form:
       title: "Forgot Your Password?"
@@ -108,6 +110,13 @@ en:
       valid_pass: "(%{num} characters minimum)"
       change_btn: "Change my password"
       login_link: "Already have an account? Login!"
+  confirmations:
+    new_form:
+      title: "Resend confirmation instructions"
+      description: "Enter your email to confirmation!"
+      resend_btn: "Resend confirmation"
+      login_link: "Log in"
+      signup_link: "Sign up"
   activerecord:
     errors:
       models:
