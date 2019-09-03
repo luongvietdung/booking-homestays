@@ -7,6 +7,7 @@ en:
       signup: "Sign Up"
       signin: "Sign In"
       signout: "Sign Out"
+      setting: "Settings"
     manager:
       title: "Booking Homestays"
   messages:
@@ -85,6 +86,16 @@ en:
       valid_pass: "(%{num} characters minimum)"
       signup_btn: "Sign up"
       login_link: "Login"
+    edit:
+      title: "Edit %{name}"
+      description_form: "Upload a photo..."
+      title_form: "Personal info"
+      not_change_password: "(leave blank if you don't want to change it)"
+      require_password: "(%{count} characters minimum)"
+      require_current_password: "(we need your current password to confirm your changes)"
+      more: "More"
+      update: "Update"
+      back: "Back"
   passwords:
     new_form:
       title: "Forgot Your Password?"

@@ -1,13 +1,21 @@
-nav
+nav.custom-nav
   = link_to "", root_path, class: "logo"
   ul
     li = link_to "item1", "#"
+    li = link_to "item4", "#"
     - if member_signed_in?
-      li = link_to t(".signout"), destroy_member_session_path, method: :delete
+      li#show-dropdown
+        = link_to("#") do
+          span
+            = image_tag current_member.avatar.url, class: "custom-avatar-drop"
+            = truncate(current_member.name, length: 10)
+        #hidden-dropdown
+          = link_to "Profile", "#"
+          = link_to t(".setting"), edit_member_registration_path
+          = link_to t(".signout"), destroy_member_session_path, method: :delete
     - else
       li = link_to t(".signup"), new_member_registration_path
       li = link_to t(".signin"), new_member_session_path
-    li = link_to "item4", "#"
 header
   .headline
     .inner

@@ -18,5 +18,8 @@ module BookingHomestays
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+    config.action_view.field_error_proc = proc { |html_tag, _instance|
+      html_tag
+    }
   end
 end

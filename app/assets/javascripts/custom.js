@@ -26,6 +26,17 @@ $(document).ready(function() {
   $(".preview-signup").change(function() {
     readURL(this, '#img-prev-signup');
   });
+
+  $(".preview-edit-profile").change(function() {
+    readURL(this, '.img-circle');
+  });
+
+  $(".hide-form-password").css('display', 'none');
+  $(".show-form").on('click', function(){
+    $(".hide-form-password").toggle();
+    $(this).text( $(this).text() == 'More' ? "Hide" : "More");
+  });
+
 });
 
 function readURL(f, previewId) {

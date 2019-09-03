@@ -7,7 +7,7 @@
         hr
         .form-group.row[style="padding: 25px"]
           .col-sm-3
-            = avatar_member member
+            = image_tag member.avatar.url, class: "avatar-default-member", id: "img_member_prev"
           .prev.col-sm-9
             = f.file_field :avatar, class: "form-control preview_member"
         .form-group
