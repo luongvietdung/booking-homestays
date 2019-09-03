@@ -112,6 +112,14 @@ en:
         name: "Name"
         action: "Action"
         address: "New Address"
+        enter_name: "Enter address..."
+      area:
+        delete: "Delete"
+        sure: "Are you sure?"
+      new_area:
+        new: "New Areas"
+        save: "Save Changes"
+        close: "Close"
       update:
         success: "Update area successfully!"
         danger: "Update area has problem!"
@@ -126,6 +134,18 @@ en:
         btn: "×"
       address:
         delete: "Delete"
+      edit_address:
+        btn: "×"
+        edit: "Edit Address"
+        save: "Save Changes"
+        close: "Close"
+    addresses:
+      create:
+        success: "Create address successfully!"
+        danger: "Create address has problem!"
+      update:
+        success: "Update address successfully!"
+        danger: "Update address has problem!"
     members:
       form:
         error: "The form contains %{count}."
@@ -153,10 +173,6 @@ en:
       edit:
         update: "Update"
         edit_member: "Edit Member"
-    addresses:
-      create:
-        success: "Create address successfully!"
-        danger: "Create address has problem!"
     passwords:
       new:
         title: "Forgot Your Password?"

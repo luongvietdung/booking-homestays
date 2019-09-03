@@ -1,0 +1,14 @@
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title = t ".edit"
+        = button_tag t(".btn"), class: "close", data: {dismiss: "modal"}, type: "button"
+      .modal-body
+        = form_tag "", method: :patch, id: "edit_address", remote: true do |f|
+          #message_errors
+          .form-group
+            = text_field_tag :name, nil, class: "form-control name_address"
+          = submit_tag t(".save"), class: "btn btn-primary"
+      .modal-footer
+        = button_tag t(".close"), class: "btn btn-danger", data: {dismiss: "modal"}, type: "button"

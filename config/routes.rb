@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :areas, except: %i[new create] do
       resources :addresses, only: %i[new create]
     end
+    resources :addresses, only: %i[destroy edit update]
   end
   root "home#index"
 end
