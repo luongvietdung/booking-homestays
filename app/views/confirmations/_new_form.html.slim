@@ -1,0 +1,17 @@
+.account
+  .text-center
+    h1.h4.text-gray-900.mb-2
+      = t ".title"
+    p.mb-4
+      = t ".description"
+  = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+    = render "shared/manager/error_messages", object: resource
+    .form-group
+      = f.label :email, class: "control-label"
+      = f.email_field :email, class: "form-control form-control-user", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+    .actions
+      = f.submit t(".resend_btn"), class: "btn btn-primary btn-user btn-block"
+    .text-center
+      = link_to t(".login_link"), new_member_session_path, class: "small"
+      br
+      = link_to t(".signup_link"), new_member_registration_path, class: "small"

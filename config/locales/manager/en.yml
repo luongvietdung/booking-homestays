@@ -135,6 +135,8 @@ en:
         delete: "Delete"
         updated: "Edited %{time}"
         created: "Created %{time}"
+        true: "True"
+        false: "False"
       index:
         create: "Create"
         all_member: "All members"
@@ -144,6 +146,7 @@ en:
         address: "Address"
         access: "Access"
         action: "Action"
+        active: "Active"
       new:
         create: "Create"
         new_member: "New Member"

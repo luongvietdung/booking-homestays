@@ -38,7 +38,7 @@ $(document).ready(function(){
     "pageLength": 25,
     "aaSorting": [],
     "columnDefs": [
-      { "orderable": false, "targets": [5] },
+      { "orderable": false, "targets": [6] },
     ]
   });
 

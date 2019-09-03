@@ -25,6 +25,9 @@
             = f.label :email, class: "control-label col-lg-3 label-profile"
             .col-lg-9
               = f.email_field :email, class: "form-control form-profile"
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                i
+                  = t ".wait_confirm", unconfirm: "#{resource.unconfirmed_email}"
         .form-group
           .row.align-attr
             = f.label :address, class: "control-label col-lg-3 label-profile"
