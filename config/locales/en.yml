@@ -25,6 +25,7 @@ en:
       update_success: Update Success!
       update_fail: Update Failed
       deleted_success: Deleted success
+      deleted_fail: Deleted fail
       new:
         create_room: Create Room
       edit:
