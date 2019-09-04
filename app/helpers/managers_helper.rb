@@ -12,4 +12,8 @@ module ManagersHelper
   def bill_vouchers(price_bill)
     (price_bill.price.cost - ((price_bill.price.cost * price_bill.voucher.sale) / 100)) + price_bill.price.cleaning_fee
   end
+
+  def select_favorite_space
+    FavoriteSpace.all.map {|f| [f.name, f.id]}
+  end
 end

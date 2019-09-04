@@ -104,5 +104,10 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 
   $('.preview-image').on("change", previewImages);
+
+  $(".select2").select2({
+    placeholder: "Select a favorite spaces",
+    allowClear: true
+  })
 });
 

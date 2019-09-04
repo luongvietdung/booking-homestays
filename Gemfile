@@ -26,6 +26,7 @@ gem "cocoon"
 gem "figaro"
 gem "carrierwave"
 gem "mini_magick", "~> 4.3"
+gem "select2-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
