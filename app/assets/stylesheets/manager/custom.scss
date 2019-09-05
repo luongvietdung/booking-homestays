@@ -162,6 +162,16 @@ i.fa.fa-caret-down {
   margin-top: 27px;
   padding: 3px;
 }
+#content {
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+}
+.sticky-footer.bg-white {
+  border-top: 1px solid #858796;
+}
+.wrapper {
+  width: 100%;
+}
 
 #content {
   -webkit-box-flex: 1;
@@ -345,6 +355,76 @@ a.account:hover {
 .add_fields {
   color: darkslategrey;
   text-decoration: none !important;
+}
+
+.image-detail {
+  width: 400px;
+  border-radius: 4%;
+  height: 300px;
+  padding: 10px;
+}
+
+td.action {
+  padding: 0;
+}
+
+.action {
+  padding: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
+}
+
+.nested-image {
+  float: left;
+  margin: 10px 0px;
+}
+
+.nested-image:before {
+  content: 'x';
+  color: #000000c4;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+}
+
+.nested-add-image {
+  margin: 10px 0px;
+}
+
+.show-image {
+  width: 100%;
+  float: left;
+}
+
+.thumb-image {
+  float: left;
+  padding: 0 20px 25px 0;
+}
+
+.links {
+  width: 100%;
+  float: left;
+}
+
+.submit {
+  width: 100%;
+  float: left;
+}
+
+.nested-image.btn.remove_fields.existing {
+  margin: -19px -50px 0;
+}
+
+.preview-image {
+  width: 200px;
+  float: left;
+}
+
+.edit-location {
+  margin-bottom: 10px;
+}
+
+.new-areas {
+  float: right;
 }
 
 .image-detail{

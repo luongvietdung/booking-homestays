@@ -3,8 +3,9 @@
 class Location < ApplicationRecord
   has_many :rooms, dependent: :destroy
   has_many :areas, dependent: :destroy
-  has_many :location_favorites, dependent: :destroy
-  has_many :favorite_spaces, through: :location_favorites
+  belongs_to :favorite_space, optional: true
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+  scope :newest, -> { order created_at: :desc }
 end

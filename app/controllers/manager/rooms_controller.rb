@@ -30,7 +30,7 @@ module Manager
     def update
       if @room.update room_params
         upload_images if params[:room_images]
-        redirect_to manager_room_path(@room), success: t(".update_success")
+        redirect_to manager_rooms_path(@room), success: t(".update_success")
       else
         render :edit, danger: t(".update_fail")
       end

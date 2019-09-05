@@ -1,3 +1,9 @@
 - provide(:button_title, t(".save"))
 h1 = t(".edit_room")
-= render "form"
+= form_for [:manager, @room] do |f|
+  = render "form", f: f
+  .links
+    = link_to_add_association "add image", f, :room_images, partial: "image",
+      class: "nested-add-image  btn btn-success"
+  .submit
+    = f.submit yield(:button_title), class: "create-room btn btn-outline-primary"

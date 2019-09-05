@@ -1,7 +1,6 @@
 en:
   please_choose_one: please choose one
   sure: "Are you sure?"
-
   layouts:
     header:
       signup: "Sign Up"
@@ -45,7 +44,6 @@ en:
         acreage: Acreage
         address: Address
         type_room: Type Rooms
-
   shared:
     manager:
       left_menu:
@@ -133,3 +131,4 @@ en:
               not_valid: "wrong format or size is too big"
               format: "wrong format"
               size: "is too big"
+        favorite_space: "Manager Favorite Spaces"
