@@ -3,6 +3,9 @@
 class Room < ApplicationRecord
   belongs_to :location
   belongs_to :user
+  belongs_to :favorite_space
+  belongs_to :price
+  belongs_to :area
   has_many :room_images
 
   validates :name, presence: true, length: { maximum: 50 }

@@ -64,7 +64,7 @@ module Manager
     end
 
     def all_member
-      @members = Member.newest
+      @members = Member.new_updated
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_072038) do
+ActiveRecord::Schema.define(version: 2019_09_06_023500) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -108,7 +108,13 @@ ActiveRecord::Schema.define(version: 2019_09_03_072038) do
     t.integer "bath_room"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "price_id"
+    t.bigint "favorite_space_id"
+    t.bigint "area_id"
+    t.index ["area_id"], name: "index_rooms_on_area_id"
+    t.index ["favorite_space_id"], name: "index_rooms_on_favorite_space_id"
     t.index ["location_id"], name: "index_rooms_on_location_id"
+    t.index ["price_id"], name: "index_rooms_on_price_id"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
@@ -147,6 +153,9 @@ ActiveRecord::Schema.define(version: 2019_09_03_072038) do
   add_foreign_key "areas", "locations"
   add_foreign_key "location_favorites", "favorite_spaces"
   add_foreign_key "location_favorites", "locations"
+  add_foreign_key "rooms", "areas"
+  add_foreign_key "rooms", "favorite_spaces"
   add_foreign_key "rooms", "locations"
+  add_foreign_key "rooms", "prices"
   add_foreign_key "rooms", "users"
 end

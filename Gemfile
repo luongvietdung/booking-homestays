@@ -27,6 +27,8 @@ gem "figaro"
 gem "carrierwave"
 gem "mini_magick", "~> 4.3"
 gem "select2-rails"
+gem "ransack"
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

@@ -14,6 +14,6 @@ module ManagersHelper
   end
 
   def select_favorite_space
-    FavoriteSpace.all.map {|f| [f.name, f.id]}
+    FavoriteSpace.all.map { |f| [f.name, f.id] }
   end
 end

@@ -1,0 +1,7 @@
+tr
+  td
+    = favorite_space_counter.next
+  td
+    = link_to favorite_space.name, edit_manager_favorite_space_path(favorite_space), class: "link-to-edit"
+  td
+    = link_to t(".delete"), manager_favorite_space_path(favorite_space), method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger"
