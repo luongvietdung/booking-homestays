@@ -1,7 +1,6 @@
 en:
   please_choose_one: please choose one
   sure: "Are you sure?"
-
   layouts:
     header:
       signup: "Sign Up"
@@ -45,7 +44,6 @@ en:
         acreage: Acreage
         address: Address
         type_room: Type Rooms
-
   shared:
     manager:
       left_menu:
@@ -118,6 +116,18 @@ en:
       resend_btn: "Resend confirmation"
       login_link: "Log in"
       signup_link: "Sign up"
+  home:
+    show:
+      available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
+      description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
+    index:
+      extra-bold: "Start your holidays at BookingHomestay"
+      description: "At this holidays, we have a promotion up to 50 %"
+  search:
+    index:
+      available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
+      description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
+      search_key: " has key '%{key}' "
   activerecord:
     errors:
       models:
@@ -133,3 +143,4 @@ en:
               not_valid: "wrong format or size is too big"
               format: "wrong format"
               size: "is too big"
+        favorite_space: "Manager Favorite Spaces"

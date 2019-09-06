@@ -1,5 +1,6 @@
 /*
- *= require custom
-.*= require toastr
- *= require_self
- */
+  *= require custom
+  *= require toastr
+  *= require jquery-ui
+  *= require_self
+*/

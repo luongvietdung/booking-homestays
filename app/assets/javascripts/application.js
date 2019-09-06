@@ -6,6 +6,8 @@
 //= require bootstrap
 //= require custom
 //= require toastr
+//= require multislider
+//= require jquery-ui
 
 /*global toastr*/
 toastr.options = {

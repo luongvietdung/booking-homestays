@@ -1,4 +1,17 @@
 @import 'bootstrap';
+@import 'font-awesome';
+
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #222;
+}
 
 /* ----------------------------
 header
@@ -11,10 +24,6 @@ body {
   color: #222;
   font-weight: 500;
   font-size: 1rem;
-}
-
-header {
-  background: #111;
 }
 
 .headline {
@@ -44,10 +53,9 @@ header {
 .custom-nav {
   position: fixed;
   width: 100%;
+  height: 78px;
   z-index: 10;
-  &.scrolled {
-    background: rgba(#111, 0.9);
-  }
+  background-color: #333;
   ul {
     float: right;
     list-style: none;
@@ -373,12 +381,12 @@ $offWhite: #e9eaea;
 }
 
 @media (min-width: 1200px){
-  .container {
+  .container #custom {
     padding: 0 2.8rem;
   }
 }
 
-.container {
+.container #custom{
   margin: auto;
   padding: 0 1.25rem;
 }
@@ -638,4 +646,202 @@ h1, h2, h3, h4, h5, h6 {
 
 .preview-edit-profile {
   padding: 3px;
+}
+
+#exampleSlider {
+  position: relative;
+}
+@media (max-width: 767px) {
+  #exampleSlider {
+    border-color: transparent;
+  }
+}
+#exampleSlider .MS-content {
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-content {
+    margin: 0;
+  }
+}
+#exampleSlider .MS-content .item {
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  border-right: none;
+  width: 20%;
+}
+@media (max-width: 1200px) {
+  #exampleSlider .MS-content .item {
+    width: 25%;
+  }
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-content .item {
+    width: 33.3333%;
+  }
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-content .item {
+    width: 50%;
+  }
+}
+#exampleSlider .MS-content .item p {
+  font-size: 30px;
+  text-align: center;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px 0;
+}
+#exampleSlider .MS-controls button {
+  position: absolute;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  outline: 0;
+  top: 35px;
+}
+@media (max-width: 767px) {
+  #exampleSlider .MS-controls button {
+    display: none;
+  }
+}
+#exampleSlider .MS-controls button:hover {
+  cursor: pointer;
+}
+#exampleSlider .MS-controls .MS-left {
+  left: 10px;
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-controls .MS-left {
+    left: -2px;
+  }
+}
+#exampleSlider .MS-controls .MS-right {
+  right: 10px;
+}
+@media (max-width: 992px) {
+  #exampleSlider .MS-controls .MS-right {
+    right: -2px;
+  }
+}
+
+.title-favorite-space {
+  margin-bottom: 18px!important;
+}
+
+.item p img {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.title-content {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.article_content {
+  padding: 0 8px;
+}
+
+#exampleSlider .MS-controls .MS-right {
+  top: 40%;
+}
+
+#exampleSlider .MS-controls .MS-left {
+  top: 40%;
+}
+
+.title-favorite {
+  margin: 0px;
+  padding-top: 20px;
+}
+
+.icon-favorite {
+  display: inline;
+  width: 32px;
+  height: 32px;
+}
+
+.card {
+  background: none;
+}
+
+.text-title {
+  display: inline;
+  padding: 0 15px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.extra-bold span {
+  font-size: 15px;
+}
+
+.address {
+  padding-top: 10px;
+}
+
+.tales {
+  width: 100%;
+}
+
+.carousel-showroomdetails {
+  height: 400px;
+}
+
+.img-room-detail {
+  width: 100%;
+  height: 583px;
+}
+
+.favorite-room {
+  width: 120%;
+}
+
+a.name-room {
+  text-decoration: none;
+  font-size: 20px;
+  color: #333;
+}
+
+a.name-room:hover {
+  color: red;
+  transition: all .5s;
+}
+
+.image-banner {
+  width: 100%;
+}
+
+.paginate-room {
+  padding: 10px 40%;
+}
+
+.card-body.body-room.custom-size{
+  padding: 5px 2px 10px 2px;
+  min-height: 30vh;
+}
+
+.custom-paginate nav .pagination{
+  float: right;
+  padding-right: 33px;
+}
+
+ul.ui-autocomplete {
+  position: fixed;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  z-index: 1000;
+  overflow: auto;
+  max-height: 400px;
 }

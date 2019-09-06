@@ -74,7 +74,7 @@ module Manager
     end
 
     def all_admin
-      @admins = Admin.newest
+      @admins = Admin.new_updated
     end
   end
 end
