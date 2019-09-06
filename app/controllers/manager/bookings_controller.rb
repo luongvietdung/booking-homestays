@@ -2,7 +2,7 @@
 
 module Manager
   class BookingsController < BaseController
-    before_action :find_booking, only: %i[show edit update]
+    before_action :find_booking, only: %i[show edit update destroy]
 
     def index
       @bookings = Booking.includes(:room).newest.page(params[:page])
@@ -18,6 +18,10 @@ module Manager
       else
         render :edit
       end
+    end
+
+    def destroy
+      redirect_to manager_bookings_path, flash: { success: t(".success") } if @booking.destroy
     end
 
     private

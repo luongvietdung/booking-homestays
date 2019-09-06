@@ -11,7 +11,7 @@
             th = t(".checkin")
             th = t(".checkout")
             th = t(".status")
-            th = t(".action")
+            th colspan="2" = t(".action")
           tbody
             = render @bookings
 = paginate @bookings, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
