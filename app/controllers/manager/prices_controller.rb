@@ -5,7 +5,7 @@ module Manager
     before_action :price, only: %i[edit update destroy]
 
     def index
-      @prices = Price.newest
+      @prices = Price.includes(:bills, :vouchers).newest
     end
 
     def new
