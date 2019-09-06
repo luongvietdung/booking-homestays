@@ -14,6 +14,7 @@ class Room < ApplicationRecord
   belongs_to :price
   belongs_to :area
   has_many :room_images
+  has_many :bookings, dependent: :destroy
 
   validates :address, presence: true, length: { maximum: 50 }, if: :step_content?
   validates :name, presence: true, length: { maximum: 50 }, if: :step_home?

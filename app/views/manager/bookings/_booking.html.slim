@@ -1,0 +1,12 @@
+tr
+  td
+    = link_to booking.room.name, manager_booking_path(booking)
+  td
+    = booking.checkin.strftime("%d/%m/%Y")
+  td
+    = booking.checkout.strftime("%d/%m/%Y")
+  td
+    = booking.status
+  td
+    - if booking.Pending?
+      = link_to t(".send_email"), "#", class: "btn btn-primary"

@@ -225,6 +225,52 @@ en:
         title: Welcome Back!
         login_btn: "Log in"
         forgot_link: "Forgot your password?"
+    bookings:
+      update:
+        success: "Update booking successfully!"
+      edit:
+        information_booking: "Information Booking"
+        number_guest: "Number guest"
+        checkin: "Check in"
+        checkout: "Check out"
+        information_customer: "Information Customer"
+        name_booking: "Name booking"
+        phone_booking: "Phone"
+        email_booking: "Email"
+        country: "Country"
+        request: "Request"
+        book_some: "Book for some else"
+        name_booked: "Name booked"
+        phone_booked: "Phone booked"
+        email_booked: "Email booked"
+        update: "Update"
+        back: "Back"
+      show:
+        information_booking: "Information Booking"
+        number_guest: "Number guest"
+        name_room: "Name room"
+        checkin: "Check in"
+        checkout: "Check out"
+        information_customer: "Information Customer"
+        name_booking: "Name booking"
+        phone_booking: "Phone"
+        email_booking: "Email"
+        country: "Country"
+        request: "Request"
+        book_some: "Book for some else"
+        name_booked: "Name booked"
+        phone_booked: "Phone booked"
+        email_booked: "Email booked"
+        edit: "Edit"
+        back: "Back"
+      index:
+        manager_all_booking: "Manager all bookings"
+        name_room: "Name room"
+        checkin: "Check in"
+        checkout: "Check out"
+        status: "Status"
+        action: "Action"
+        send_email: "Send Email"
   messages:
     success:
       admins:

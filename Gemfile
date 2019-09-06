@@ -29,6 +29,7 @@ gem "mini_magick", "~> 4.3"
 gem "select2-rails"
 gem "ransack"
 gem "jquery-ui-rails"
+gem "country_select"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

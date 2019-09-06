@@ -1,0 +1,76 @@
+= form_for [:manager, @booking] do |booking|
+  .container-fluid
+    = render "shared/manager/error_messages", object: @booking
+    div
+      .title
+        h3 
+          p = t(".information_booking")
+      .number-guest
+        .row
+          .col-12
+            p = t(".number_guest")
+            p = booking.number_field :number_guest, class: "form-control"
+      .date-booking
+        .row
+          .col-6
+            div.checkin 
+              hr
+              p = t(".checkin")
+              p = booking.datetime_field :checkin, class: "form-control"
+          .col-6
+            div.checkout 
+              hr
+              p = t(".checkout")
+              p = booking.datetime_field :checkout, class: "form-control"
+      hr
+      .information-customer
+        .title
+          h3
+            = t(".information_customer")
+        .name 
+          p = t(".name_booking")
+          p = booking.text_field :name_booking, class: "form-control"
+        hr
+        .phone-email 
+          .row
+            .col-6
+              p = t(".phone_booking")
+              p = booking.text_field :phone_booking, class: "form-control", id: "phone-booking"
+            .col-6
+              p = t(".email_booking")
+              p = booking.text_field :email_booking, class: "form-control"
+        hr
+        .country 
+          .row
+            .col-12
+              p = t(".country")
+              p = booking.country_select(:country_code, { prompt: "Select one" }, class: "form-control")
+        hr
+        .description 
+          .row
+            .col-12
+              p = t(".request")
+              p = booking.text_area :request, class: "form-control"
+        hr
+        .new-checkbox
+          .row
+            label.checkbox-booking
+              p = t(".book_some")
+              input#checkbox type="checkbox"
+              span.checkmark
+        .container#info-booked
+          .name-booked
+            .row
+              .col-12
+                p = t(".name_booked")
+                p = booking.text_field :name_booked, class: "form-control"
+          .phone-booked
+            .row
+              .col-6
+                p = t(".phone_booked")
+                p = booking.phone_field :phone_booked, class: "form-control"
+              .col-6
+                p = t(".email_booked")
+                p = booking.email_field :email_booked, class: "form-control"
+        = booking.submit t(".update"), class: "btn btn-primary"
+        = link_to t(".back"), manager_bookings_path, class: "btn btn-secondary"

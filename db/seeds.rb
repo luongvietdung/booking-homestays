@@ -84,3 +84,24 @@ end
 ["Wifi","May Giat", "Tu Lanh", "Ho Boi", "Dieu Hoa"].each do |utility|
   Utility.create! name: utility
 end
+
+10.times do |voucher|
+  Voucher.create!(code: SecureRandom.base64(10), sale: rand(1..100), date_off: 3.days.from_now)
+end
+
+20.times do |f|
+  name = Faker::Name.name
+  phone_booking = Faker::PhoneNumber.cell_phone
+  request = Faker::Lorem.paragraph_by_chars
+  email = "booking_test#{f+1}@example.com"
+  Booking.create!(room_id: rand(1..50),
+                  number_guest: rand(1..10),
+                  checkin: Time.now,
+                  checkout: 3.days.from_now,
+                  status: 0,
+                  email_booking: email,
+                  name_booking: name,
+                  phone_booking: phone_booking,
+                  request: request,
+                  voucher_id: rand(1..10))
+end

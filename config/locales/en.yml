@@ -51,7 +51,6 @@ en:
       create_fail: can not create utility
       new:
         create_utility: Create
-
   shared:
     manager:
       left_menu:
@@ -66,6 +65,7 @@ en:
         manager_admin: "Manager admins"
         manager_member: "Manager members"
         user: "User"
+        booking: "Manager bookings"
       top:
         logout: "Logout"
         settings: "Settings"

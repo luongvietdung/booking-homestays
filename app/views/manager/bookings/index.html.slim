@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        h4.card-title
+          p = t(".manager_all_booking")
+      .card-body
+        table.table.table-hover.table-striped.text-center
+          thead
+            th = t(".name_room")
+            th = t(".checkin")
+            th = t(".checkout")
+            th = t(".status")
+            th = t(".action")
+          tbody
+            = render @bookings
+= paginate @bookings, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"

@@ -3,6 +3,7 @@
 class Voucher < ApplicationRecord
   has_many :bills
   has_many :prices, through: :bills
+  has_many :bookings, dependent: :destroy
 
   validates :code, length: { in: 6..20 }, uniqueness: true
   validates :date_off, presence: true
