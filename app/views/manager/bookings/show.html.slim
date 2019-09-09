@@ -1,0 +1,83 @@
+.container-fluid
+  form
+    fieldset disabled="disabled"
+      div
+        .title
+          h3 
+            p = t(".information_booking")
+        hr
+        .number-guest
+          .row
+            .col-12
+              p = t(".number_guest")
+              input#disabledTextInput.form-control placeholder=("#{ @booking.number_guest }") type="text"
+        .date-booking
+          .name-room
+            p.font-weight-bold = t(".name_room")
+            input#disabledTextInput.form-control placeholder=("#{ @booking.room.name }") type="text"
+          .row
+            .col-6
+              div.checkin 
+                hr
+                p.font-weight-bold = t(".checkin")
+                input#disabledTextInput.form-control placeholder=("#{ @booking.checkin.strftime('%d - %m - %Y') }") type="text" /
+            .col-6
+              div.checkout 
+                hr
+                p.font-weight-bold = t(".checkout")
+                input#disabledTextInput.form-control placeholder=("#{ @booking.checkout.strftime('%d - %m - %Y') }") type="text"
+        hr
+        .information-customer
+          .title
+            h3
+              = t(".information_customer")
+          .name 
+            p.font-weight-bold = t(".name_booking")
+            input#disabledTextInput.form-control placeholder=("#{ @booking.name_booking }") type="text"
+          hr
+          .phone-email 
+            .row
+              .col-6
+                p.font-weight-bold = t(".phone_booking")
+                input#disabledTextInput.form-control placeholder=("#{ @booking.phone_booking }") type="text"
+              .col-6
+                p.font-weight-bold = t(".email_booking")
+                input#disabledTextInput.form-control placeholder=("#{ @booking.email_booking }") type="text"
+          hr
+          .country 
+            .row
+              .col-12
+                p.font-weight-bold = t(".country")
+                input#disabledTextInput.form-control placeholder=("#{ @booking.country_name }") type="text"
+          hr
+          .description 
+            .row
+              .col-12
+                p.font-weight-bold = t(".request")
+                textarea#disabledTextInput.form-control placeholder=("#{ @booking.request }") type="text"
+  hr
+  .new-checkbox
+    .row
+      label.checkbox-booking
+        p = t(".book_some")
+        input#checkbox type="checkbox"
+        span.checkmark
+  form
+    fieldset disabled="disabled"
+      .container#info-booked
+        .name-booked
+          .row
+            .col-12
+              p = t(".name_booked")
+              input#disabledTextInput.form-control placeholder=("#{ @booking.name_booked }") type="text"
+        .phone-booked
+          .row
+            .col-6
+              p = t(".phone_booked")
+              input#disabledTextInput.form-control placeholder=("#{ @booking.phone_booked }") type="text"
+            .col-6
+              p = t(".email_booked")
+              input#disabledTextInput.form-control placeholder=("#{ @booking.email_booked }") type="text"
+    .action-booking
+      = link_to t(".edit"), edit_manager_booking_path(@booking), class: "btn btn-primary"
+      = link_to t(".back"), manager_bookings_path, class: "btn btn-secondary"

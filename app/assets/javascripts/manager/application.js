@@ -8,6 +8,7 @@
 //= require manager/custom
 //= require cocoon
 //= require select2
+//= require mask
 
 /*global toastr*/
 toastr.options = {

@@ -18,6 +18,10 @@ ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordio
     = link_to manager_favorite_spaces_path, class: "nav-link collapsed" do
       i.fa.fa-star
       span = t ".favorite_space"
+  li.nav-item
+    = link_to manager_bookings_path, class: "nav-link collapsed" do
+      i.fa.fa-book
+      span = t ".booking"
   li.nav-item.sidenav
     .dropdown-btn.nav-link.collapsed
       i.fa.fa-home

@@ -58,6 +58,30 @@ ActiveRecord::Schema.define(version: 2019_09_06_023500) do
     t.index ["voucher_id"], name: "index_bills_on_voucher_id"
   end
 
+  create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "voucher_id"
+    t.datetime "checkin"
+    t.datetime "checkout"
+    t.integer "status", null: false
+    t.integer "number_guest"
+    t.string "name_booking"
+    t.string "phone_booking"
+    t.string "email_booking"
+    t.string "name_booked"
+    t.string "phone_booked"
+    t.string "email_booked"
+    t.string "country_code"
+    t.string "trip_purpose"
+    t.text "request"
+    t.time "intend_time"
+    t.decimal "total_price", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_bookings_on_room_id"
+    t.index ["voucher_id"], name: "index_bookings_on_voucher_id"
+  end
+
   create_table "favorite_spaces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -166,6 +190,8 @@ ActiveRecord::Schema.define(version: 2019_09_06_023500) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "areas"
   add_foreign_key "areas", "locations"
+  add_foreign_key "bookings", "rooms"
+  add_foreign_key "bookings", "vouchers"
   add_foreign_key "location_favorites", "favorite_spaces"
   add_foreign_key "location_favorites", "locations"
   add_foreign_key "room_utilities", "rooms"

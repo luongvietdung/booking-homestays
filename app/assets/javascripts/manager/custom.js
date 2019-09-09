@@ -107,6 +107,14 @@ $(document).ready(function(){
   $(".select2").select2({
     placeholder: "Select a favorite spaces",
     allowClear: true
-  })
+  });
+
+  $('#phone-booking').mask('(+84) 000 000 000');
+
+  $('#info-booked').hide();
+  
+  $('#checkbox').click(function(){
+     $('#info-booked').toggle();
+  });
 });
 
