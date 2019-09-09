@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :admins
     resources :members
     resources :prices
+    resources :trends
 
     resources :locations do
       resources :areas, except: %i[destroy edit update]
