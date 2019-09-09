@@ -49,7 +49,7 @@ end
 end
 
 20.times do |price|
-  price = rand(1..999999)
+  price = rand(1..5000)
   Price.create!(cost: price,
                 cleaning_fee: price)
 end
@@ -94,7 +94,12 @@ end
   phone_booking = Faker::PhoneNumber.cell_phone
   request = Faker::Lorem.paragraph_by_chars
   email = "booking_test#{f+1}@example.com"
-  Booking.create!(room_id: rand(1..50),
+  room_id = rand(1..50)
+  cost = Room.find(room_id).price.cost
+  voucher_id = rand(1..10)
+  sale = Voucher.find(voucher_id).sale
+  total_price = cost - (cost*sale/100)
+  Booking.create!(room_id: room_id,
                   number_guest: rand(1..10),
                   checkin: Time.now,
                   checkout: 3.days.from_now,
@@ -103,5 +108,6 @@ end
                   name_booking: name,
                   phone_booking: phone_booking,
                   request: request,
-                  voucher_id: rand(1..10))
+                  voucher_id: voucher_id,
+                  total_price: total_price)
 end

@@ -9,5 +9,6 @@ tr
     = booking.status
   td
     - if booking.Pending?
-      = link_to t(".send_email"), "#", class: "btn btn-primary"
-  td = link_to t(".destroy"), manager_booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+      = link_to t(".send_email"), mailpayment_path(booking), method: :post, class: "btn btn-primary"
+  td
+    = link_to t(".destroy"), manager_booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

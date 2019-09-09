@@ -23,6 +23,7 @@ AllCops:
     - 'db/*.rb'
     - 'bin/**/*'
     - 'config/environments/*.rb'
+    - 'config/routes.rb'
 
 Style/Documentation:
   Enabled: false

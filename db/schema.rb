@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_023500) do
+ActiveRecord::Schema.define(version: 2019_09_08_171519) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 2019_09_06_023500) do
     t.decimal "total_price", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "notification_params"
+    t.string "transaction_id"
+    t.datetime "purchased_at"
     t.index ["room_id"], name: "index_bookings_on_room_id"
     t.index ["voucher_id"], name: "index_bookings_on_voucher_id"
   end

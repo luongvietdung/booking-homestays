@@ -1,0 +1,110 @@
+span.preheader = t ".title"
+table.body border="0" cellpadding="0" cellspacing="0" role="presentation"
+  tr
+    td  
+    td.container
+      .content
+        /! START CENTERED WHITE CONTAINER
+        table.main role="presentation"
+          /! START MAIN CONTENT AREA
+          tr
+            td.wrapper
+              table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                tr
+                  td
+                    p = t ".first_mail", name: "#{@booking.name_booking}"
+                    p = t ".description_mail"
+                    hr style="border: solid 1px blue;"
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".room_name"
+                      .col-7
+                        = @room.name
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".price"
+                      .col-7
+                        = number_to_currency(@room.price.cost)
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".sale"
+                      .col-7
+                        = number_to_percentage(@booking.voucher.sale, precision: 0)
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".total_price"
+                      .col-7
+                        = number_to_currency(@booking.total_price)
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".checkin"
+                      .col-7
+                        = @booking.checkin.strftime('%d - %m - %Y')
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".checkout"
+                      .col-7
+                        = @booking.checkout.strftime('%d - %m - %Y')
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".customer"
+                      .col-7
+                        = @booking.name_booking
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".phone"
+                      .col-7
+                        = @booking.phone_booking
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".email"
+                      .col-7
+                        = @booking.email_booking
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".guest"
+                      .col-7
+                        = @booking.number_guest
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".status"
+                      .col-7
+                        = @booking.status
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".date"
+                      .col-7
+                        = @booking.purchased_at
+                    .row
+                      .col-2
+                      .col-3 style="font-weight: bold;"
+                        = t ".transaction"
+                      .col-7
+                        = @booking.transaction_id
+                    hr style="border: solid 1px blue;"
+                    p = t ".end_mail"
+          /! END MAIN CONTENT AREA
+        /! END CENTERED WHITE CONTAINER
+        /! START FOOTER
+        .footer
+          table border="0" cellpadding="0" cellspacing="0" role="presentation"
+            tr
+              td.content-block
+                span.apple-link = t ".footer_mail"
+            tr
+              td.content-block.powered-by
+                = t ".author"
+        /! END FOOTER
+    td  

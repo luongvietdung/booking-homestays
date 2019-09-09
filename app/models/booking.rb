@@ -17,6 +17,21 @@ class Booking < ApplicationRecord
     country.present? ? country.translations[I18n.locale.to_s] || country.name : country_code
   end
 
+  def paypal_url(_return_path)
+    values = {
+      business: Settings.email.to_s,
+      cmd: "_xclick",
+      upload: 1,
+      return: "#{Settings.app_host}#{Settings.thank_path}",
+      invoice: id,
+      amount: total_price,
+      item_name: room.name,
+      item_number: room.id,
+      notify_url: "#{Settings.app_host}/payment_update"
+    }
+    "#{Settings.paypal_host}/cgi-bin/webscr?" + values.to_query
+  end
+
   private
 
   def checkin_date_after_checkout_date
