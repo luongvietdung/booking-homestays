@@ -66,6 +66,7 @@ en:
         manager_admin: "Manager admins"
         manager_member: "Manager members"
         user: "User"
+        trend: "Trends"
       top:
         logout: "Logout"
         settings: "Settings"

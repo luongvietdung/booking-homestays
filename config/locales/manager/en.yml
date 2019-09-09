@@ -225,6 +225,16 @@ en:
         title: Welcome Back!
         login_btn: "Log in"
         forgot_link: "Forgot your password?"
+    trends:
+      form:
+        name: "Name"
+        description: "Description"
+        submit: "Save Changes"
+      new:
+        title: "New Trends"
+      create:
+        success: "Create trend successfully!"
+        danger: "Create trend has problem!"
   messages:
     success:
       admins:
