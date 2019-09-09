@@ -228,6 +228,8 @@ en:
     bookings:
       update:
         success: "Update booking successfully!"
+      destroy:
+        success: "Destroy booking successfully!"
       edit:
         information_booking: "Information Booking"
         number_guest: "Number guest"
@@ -270,7 +272,9 @@ en:
         checkout: "Check out"
         status: "Status"
         action: "Action"
+      booking:
         send_email: "Send Email"
+        destroy: "Destroy"
   messages:
     success:
       admins:
