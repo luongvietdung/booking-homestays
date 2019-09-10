@@ -20,7 +20,6 @@ class Room < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }, if: :step_home?
   validates :guest, :bed_room, :bath_room, presence: true,
                                            numericality: { only_integer: true }, if: :step_home?
-
   validates :type_room, presence: true, if: :step_home?
 
   enum type_room: { private_room: 0, entire: 1 }

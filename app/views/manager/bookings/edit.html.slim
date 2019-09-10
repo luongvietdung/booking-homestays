@@ -3,7 +3,7 @@
     = render "shared/manager/error_messages", object: @booking
     div
       .title
-        h3 
+        h3
           p = t(".information_booking")
       .number-guest
         .row
@@ -13,12 +13,12 @@
       .date-booking
         .row
           .col-6
-            div.checkin 
+            div.checkin
               hr
               p = t(".checkin")
               p = booking.datetime_field :checkin, class: "form-control"
           .col-6
-            div.checkout 
+            div.checkout
               hr
               p = t(".checkout")
               p = booking.datetime_field :checkout, class: "form-control"
@@ -27,11 +27,11 @@
         .title
           h3
             = t(".information_customer")
-        .name 
+        .name
           p = t(".name_booking")
           p = booking.text_field :name_booking, class: "form-control"
         hr
-        .phone-email 
+        .phone-email
           .row
             .col-6
               p = t(".phone_booking")
@@ -40,13 +40,13 @@
               p = t(".email_booking")
               p = booking.text_field :email_booking, class: "form-control"
         hr
-        .country 
+        .country
           .row
             .col-12
               p = t(".country")
               p = booking.country_select(:country_code, { prompt: "Select one" }, class: "form-control")
         hr
-        .description 
+        .description
           .row
             .col-12
               p = t(".request")

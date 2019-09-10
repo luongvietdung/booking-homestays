@@ -16,6 +16,9 @@ en:
     failed:
       admins:
         create: "Create failed!"
+    notice:
+      mailpayment:
+        sent_mail: "Sent a mail to %{email}"
   manager:
     rooms:
       create_room: "Thank you to create room"
@@ -136,6 +139,48 @@ en:
       available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
       description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
       search_key: " has key '%{key}' "
+  payment_mailer:
+    payment_booking:
+      title: BookingHomeStay
+      first_mail: "Hi %{name},"
+      description_mail: "We send this letter to confirm your reservation on the system."
+      room_name: "Room Name:"
+      cost: "Cost:"
+      sale: "Sale:"
+      total_price: "Total price:"
+      checkin: "Check in:"
+      checkout: "Check out:"
+      customer: "Customer:"
+      phone: "Phone:"
+      email: "Email:"
+      end_mail: "If the information is exactly, please click 'Payment now' to payment for your order!"
+      payment_now: "Payment now"
+      footer_mail: "Booking Homestay - 19 Avenger - Viet Nam"
+      author: "Powered by HTML mail"
+    invoice_payment:
+      title: "ROOM INVOICE"
+      first_mail: "Hi %{name},"
+      description_mail: "We send this letter to confirm your invoice!"
+      room_name: "Room name:"
+      price: "Price:"
+      sale: "Sale:"
+      total_price: "Total price:"
+      checkin: "Check in:"
+      checkout: "Check out:"
+      guest: "Number guest:"
+      customer: "Customer:"
+      email: "Email:"
+      phone: "Phone:"
+      status: "Payment status:"
+      date: "Payment date:"
+      transaction: "Transaction:"
+      footer_mail: "Booking Homestay - 19 Avenger - Viet Nam"
+      author: "Powered by HTML mail"
+      end_mail: "Please contact us again if there are errors, thank you for using our service"
+  payment_booking:
+    index:
+      description: "Thank you for using BookingHomestay's service!"
+      back: "Back to Home"
   activerecord:
     errors:
       models:

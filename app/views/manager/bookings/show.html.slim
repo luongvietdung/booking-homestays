@@ -3,7 +3,7 @@
     fieldset disabled="disabled"
       div
         .title
-          h3 
+          h3
             p = t(".information_booking")
         hr
         .number-guest
@@ -17,12 +17,12 @@
             input#disabledTextInput.form-control placeholder=("#{ @booking.room.name }") type="text"
           .row
             .col-6
-              div.checkin 
+              div.checkin
                 hr
                 p.font-weight-bold = t(".checkin")
                 input#disabledTextInput.form-control placeholder=("#{ @booking.checkin.strftime('%d - %m - %Y') }") type="text" /
             .col-6
-              div.checkout 
+              div.checkout
                 hr
                 p.font-weight-bold = t(".checkout")
                 input#disabledTextInput.form-control placeholder=("#{ @booking.checkout.strftime('%d - %m - %Y') }") type="text"
@@ -31,11 +31,11 @@
           .title
             h3
               = t(".information_customer")
-          .name 
+          .name
             p.font-weight-bold = t(".name_booking")
             input#disabledTextInput.form-control placeholder=("#{ @booking.name_booking }") type="text"
           hr
-          .phone-email 
+          .phone-email
             .row
               .col-6
                 p.font-weight-bold = t(".phone_booking")
@@ -44,13 +44,13 @@
                 p.font-weight-bold = t(".email_booking")
                 input#disabledTextInput.form-control placeholder=("#{ @booking.email_booking }") type="text"
           hr
-          .country 
+          .country
             .row
               .col-12
                 p.font-weight-bold = t(".country")
                 input#disabledTextInput.form-control placeholder=("#{ @booking.country_name }") type="text"
           hr
-          .description 
+          .description
             .row
               .col-12
                 p.font-weight-bold = t(".request")

@@ -4,3 +4,6 @@ file_path: image/
 time_out: 30
 address_per: 10
 favorite_per: 10
+default_email: bookinghomestay@example.com
+COMPLETE: Completed
+thank_path: /payment_booking

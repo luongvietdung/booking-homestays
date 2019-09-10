@@ -112,7 +112,7 @@ $(document).ready(function(){
   $('#phone-booking').mask('(+84) 000 000 000');
 
   $('#info-booked').hide();
-  
+
   $('#checkbox').click(function(){
      $('#info-booked').toggle();
   });

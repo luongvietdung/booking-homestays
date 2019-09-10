@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   devise_for :members, controllers: { registrations: "registrations",
                                       sessions: "sessions", passwords: "passwords", confirmations: "confirmations" }
   root "home#index"
-  get "favorite_spaces/:id", to: "home#show"
-  get "autocomplete", to: "search#show"
+  get "/favorite_spaces/:id", to: "home#show"
+  get "/autocomplete", to: "search#show"
+  post "/mailpayment/:id", to: "mailpayment#create", as: :mailpayment
+  post "/payment_update", to: "payment_booking#create", as: :payment_bookings
+  get "/payment_booking/:id", to: "payment_booking#show", as: :payment_booking
+  get "/payment_booking", to: "payment_booking#index", as: :thank_payment
 
   resources :favorite_spaces, only: [:show]
   resources :search, only: :index
