@@ -1,21 +1,28 @@
 nav.custom-nav
-  = link_to "", root_path, class: "logo"
-  ul
-    li = link_to "item1", "#"
-    li = link_to "item4", "#"
-    - if member_signed_in?
-      li#show-dropdown
-        = link_to("#") do
-          span
-            = image_tag current_member.avatar.url, class: "custom-avatar-drop"
-            = truncate(current_member.name, length: 10)
-        #hidden-dropdown
-          = link_to "Profile", "#"
-          = link_to t(".setting"), edit_member_registration_path
-          = link_to t(".signout"), destroy_member_session_path, method: :delete
-    - else
-      li = link_to t(".signup"), new_member_registration_path
-      li = link_to t(".signin"), new_member_session_path
+  .row
+    .col-md-2
+      = link_to "", root_path, class: "logo"
+    .col-md-2
+    .col-md-4.mt-4
+      = form_tag search_index_path, method: :get, autocomplete: "off", id: "room-search" do
+        = search_field_tag :"searchroom[name_or_location_name_or_area_name_cont]","", class: 'form-control search-form', placeholder: 'Search room with name or area or location', id: "search-rooms"
+    .col-md-1
+    ul.col-md-3
+      li = link_to "item1", "#"
+      li = link_to "item4", "#"
+      - if member_signed_in?
+        li#show-dropdown
+          = link_to("#") do
+            span
+              = image_tag current_member.avatar.url, class: "custom-avatar-drop"
+              = truncate(current_member.name, length: 10)
+          #hidden-dropdown
+            = link_to "Profile", "#"
+            = link_to t(".setting"), edit_member_registration_path
+            = link_to t(".signout"), destroy_member_session_path, method: :delete
+      - else
+        li = link_to t(".signup"), new_member_registration_path
+        li = link_to t(".signin"), new_member_session_path
 header
   .headline
     .inner

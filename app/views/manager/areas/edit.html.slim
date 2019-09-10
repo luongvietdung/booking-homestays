@@ -18,7 +18,7 @@
       .card-header
         h4.card-title
           = t ".address"
-          = link_to t(".address"), "#", class: "btn btn-primary btn-xs right btn_right", data: {toggle: "modal", target: "#myModal"}
+          = link_to t(".new_address"), "#", class: "btn btn-primary btn-xs right new-areas", data: {toggle: "modal", target: "#new_address_modal"}
       .card-body.load-address
         table.table.table-hover.table-striped
           thead
@@ -26,6 +26,7 @@
             th= t ".name"
             th= t ".action"
           tbody
-          = render partial: "address", collection: @addresses
-        = paginate @addresses, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
+            = render partial: "address", collection: @addresses
+= paginate @addresses, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
 = render "new_address", address: @address
+= render "edit_address"

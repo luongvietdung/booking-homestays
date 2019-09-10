@@ -1,3 +1,7 @@
+body#page-top{
+  width: 1280px;
+}
+
 footer.sticky-footer {
   padding: 2rem 0;
   flex-shrink: 0;
@@ -167,6 +171,12 @@ i.fa.fa-caret-down {
   -webkit-box-flex: 1;
   flex: 1 0 auto;
 }
+.sticky-footer.bg-white {
+  border-top: 1px solid #858796;
+}
+.wrapper {
+  width: 100%;
+}
 
 .sticky-footer.bg-white {
   border-top: 1px solid #858796;
@@ -177,6 +187,7 @@ i.fa.fa-caret-down {
 }
 
 /*******Locations*******/
+
 .link-to-edit:hover {
   text-decoration: none;
   color: #4e73df;
@@ -186,21 +197,220 @@ i.fa.fa-caret-down {
   color: #A9A9A9;
 }
 
+/********Voucher*******/
+
+.image-detail{
+  width: 400px;
+  border-radius: 4%;
+  height: 300px;
+  padding: 10px;
+}
+
+td.action{
+  padding: 0;
+}
+
+td.action{
+  padding: 0;
+}
+
+.action{
+  padding: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
+}
+
+.nested-image{
+  float: left;
+  margin: 10px 0px;
+}
+
+.nested-image:before {
+  content: 'x';
+  color: #000000c4;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+}
+
+.nested-add-image{
+  margin: 10px 0px;
+}
+
+.show-image{
+  width: 100%;
+  float: left;
+}
+
+.thumb-image{
+  float: left;
+  padding: 0 20px 25px 0;
+}
+
+.links{
+  width: 100%;
+  float: left;
+}
+
+.submit{
+  width: 100%;
+  float: left;
+}
+
+.nested-image.btn.remove_fields.existing {
+  margin: -19px -50px 0;
+}
+
+/* checkbox utiliti */
+
+.form-checbox {
+  float: left;
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.check-box-utility {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 40px 0 40px;
+}
+
+/* Hide the browser's default checkbox */
+.check-box-utility input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.check-box-utility:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-box-utility input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-box-utility input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-box-utility .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .edit-location {
   margin-bottom: 10px;
 }
-.btn_right {
-  float: right;
+
+/* checkbox utiliti */
+.form-checbox {
+  float: left;
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
 }
 
-.align-button {
-  margin-left: 42%;
-  margin-top: 5%;
+.check-box-utility {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 40px 0 40px;
 }
 
-#custom_field_file {
-  margin-top: 3%;
-  padding: 3px;
+/* Hide the browser's default checkbox */
+.check-box-utility input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.check-box-utility:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check-box-utility input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-box-utility input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-box-utility .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.edit-location {
+  margin-bottom: 10px;
 }
 
 .avatar-default-member {
@@ -325,16 +535,13 @@ a.account:hover {
 .new-price {
   float: right;
 }
-
 .price {
   float: right;
 }
-
 .voucher {
   border: 1px solid #cbd4d4;
   padding: 0 15px;
 }
-
 .fa-times-circle {
   font-size: 20px !important;
   padding: 10px 0 !important;
@@ -342,75 +549,49 @@ a.account:hover {
   float: right;
 }
 
+.fa-times-circle:hover {
+  color: red;
+}
+
 .add_fields {
   color: darkslategrey;
   text-decoration: none !important;
 }
 
-.image-detail{
-  width: 400px;
-  border-radius: 4%;
-  height: 300px;
-  padding: 10px;
-}
-
-td.action{
-  padding: 0;
-}
-
-td.action{
-  padding: 0;
-}
-
-.action{
-  padding: 0 10px 0 10px;
-  margin: 0 10px 0 10px;
-}
-
-.nested-image{
-  float: left;
+.nested-add-image {
   margin: 10px 0px;
 }
 
-.nested-image:before {
-  content: 'x';
-  color: #000000c4;
-  font-weight: 600;
-  font-family: Arial, sans-serif;
-  font-size: 28px;
-}
-
-.nested-add-image{
-  margin: 10px 0px;
-}
-
-.show-image{
+.show-image {
   width: 100%;
   float: left;
 }
 
-.thumb-image{
+.thumb-image {
   float: left;
   padding: 0 20px 25px 0;
 }
+
+.submit {
+  width: 100%;
+  float: left;
+}
+
+.new-areas {
+  float: right;
+}
+
+/*********room*********/
 
 .links{
   width: 100%;
   float: left;
 }
 
-.submit{
-  width: 100%;
-  float: left;
-}
-
-.nested-image.btn.remove_fields.existing {
-  margin: -19px -50px 0;
-}
-
 .preview-image{
   width: 200px;
   float: left;
+  padding: 3px 3px !important;
 }
 
 .control-label{
@@ -421,6 +602,216 @@ td.action{
   word-break: break-word;
 }
 
-#admin_table td{
-  word-break: break-word;
+.align-button {
+  margin-left: 42%;
+  margin-top: 5%;
+}
+
+#custom_field_file {
+  margin-top: 3%;
+  padding: 3px;
+}
+
+.custom-dropdown {
+  color: #555;
+  margin: 3px -22px 0 0;
+  width: 143px;
+  position: relative;
+  height: 17px;
+  text-align:left;
+}
+
+.custom-dropdown  li a {
+color: #555555;
+display: block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+.custom-dropdown li a:hover{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+
+a.account {
+  font-size: 12px;
+  line-height: 16px;
+  color: #555;
+  position: absolute;
+  z-index: 110;
+  display: block;
+  padding: 11px 0 0 20px;
+  height: 28px;
+  width: 121px;
+  margin: -11px 0 0 -10px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.custom-root {
+  list-style: none;
+  font-size: 11px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  background: #fff;
+  padding: 10px 0 10px 0;
+  border-radius: 5px 5px 5px 5px;
+  margin: 11px 8px 0px -15px
+}
+
+.custom-root:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  color: #ffffff;
+  top: 44px;
+  left: 77px;
+}
+
+.profile-circle {
+  width: 45px;
+  height: 44px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 2px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  vertical-align: middle;
+}
+
+img.profile-circle {
+  margin: 0px 64px;
+  margin-top: -41px;
+}
+
+a.account:hover {
+  text-decoration: none;
+}
+
+/*******select2*******/
+.select2-selection__choice {
+  background: #36b9cc!important;
+  color: #eaecf4!important;
+}
+.select2-selection__choice__remove {
+  color: #f6c23e!important;
+}
+
+.btn_right {
+  float: right;
+}
+
+.custom-dropdown {
+  color: #555;
+  margin: 3px -22px 0 0;
+  width: 143px;
+  position: relative;
+  height: 17px;
+  text-align:left;
+}
+
+.custom-submenu {
+  position: absolute;
+  z-index: 100;
+  width: 135px;
+  display: none;
+  margin-left: 10px;
+  padding: 40px 0 5px;
+  border-radius: 6px;
+}
+
+.custom-dropdown  li a {
+color: #555555;
+display: block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+.custom-dropdown li a:hover{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+
+a.account {
+  font-size: 12px;
+  line-height: 16px;
+  color: #555;
+  position: absolute;
+  z-index: 110;
+  display: block;
+  padding: 11px 0 0 20px;
+  height: 28px;
+  width: 121px;
+  margin: -11px 0 0 -10px;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.custom-root {
+  list-style: none;
+  font-size: 11px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  background: #fff;
+  padding: 10px 0 10px 0;
+  border-radius: 5px 5px 5px 5px;
+  margin: 11px 8px 0px -15px
+}
+
+.custom-root:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  color: #ffffff;
+  top: 44px;
+  left: 77px;
+}
+
+.profile-circle {
+  width: 45px;
+  height: 44px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 2px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  vertical-align: middle;
+}
+
+img.profile-circle {
+  margin: 0px 64px;
+  margin-top: -41px;
+}
+
+a.account:hover {
+  text-decoration: none;
+}
+
+/*******select2*******/
+.select2-selection__choice {
+  background: #36b9cc!important;
+  color: #eaecf4!important;
+}
+.select2-selection__choice__remove {
+  color: #f6c23e!important;
 }

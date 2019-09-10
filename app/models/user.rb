@@ -4,10 +4,11 @@ class User < ApplicationRecord
   attr_accessor :not_update_password
 
   devise :registerable, :database_authenticatable, :recoverable, :rememberable,
-    :validatable, :timeoutable
+         :validatable, :timeoutable
   has_many :rooms
+  has_one_attached :avatar
 
-  validates :name, presence: true, length: { maximum: 45 }
+  validates :name, presence: true
   validates :address, presence: true, length: { maximum: 255 }
   validates :type, presence: true
   mount_uploader :avatar, AvatarUploader

@@ -1,7 +1,14 @@
-= form_for [:manager, @favorite_space] do |f|
-  = render "shared/manager/error_messages", object: @favorite_space
-  = f.label t(".name")
-  = f.text_field :name, class: "form-control"
-  br
-  = f.submit t(".create"), class: "btn btn-primary"
-  = link_to t(".back"), manager_favorite_spaces_path, class: "btn btn-danger"
+- provide :title, t(".title")
+.row
+  .col-md-12
+    .card
+      .card-header
+        h4.card-title= t ".add"
+      .card-body
+        = form_for [:manager, @favorite_space] do |f|
+          = render "shared/manager/error_messages", object: @favorite_space
+          .form-group
+            = f.label t(".name")
+            = f.text_field :name, class: "form-control"
+          .form-group
+            = f.submit t(".create"), class: "btn btn-primary"

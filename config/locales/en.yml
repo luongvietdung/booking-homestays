@@ -1,7 +1,6 @@
 en:
   please_choose_one: please choose one
   sure: "Are you sure?"
-
   layouts:
     header:
       signup: "Sign Up"
@@ -45,14 +44,17 @@ en:
         acreage: Acreage
         address: Address
         type_room: Type Rooms
-
+    utilities:
+      create_utility: Create Success
+      create_fail: can not create utility
+      new:
+        create_utility: Create
   shared:
     manager:
       left_menu:
         admin_manager: Admin Manager
         dashboard: Dashboard
         manager: Manager
-        location: Locations
         room: Rooms
         list: List Rooms
         create_room: Create Rooms
@@ -60,6 +62,11 @@ en:
         manager_admin: "Manager admins"
         manager_member: "Manager members"
         user: "User"
+        favorite_space: "Manager Favorite Spaces"
+        prices: "Manager Prices & Vouchers"
+        manager_admin: "Manager admins"
+        manager_member: "Manager members"
+        utility: "Manager Utilities"
       top:
         logout: "Logout"
         settings: "Settings"
@@ -75,7 +82,6 @@ en:
       simple_des: "Save card information in My Cards, much safer and convenient for the next payment."
       promo_title: "New promotions every day"
       promo_des: "Update promotions from Booking and choose great accommodation at your budget."
-  hello: "Hello world"
   sessions:
     new_form:
       login_btn: "Log in"
@@ -118,6 +124,18 @@ en:
       resend_btn: "Resend confirmation"
       login_link: "Log in"
       signup_link: "Sign up"
+  home:
+    show:
+      available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
+      description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
+    index:
+      extra-bold: "Start your holidays at BookingHomestay"
+      description: "At this holidays, we have a promotion up to 50 %"
+  search:
+    index:
+      available_room: "Now available %{total_count} rooms be allowed quick ticket booking"
+      description_room: "%{guest} Guest - %{bed_room} Bed Room - %{bath_room} Bath Room"
+      search_key: " has key '%{key}' "
   activerecord:
     errors:
       models:
@@ -133,3 +151,59 @@ en:
               not_valid: "wrong format or size is too big"
               format: "wrong format"
               size: "is too big"
+        favorite_space: "Manager Favorite Spaces"
+  trends:
+    show:
+      present: "Hiện có"
+      allow: "chỗ ở cho phép"
+      booking: "đặt phòng nhanh"
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"
+  home:
+    show:
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"
+  bookings:
+    create:
+      danger: "Booking has problem!"
+    new:
+      warning: "The page you requested cannot be active at this time!"
+  rooms:
+    show:
+      code_room: Mã chỗ ở
+      country: "Vietname"
+      map: "Xem bản đồ"
+      bed_room: "phòng ngủ ·"
+      bath_room: "phòng tắm ·"
+      guest: "khách"
+      room_details: "Chi tiết về phòng"
+      title_utility: "Tiện nghi chỗ ở"
+      paragraph: "Giới thiệu về các tiện nghi và dịch vụ tại nơi lưu trú"
+      room_price: "Giá phòng"
+      price_voucher: "Giá có thể tăng vào cuối tuần hoặc ngày lễ"
+      date: "Thứ hai - Thứ năm"
+      date_room: "Thứ sáu - Chủ nhật"
+      cleaning: "Phí dọn dẹp(nếu có)"
+      number_bed: "Số đêm tối thiểu"
+      min_bed: "1 đêm"
+      same_room: "Chỗ ở tương tự"
+      people: "người"
+      bed: "phòng ngủ"
+      bath: "phòng tắm"
+      nigth: "/đêm"
+      sale: "Giảm 30% từ chủ nhà"
+      checkin: "Ngày đến"
+      checkout: "Ngày đi"
+      clear: "Phí dọn dẹp"
+      sum_price: "Tổng tiền"
+      btn: "Đặt ngay"
+      joining: "Tham gia"
+      call: "Gọi"
+      sdt: "18006586 (miễn phí)"
+      supplier: "để được hỗ trợ 24/7"
+    room:
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"

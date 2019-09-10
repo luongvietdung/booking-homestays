@@ -1,0 +1,173 @@
+.container
+  .row
+    .col-md-8
+      = hidden_field_tag :code, @code_vouchers
+      .detail-description
+        = form_for @booking, url: bookings_path do |f|
+          = f.hidden_field :number_guest, value: params[:guest]
+          = f.hidden_field :checkin, value: params[:checkin]
+          = f.hidden_field :checkout, value: params[:checkout]
+          = f.hidden_field :room_id, value: params[:room_id]
+          = render "shared/manager/error_messages", object: @booking
+          h3.title-utility Thông tin đặt chỗ
+          .space--loose
+            .input-group
+              label.input-group__label.bold.is-block
+                span.text-danger> *
+                | Số khách
+              .row.number-guest
+                .col-xs-6.pl-3
+                  .py--12.px--18.bg-white.is-shadow-box.rounded
+                    | #{params[:guest]} khách
+            .input-group
+              label.input-group__label.bold.is-block
+                | #{@night} đêm tại - Lambro Home
+              .row.number-guest
+                .col-xs-6
+                  .p--12.is-shadow-box.rounded.bg-white
+                    hr.is-decorate.is-green/
+                    p.c-gray-9.mb--0 Nhận phòng
+                    p.p--giant.mb--0 = params[:checkin]
+                .col-xs-6
+                  .p--12.is-shadow-box.rounded.bg-white
+                    hr.is-decorate.is-orange/
+                    p.c-gray-9.mb--0 Trả phòng
+                    p.p--giant.mb--0 = params[:checkout]
+            .input-group
+              label.input-group__label.bold.is-block Trách nhiệm vật chất
+              span.input-group__text.is-block Khách hàng chịu mọi trách nhiệm thiệt hại về tài sản đã gây ra tại chỗ ở trong thời gian lưu trú.
+            .input-group
+              label.input-group__label.bold.is-block Nội quy chỗ ở
+              span.input-group__text.is-block
+                | - Không hút thuốc lá trong phòng
+                | - Được phép mang theo vật nuôi
+          .title.mt--48
+            h3 Thông tin của bạn
+          .space--loose
+            .input-group
+              label.input-group__label.bold.is-block
+                span.text-danger *
+                | Tên Khách hàng
+              span.input-group__text.is-block Họ tên trên CMND/ Thẻ căn cước
+              = f.text_field :name_booking, class: "input form-control rounded"
+
+            .input-group
+              .col-xs-6.pl-0
+                label.input-group__label.bold.is-block
+                  span.text-danger *
+                  | Số điện thoại
+                span.input-group__text.is-block VD: 0987654321
+                = f.text_field :phone_booking, class: "form-control rounded", id: "phoneNumber", placeholder: "Số điện thoại"
+                .error
+              .col-xs-6.pl-0
+                label.input-group__label.bold.is-block
+                  span.text-danger *
+                  | Email
+                span.input-group__text.is-block VD: email@example.com
+                = f.email_field :email_booking, class: "input input-email form-control"
+            .input-group
+              label.input-group__label.bold.is-block
+                span.text-danger *
+                | Quốc gia cư trú
+              span.input-group__text.is-block Nội dung này sẽ được sử dụng cho vấn đề pháp lý và thuế.
+              .col-xs-6.pl-0
+                = f.country_select :country, class: "form-control input", include_blank: 'Select a country', placeholder: "Countries", priority_countries: ["VN", "US"], priority_countries_divider: "~~~~~~"
+            .input-group.input-group--checkbox
+              .custom-control.custom-checkbox.mb-3
+                input#customCheck.custom-control-input.event_check name="example1" type="checkbox" /
+                label.custom-control-label for="customCheck"  Tôi đặt phòng cho người khác
+            .event-click
+              .input-group
+                label.input-group__label.bold.is-block
+                  span.text-danger *
+                  | Tên Khách hàng
+                span.input-group__text.is-block Họ tên trên CMND/ Thẻ căn cước
+                = f.text_field :name_booked, class: "input form-control rounded"
+              .input-group
+                .col-xs-6.pl-0
+                  label.input-group__label.bold.is-block
+                    span.text-danger *
+                    | Số điện thoại
+                  span.input-group__text.is-block VD: 0987654321
+                  = f.text_field :phone_booked, class: "form-control rounded", id: "phoneNumber", placeholder: "Số điện thoại"
+                .col-xs-6.pl-0
+                  label.input-group__label.bold.is-block
+                    span.text-danger *
+                    | Email
+                  span.input-group__text.is-block VD: email@example.com
+                  = f.email_field :email_booked, class: "input input-email form-control"
+          .space--loose
+            .title.mt--48
+              h3 Thông tin thêm
+              .input-group.purpose
+                label.input-group__label.bold.is-block
+                  span.text-danger *
+                  | Mục đích của chuyến đi này?
+                .trip-purpose
+                  select#sel1.form-control.input name="booking[trip_purpose]"
+                    option Dành cho gia đình
+                    option Tổ chức tiệc
+                    option Công tác
+                    option Khác
+              .input-group.col-xs-6.pl-0
+                label.input-group__label.bold.is-block
+                  span.text-danger *
+                  | Thời gian đến dự kiến
+                = f.time_field :intend_time, class: "form-control", id: "sel1"
+              .input-group
+                label.input-group__label.bold.is-block
+                  span Yêu cầu đặc biệt
+                = f.text_area :request, class: "request form-control rounded", clos: 30, rows: 10
+            .title.mt--48
+              h3 Mã khuyến mại
+              .input-group
+                .input-group__control.is-relative.is-flex
+                = text_field_tag :code_promotion, nil, class: "input form-control rounded", placeholder: "Nhập mã khuyến mại"
+                .error_code
+                .btn.rounded.bold.btn--primary.btn-code.event_disable#event_disable Áp dụng
+          = button_tag "Thanh toán »", class: "btn btn-grad--primary bold rounded btn-pay", id: "phone_email"
+    .col-md-4
+      .checkup.room-sidebar
+        .checkup__header
+          = link_to room_path(params[:room_id]), class: "is-flex booking_info_detail" do
+            .grow
+              h4.checkup__title = @room.name
+              .checkup__add
+                svg.mt--5.svg-icon.svg-fill style=("width: 24px; height: 24px;") version="1.1" viewbox=("0 0 24 24")
+                  g fill="none" fill-rule="evenodd"
+                    circle cx="12" cy="12" fill="#000" fill-opacity=".2" fill-rule="nonzero" pid="0" r="12"
+                    path d=("M11.92 6c2.87 0 5.218 2.335 5.218 5.205a5.112 5.112 0 0 1-1.055 3.137c-.97 1.252-3.77 3.461-3.882 3.56a.43.43 0 0 1-.282.098.43.43 0 0 1-.281-.098c-.113-.099-2.912-2.308-3.883-3.546a5.182 5.182 0 0 1-1.055-3.15C6.7 8.335 9.05 6 11.92 6zm0 7.203a2.104 2.104 0 0 0 0-4.207 2.104 2.104 0 0 0 0 4.206z") fill="#FFF" pid="1"
+                span.medium style=("width: calc(100% - 25px);")  #{@room.location_name}, #{@room.address}, Vietnam
+            div style=("width: 128px;")
+              .bg-img.radius-xs
+                = image_tag load_limit_image(@room), class: "limit-image"
+        .checkup__body
+          .checkup__detail
+            .is-flex.middle-xs.checkup_bottom
+              svg.icon--24.svg-icon.svg-fill version="1.1" viewbox=("0 0 24 24")
+                g fill="none" fill-rule="evenodd"
+                  path d=("M12 0c6.614 0 12 5.386 12 12s-5.386 12-12 12S0 18.614 0 12 5.386 0 12 0z") fill="#F65E39" fill-rule="nonzero" pid="0"
+                  path d=("M10 7h4a1 1 0 1 1 2 0h.5A1.5 1.5 0 0 1 18 8.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 16.5v-8A1.5 1.5 0 0 1 7.5 7H8a1 1 0 1 1 2 0zm4 7v2h2v-2h-2zm-3 0v2h2v-2h-2zm-3 0v2h2v-2H8zm3-3v2h2v-2h-2zm3 0v2h2v-2h-2zm-6 0v2h2v-2H8z") fill="#FFF" pid="1"
+              span.ml-2
+                b #{@night} đêm
+                | · #{params[:checkin]} - #{params[:checkout]}
+            .is-flex.middle-xs
+              svg.icon--24.svg-icon.svg-fill version="1.1" viewbox=("0 0 24 24")
+                g fill="none"
+                  circle cx="12" cy="12" fill="#F65E39" pid="0" r="12"
+                  path d=("M12.007 12c.844 0 1.807-.083 2.414-.747.518-.539.681-1.396.518-2.585C14.702 6.995 13.607 6 12.007 6c-1.599 0-2.695.995-2.946 2.668-.163 1.19 0 2.046.518 2.585.607.664 1.57.747 2.428.747zm-3.67 6h7.335c.411 0 .779-.16 1.029-.442.264-.309.367-.724.264-1.126C16.436 14.408 14.408 13 12.012 13c-2.41 0-4.439 1.408-4.968 3.432-.103.402 0 .817.264 1.126.25.281.618.442 1.03.442z") fill="#FFF" pid="1"
+              span.ml-2
+                b #{params[:guest]} khách
+          .checkup__price.border-1
+            .is-flex.middle-xs.between-xs
+              .is-flex.align-center
+                span.pr--6 Giá thuê #{@night} đêm
+              span = number_to_currency(@room.price_cost * @night)
+            .is-flex.middle-xs.between-xs
+              .is-relative
+                span Phí dọn dẹp
+              span = number_to_currency(@room.price_cleaning_fee)
+            .is-flex.middle-xs.between-xs
+              div
+                b Tổng tiền
+              b = number_to_currency(@room.price_cleaning_fee + @room.price_cost * @night)

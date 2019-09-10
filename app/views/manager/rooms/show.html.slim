@@ -50,7 +50,16 @@
           = @room.type_room
     #menu2.tab-pane.fade
       h3 = t ".utility"
+      - @room_utilities.each do |room_utility|
+        = room_utility.utility.name
     #menu3.tab-pane.fade
       h3 = t ".image"
       - @room.room_images.each do |img|
         = image_tag img.image.url, class: "image-detail"
+    #menu4.tab-pane.fade
+      h3 = t ".price"
+      - if @room.price.present?
+        = @room.price.cost
+        - @room.price.bills.each do |f|
+          = bill_vouchers(f)
+        = link_to "Edit Price", edit_manager_room_price_path(@room, @room.price), class: "btn btn-primary"

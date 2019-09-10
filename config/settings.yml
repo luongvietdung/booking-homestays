@@ -3,3 +3,7 @@ max_size: 5_242_880
 file_path: image/
 time_out: 30
 address_per: 10
+favorite_per: 10
+trend_per: 10
+room_per: 20
+trend_limit: 4

@@ -24,6 +24,12 @@ function previewImages() {
 }
 
 $(document).ready(function(){
+
+  $(".select2").select2({
+    placeholder: "Select option tags",
+    allowClear: true
+  });
+
   $('#room_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
@@ -45,6 +51,10 @@ $(document).ready(function(){
       }
   });
 
+  $(".preview_member").change(function() {
+    readURL(this, '#img_member_prev');
+  });
+
   $('#member_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
@@ -52,10 +62,6 @@ $(document).ready(function(){
     "columnDefs": [
       { "orderable": false, "targets": [6] },
     ]
-  });
-
-  $(".preview_member").change(function() {
-    readURL(this, '#img_member_prev');
   });
 
   $(".dropdown-btn").click( function(e) {
@@ -67,6 +73,52 @@ $(document).ready(function(){
       dropdownContent.css('display', 'block');
     }
   });
+
+  $('#new_address_modal, #editModal').on('hidden.bs.modal', function(){
+    location.reload();
+  });
+
+  $('#new-address').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      data: $(this).serialize(),
+      success: function(data) {
+        if(data.type == 'success') {
+          $('.name_address').val('');
+          toastr.success('', data.message);
+          $('.load-address').load(location.href + ' .load-address');
+        } else {
+          toastr.error('', data.message);
+        }
+      }
+    });
+    return false;
+  });
+
+  $('#edit-address').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: 'PATCH',
+      data: $(this).serialize(),
+      success: function(data) {
+        if(data.type == 'success') {
+          toastr.success('', data.message);
+          $('.load-address').load(location.href + ' .load-address');
+        } else {
+          toastr.error('', data.message);
+        }
+      }
+    });
+    return false;
+  });
+
+  $('.address-edit').click(function() {
+    $('.name_address').val($(this).data('address-name'))
+    $('#edit-address').attr('action', $(this).data('address-url'))
+  })
+
+  $('.preview-image').on("change", previewImages);
 
   $('#admin-prices').DataTable({
     scrollY: 500,
@@ -102,7 +154,4 @@ $(document).ready(function(){
   });
 
   $('[data-toggle="tooltip"]').tooltip();
-
-  $('.preview-image').on("change", previewImages);
 });
-
