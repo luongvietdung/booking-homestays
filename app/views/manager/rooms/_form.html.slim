@@ -1,6 +1,8 @@
 = form_for [:manager, @room] do |f|
   = render "shared/manager/error_messages", object: @room
   = render "#{@room.current_step}_step", f: f
+
   = f.submit "Continue", class: "create-room btn btn-outline-success" unless @room.last_step?
   = f.submit "Back", name: "back_button" ,class: "create-room btn btn-outline-success" unless @room.first_step?
-  = f.submit t(".save"), class: "create-room btn btn-primary" if @room.last_step?
+  .submit
+    = f.submit t(".save"), class: "create-room btn btn-outline-primary" if @room.last_step?

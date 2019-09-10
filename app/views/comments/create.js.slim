@@ -1,0 +1,9 @@
+|
+  $('#{ j render @comment }').appendTo("#comments_#{@room.id}");
+
+  $('#rate_#{@comment.id}').raty({
+    readOnly: true,
+    path: '/assets/'
+  });
+
+  $("#comment_content").val("");

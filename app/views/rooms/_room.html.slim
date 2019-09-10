@@ -1,0 +1,17 @@
+.card.col-md-3 style=("width: 18rem;")
+  - if member_signed_in?
+    div[id="like_#{room.id}"]
+      = render partial: "likes/like", locals: {room: room}
+  = link_to room_path(room), class: "room-image" do
+    = image_tag load_limit_image(room), class: "card-img-top image-content"
+  .card-body.promo-content
+    .card-favorite-spaces = room.favorite_space.name
+    .room-title = link_to room.name, "#", class: "trend-title"
+    .room-details
+      = room.guest
+      | #{t ".people"} #{room.bed_room} #{t ".bed_room"} #{room.bath_room} #{t ".bath_room"}
+    .room-prices
+      = number_to_currency(room.price_cost) if room.price.present?
+    .room-locations
+      = room.location_name
+      | , #{room.address}

@@ -1,3 +1,7 @@
+= image_tag "nature.jpg", style: "width: 100%"
+.banner-image
+  h1 Hello
+  p Welcome To Home Stay
 .container.favorite-space
   .title-favorite-space
     h2.extra-bold.p--giant = t(".extra-bold")
@@ -7,7 +11,8 @@
       - @favorite_spaces.each do |favorite_space|
         .item
           p
-            = image_tag "location_6"
+            = link_to favorite_space_path(favorite_space) do
+              = image_tag "location_6"
             br
           .article_content
             .article_content.bold.title-content.text-center
@@ -17,3 +22,4 @@
         i.fa.fa-arrow-left
       button.MS-right
         i.fa.fa-arrow-right
+  = render @trends

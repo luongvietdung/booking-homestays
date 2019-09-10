@@ -12,47 +12,62 @@
     li
       = link_to "#menu3", class: "nav-link", data:{toggle: "tab"} do
         = t ".image"
+    li
+      - if @room.price.present?
+        a.nav-link data-toggle="tab" href="#menu4"  = t ".price"
+      - else
+        = link_to "Add Price", new_manager_room_price_path(@room), class: "fa fa-plus btn btn-primary"
   .tab-content
     #home.tab-pane.fade.show.active
-      h3 = @room.name
-      = @room.description
+      h3 House: #{@room.name}
+      .description-show
+        h4 Description:
+        = @room.description
     #menu1.tab-pane.fade
       h3 = t ".room"
-      div.row
-        .col-md-3
-          = t ".guest"
-        .col-md-9
-          = @room.guest
-      div.row
-        .col-md-3
-          = t ".bed_room"
-        .col-md-9
-          = @room.bed_room
-      div.row
-        .col-md-3
-          = t ".bath_room"
-        .col-md-9
-          = @room.bath_room
-      div.row
-        .col-md-3
-          = t ".acreage"
-        .col-md-9
-          = @room.acreage
-      div.row
-        .col-md-3
-          = t ".address"
-        .col-md-9
-          = @room.address
-      div.row
-        .col-md-3
-          = t ".type_room"
-        .col-md-9
-          = @room.type_room
+      table.table.table-bordered#show-room-member
+        thead.thead-dark
+          tr
+            th = t ".guest"
+            th = t ".bed_room"
+            th = t ".bath_room"
+            th = t ".acreage"
+            th = t ".address"
+            th = t ".type_room"
+        tbody
+          tr [style="text-align: center;"]
+            td = @room.guest
+            td = @room.bed_room
+            td = @room.bath_room
+            td = @room.acreage
+            td = @room.address
+            td = @room.type_room
     #menu2.tab-pane.fade
       h3 = t ".utility"
       - @room_utilities.each do |room_utility|
-        = room_utility.name
+        .utiliti-show
+          = room_utility.name
     #menu3.tab-pane.fade
       h3 = t ".image"
       - @room.room_images.each do |img|
         = image_tag img.image.url, class: "image-detail"
+    #menu4.tab-pane.fade
+      h3 = t ".price"
+      - if @room.price.present?
+        table.table.table-bordered#show-room-member
+          thead.thead-dark
+            tr
+              th Cost
+              th Sale Off
+              th Action
+          tbody
+            tr [style="text-align: center;"]
+              td = @room.price.cost
+              td
+                - @room.price.bills.each do |f|
+                  .price-sticke[style="text-decoration: line-through;"]
+                    = @room.price.cost
+                  = bill_vouchers(f)
+              td
+                = link_to "Edit Price", edit_manager_room_price_path(@room, @room.price),
+                  class: "btn btn-primary"

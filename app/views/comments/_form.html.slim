@@ -1,0 +1,9 @@
+div[id="comments_#{@room.id}"]
+  h3#section-comment-title
+    b = t "view.review.new_review"
+  = form_for [@room, @comment], remote: true do |f|
+    #rating-form
+      b = t "view.review.rate"
+    = f.text_area :content
+    = f.submit "comment", class: "btn btn-success btn-md abc"
+  .tg-sectionhead

@@ -12,10 +12,14 @@ module Manager
       session[:room_params] ||= {}
       @room = Room.new(session[:room_params])
       @room.room_images.build
+      get_area_to_location
       @room.current_step = session[:room_step]
     end
 
-    def edit; end
+    def edit
+      @room.room_images.build
+      @room.current_step = session[:room_step]
+    end
 
     def show
       @room_utilities = @room.utilities
@@ -25,34 +29,38 @@ module Manager
       session[:room_params].deep_merge!(room_params) if room_params
       @room = current_admin.rooms.build session[:room_params]
       @room.current_step = session[:room_step]
-      btn_action_step @room
+      return redirect_to manager_room_path(@room), success: t(".create_room") if btn_action_step @room
+
+      if @room.last_step?
+        redirect_to new_manager_room_path
+      else
+        render :new
+      end
     end
 
     def update
-      if @room.update room_params
-        upload_images if params[:room_images]
-        redirect_to manager_room_path(@room), success: t(".update_success")
+      @room.update room_params
+      @room.current_step = session[:room_step]
+      return redirect_to manager_room_path(@room), success: t(".update_success") if btn_action_step @room
+
+      if @room.last_step?
+        redirect_to edit_manager_room_path
       else
-        render :edit, danger: t(".update_fail")
+        render :edit
       end
     end
 
     def destroy
-      if @room.destroy
-        flash[:success] = t ".deleted_success"
-      else
-        flash[:danger] = t ".deleted_fail"
-      end
-      redirect_to manager_rooms_path
+      redirect_to manager_rooms_path, success: t(".deleted_success") if @room.destroy
     end
 
     private
 
     def room_params
-      params.require(:room).permit :name, :address, :rate_point, :description,
-                                   :guest, :type_room, :acreage, :bed_room,
-                                   :bath_room, :location_id, utility_ids: [],
-                                                             room_images_attributes: %i[id room_id image _destroy]
+      params.require(:room).permit :name, :address, :rate_point, :description, :code_room,
+                                   :favorite_space_id, :guest, :type_room,
+                                   :acreage, :bed_room, :area_id, :bath_room, :location_id,
+                                   utility_ids: [], room_images_attributes: [:id, :room_id, :image, :_destroy]
     end
 
     def load_room
@@ -74,17 +82,22 @@ module Manager
           session.delete(:room_step)
           session.delete(:room_params)
           upload_images if params[:room_images]
-          redirect_to manager_room_path(room), success: t(".create_room")
-          return
+          return true
         else
           room.next_step
         end
         session[:room_step] = room.current_step
       end
-      if room.last_step?
-        redirect_to new_manager_room_path
-      else
-        render :new
+      false
+    end
+
+    def get_area_to_location
+      @areas = []
+      @areas = Location.find(params[:location]).areas if params[:location].present?
+      if request.xhr?
+        respond_to do |format|
+          format.json { render json: { areas: @areas } }
+        end
       end
     end
   end
