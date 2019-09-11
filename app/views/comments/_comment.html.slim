@@ -2,7 +2,6 @@ div[id="comment_#{comment.id}"]
   div
     b = comment.user.name
     | :
-  .review-rating [id="rate_#{comment.id}" data-score="#{comment.rate}"]
   .review-comment
     = comment.content
   .small = time_ago_in_words(comment.created_at)

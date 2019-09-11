@@ -13,6 +13,8 @@
 //= require bootstrap-datepicker
 //= require jquery.validate
 //= require jquery.validate.additional-methods
+//= require jquery.raty
+//= require ratyrate
 
 /*global toastr*/
 toastr.options = {

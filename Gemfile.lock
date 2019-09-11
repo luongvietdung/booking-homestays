@@ -249,6 +249,7 @@ GEM
       activesupport (>= 5.0)
       i18n
       polyamorous (= 2.3.0)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -386,6 +387,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.3)
   ransack
+  ratyrate
   rspec-rails (~> 3.8)
   rubocop (~> 0.74.0)
   sass-rails (~> 5.0)

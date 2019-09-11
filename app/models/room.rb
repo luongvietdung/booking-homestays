@@ -28,6 +28,7 @@ class Room < ApplicationRecord
   enum type_room: { Nhà_Riêng: 0, Căn_Hộ: 1 }
 
   accepts_nested_attributes_for :room_images, allow_destroy: true
+  ratyrate_rateable "rating_room"
 
   delegate :name, to: :area, prefix: true
   delegate :name, to: :favorite_space, prefix: true

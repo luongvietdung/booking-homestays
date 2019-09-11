@@ -25,8 +25,8 @@
         .number-code
           = t ".code_room"
             |  #{@room.code_room}
-        .average_review-rating [data-score="#{@average_comment}"]
-
+        .rating
+          = rating_for @room, "rating_room", disable_after_rate: false, enable_half: true
         .detail-location
           svg.svg-icon.svg-fill style=("width: 24px; height: 24px;") version="1.1" viewbox=("0 0 24 24")
             g fill="none" fill-rule="evenodd"

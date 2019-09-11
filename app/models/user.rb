@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates :type, presence: true
   mount_uploader :avatar, AvatarUploader
 
+  ratyrate_rater
+
   def timeout_in
     Settings.time_out.minutes
   end

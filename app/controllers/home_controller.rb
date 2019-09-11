@@ -9,6 +9,6 @@ class HomeController < ApplicationController
   def show
     @favorite_space = FavoriteSpace.find(params[:id])
     @room_favorite_space = @favorite_space.rooms
-      .includes(:price, :location, :room_images).page(params[:page]).per Settings.room_per
+                                          .includes(:price, :location, :room_images).page(params[:page]).per Settings.room_per
   end
 end

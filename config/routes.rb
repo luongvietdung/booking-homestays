@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   root "home#index"
   get "/favorite_spaces/:id", to: "home#show"
   get "/autocomplete", to: "search#show"
