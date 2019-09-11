@@ -2,13 +2,14 @@
 
 class Booking < ApplicationRecord
   belongs_to :room
-  belongs_to :voucher
+  belongs_to :voucher, optional: true
+
+  validates :checkin, :checkout, :room_id, :number_guest, :name_booking,
+            :phone_booking, :email_booking, presence: true
 
   enum status: %i[Pending Approve]
 
-  validates :checkin, :checkout, presence: true
-  validates :phone_booking, presence: true, length: { minimum: 6, maximum: 17 }
-  validates :number_guest, presence: true
+  validates :phone_booking, length: { minimum: 6, maximum: 17 }
   validates :email_booking, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
   validate :checkin_date_after_checkout_date
 

@@ -5,10 +5,11 @@
 //= require popper
 //= require toastr
 //= require datatable
-//= require manager/custom
 //= require cocoon
+//= require manager/custom
 //= require select2
 //= require mask
+//= require jquery-ui
 
 /*global toastr*/
 toastr.options = {

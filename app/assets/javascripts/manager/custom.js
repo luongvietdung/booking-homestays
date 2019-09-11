@@ -24,6 +24,12 @@ function previewImages() {
 }
 
 $(document).ready(function(){
+
+  $(".select2").select2({
+    placeholder: "Select option tags",
+    allowClear: true
+  });
+
   $('#room_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
@@ -45,6 +51,10 @@ $(document).ready(function(){
       }
   });
 
+  $(".preview_member").change(function() {
+    readURL(this, '#img_member_prev');
+  });
+
   $('#member_table').DataTable({
     scrollY: 500,
     "pageLength": 25,
@@ -52,10 +62,6 @@ $(document).ready(function(){
     "columnDefs": [
       { "orderable": false, "targets": [6] },
     ]
-  });
-
-  $(".preview_member").change(function() {
-    readURL(this, '#img_member_prev');
   });
 
   $(".dropdown-btn").click( function(e) {
@@ -67,6 +73,50 @@ $(document).ready(function(){
       dropdownContent.css('display', 'block');
     }
   });
+
+  $('#new_address_modal, #editModal').on('hidden.bs.modal', function(){
+    location.reload();
+  });
+
+  $('#new-address').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      data: $(this).serialize(),
+      success: function(data) {
+        if(data.type == 'success') {
+          $('.name_address').val('');
+          toastr.success('', data.message);
+          $('.load-address').load(location.href + ' .load-address');
+        } else {
+          toastr.error('', data.message);
+        }
+      }
+    });
+    return false;
+  });
+
+  $('#edit-address').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: 'PATCH',
+      data: $(this).serialize(),
+      success: function(data) {
+        if(data.type == 'success') {
+          toastr.success('', data.message);
+          $('.load-address').load(location.href + ' .load-address');
+        } else {
+          toastr.error('', data.message);
+        }
+      }
+    });
+    return false;
+  });
+
+  $('.address-edit').click(function() {
+    $('.name_address').val($(this).data('address-name'))
+    $('#edit-address').attr('action', $(this).data('address-url'))
+  })
 
   $('#admin-prices').DataTable({
     scrollY: 500,
@@ -102,6 +152,7 @@ $(document).ready(function(){
   });
 
   $('[data-toggle="tooltip"]').tooltip();
+
   $('.preview-image').on("change", previewImages);
 
   $(".select2").select2({
@@ -118,3 +169,25 @@ $(document).ready(function(){
   });
 });
 
+$(document).on("change", "#location select", function(){
+  var location = $(this).val();
+  $.ajax({
+    url: "new",
+    method: "GET",
+    dataType: "json",
+    data: {location: location},
+    error: function (xhr, status, error) {
+      console.error('AJAX Error: ' + status + error);
+    },
+    success: function (response) {
+      console.log(response);
+      var areas = response["areas"];
+      $("#area select").empty();
+
+      $("#area select").append('<option>Select Area</option>');
+      for(var i=0; i< areas.length; i++)  {
+        $("#area select").append('<option value="' + areas[i]["id"] + '">' + areas[i]["name"] + '</option>');
+      }
+    }
+  });
+});

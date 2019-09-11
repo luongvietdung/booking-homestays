@@ -1,5 +1,7 @@
 en:
   please_choose_one: please choose one
+  select_are: Select Area
+  select_location: Select Location
   sure: "Are you sure?"
   layouts:
     header:
@@ -9,6 +11,7 @@ en:
       setting: "Settings"
     manager:
       title: "Booking Homestays"
+
   messages:
     success:
       admins:
@@ -38,7 +41,7 @@ en:
         delete: "Delete"
       show:
         description: Description
-        room: Rooms
+        detail: Details
         utility: Utilities
         image: Images
         guest: Guest
@@ -60,7 +63,6 @@ en:
         admin_manager: Admin Manager
         dashboard: Dashboard
         manager: Manager
-        location: Locations
         room: Rooms
         list: List Rooms
         create_room: Create Rooms
@@ -69,6 +71,11 @@ en:
         manager_member: "Manager members"
         user: "User"
         booking: "Manager bookings"
+        favorite_space: "Manager Favorite Spaces"
+        prices: "Manager Prices & Vouchers"
+        manager_admin: "Manager admins"
+        manager_member: "Manager members"
+        utility: "Manager Utilities"
       top:
         logout: "Logout"
         settings: "Settings"
@@ -84,13 +91,13 @@ en:
       simple_des: "Save card information in My Cards, much safer and convenient for the next payment."
       promo_title: "New promotions every day"
       promo_des: "Update promotions from Booking and choose great accommodation at your budget."
-  hello: "Hello world"
   sessions:
     new_form:
       login_btn: "Log in"
       forgot_link: "Forgot your password?"
       signup_link: "Sign Up"
       resend_mail: "Resend confirmation mail?"
+
   registrations:
     new_form:
       title: "Sign Up"
@@ -108,6 +115,19 @@ en:
       update: "Update"
       back: "Back"
       wait_confirm: "Currently waiting confirmation for: %{unconfirm}"
+
+    show:
+      description: Description
+      detail: Details
+      utility: Utilities
+      image: Images
+      guest: Guest
+      bed_room: Bed Rooms
+      bath_room: Bath Rooms
+      acreage: Acreage
+      address: Address
+      type_room: Type Rooms
+
   passwords:
     new_form:
       title: "Forgot Your Password?"
@@ -196,4 +216,74 @@ en:
               not_valid: "wrong format or size is too big"
               format: "wrong format"
               size: "is too big"
-        favorite_space: "Manager Favorite Spaces"
+        prices: "Manager Prices & Vouchers"
+        favorite-space: "Manager Favorite Spaces"
+  rooms:
+    form:
+      save: Save
+    create:
+      create_room: Create Room Successful
+    destroy:
+      del_success: Delete successful
+      del_fail: Delete failed
+
+  trends:
+    show:
+      present: "Hiện có"
+      allow: "chỗ ở cho phép"
+      booking: "đặt phòng nhanh"
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"
+  rooms:
+    room:
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"
+  home:
+    show:
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"
+  bookings:
+    create:
+      danger: "Booking has problem!"
+    new:
+      warning: "The page you requested cannot be active at this time!"
+  rooms:
+    show:
+      code_room: Mã chỗ ở
+      country: "Vietname"
+      map: "Xem bản đồ"
+      bed_room: "phòng ngủ ·"
+      bath_room: "phòng tắm ·"
+      guest: "khách"
+      room_details: "Chi tiết về phòng"
+      title_utility: "Tiện nghi chỗ ở"
+      paragraph: "Giới thiệu về các tiện nghi và dịch vụ tại nơi lưu trú"
+      room_price: "Giá phòng"
+      price_voucher: "Giá có thể tăng vào cuối tuần hoặc ngày lễ"
+      date: "Thứ hai - Thứ năm"
+      date_room: "Thứ sáu - Chủ nhật"
+      cleaning: "Phí dọn dẹp(nếu có)"
+      number_bed: "Số đêm tối thiểu"
+      min_bed: "1 đêm"
+      same_room: "Chỗ ở tương tự"
+      people: "người"
+      bed: "phòng ngủ"
+      bath: "phòng tắm"
+      nigth: "/đêm"
+      sale: "Giảm 30% từ chủ nhà"
+      checkin: "Ngày đến"
+      checkout: "Ngày đi"
+      clear: "Phí dọn dẹp"
+      sum_price: "Tổng tiền"
+      btn: "Đặt ngay"
+      joining: "Tham gia"
+      call: "Gọi"
+      sdt: "18006586 (miễn phí)"
+      supplier: "để được hỗ trợ 24/7"
+    room:
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"

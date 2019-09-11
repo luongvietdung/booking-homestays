@@ -29,7 +29,10 @@ gem "mini_magick", "~> 4.3"
 gem "select2-rails"
 gem "ransack"
 gem "jquery-ui-rails"
-gem "country_select"
+gem "bootstrap-datepicker-rails", "~> 1.8", ">= 1.8.0.1"
+gem "country_select", "~> 4.0"
+gem "jquery-validation-rails"
+gem "ratyrate"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

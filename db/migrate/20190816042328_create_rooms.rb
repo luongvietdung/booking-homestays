@@ -12,6 +12,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
       t.decimal :acreage
       t.integer :bed_room
       t.integer :bath_room
+      t.integer :code_room
 
       t.timestamps
     end

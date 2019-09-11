@@ -5,7 +5,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.references :voucher, foreign_key: true
       t.datetime :checkin
       t.datetime :checkout
-      t.integer :status, null: false, dafault: 0
+      t.integer :status, dafault: 0
       t.integer :number_guest
       t.string :name_booking
       t.string :phone_booking
