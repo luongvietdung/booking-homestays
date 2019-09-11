@@ -15,8 +15,8 @@ class RoomsController < ApplicationController
     @rooms = []
     @room = Room.find params[:id]
     user = @room.user
-    rooms = user.rooms.map(&:id).reject{|r| r == @room.id}
-    rooms.each{|rooms| @rooms << Room.find(rooms)}
+    rooms = user.rooms.map(&:id).reject { |r| r == @room.id }
+    rooms.each { |rooms| @rooms << Room.find(rooms) }
     @comment = @room.comments.build
     @comments = @room.comments.newest
     @average_comment = @room.comments.average(:rate) if @room.comments.present?

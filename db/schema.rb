@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 2019_09_09_044921) do
     t.text "request"
     t.time "intend_time"
     t.decimal "total_price", precision: 10
+    t.string "booking_digest"
+    t.datetime "booking_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "notification_params"

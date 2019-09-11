@@ -2,4 +2,4 @@
   h2.extra-bold.p--giant= link_to trend.name, trend_path(trend), class: "trend-title"
   p = trend.description
 .row
-  = render trend.rooms.limit Settings.trend_limit
+  = render trend.rooms.includes(:trend_rooms, :room_images, :location, :price, :likes, :favorite_space).limit Settings.trend_limit

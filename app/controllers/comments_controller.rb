@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :load_room, only: %i(create destroy)
+  before_action :load_room, only: %i[create destroy]
   before_action :load_comment, only: :destroy
 
   def create
@@ -19,7 +21,7 @@ class CommentsController < ApplicationController
     if @comment.destroy
       respond_to do |format|
         format.html { redirect_to request.referrer }
-        format.js { }
+        format.js {}
       end
     else
       flash[:danger] = t "controller.reviews.delete_review_fail"

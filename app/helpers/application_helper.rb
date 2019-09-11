@@ -22,12 +22,13 @@ module ApplicationHelper
     end
   end
 
-  def format_time time
+  def format_time(time)
     time.strftime("%m/%d/%Y")
   end
 
-  def load_limit_image object
+  def load_limit_image(object)
     return object.room_images.limit(1)[0].image.url if object.room_images.present?
+
     "location_2.png"
   end
 end

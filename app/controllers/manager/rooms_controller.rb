@@ -60,7 +60,7 @@ module Manager
       params.require(:room).permit :name, :address, :rate_point, :description, :code_room,
                                    :favorite_space_id, :guest, :type_room,
                                    :acreage, :bed_room, :area_id, :bath_room, :location_id,
-                                   utility_ids: [], room_images_attributes: [:id, :room_id, :image, :_destroy]
+                                   utility_ids: [], room_images_attributes: %i[id room_id image _destroy]
     end
 
     def load_room

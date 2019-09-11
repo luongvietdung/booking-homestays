@@ -19,9 +19,15 @@ en:
     failed:
       admins:
         create: "Create failed!"
+      mailpayment:
+        sent_mail: "Not find booking!"
+        paymented: "Booking paymented!"
+        token: "Token not true!"
+        expire: "Payment expired"
     notice:
       mailpayment:
         sent_mail: "Sent a mail to %{email}"
+
   manager:
     rooms:
       create_room: "Thank you to create room"
@@ -167,6 +173,7 @@ en:
       room_name: "Room Name:"
       cost: "Cost:"
       sale: "Sale:"
+      clean: "Clean fee:"
       total_price: "Total price:"
       checkin: "Check in:"
       checkout: "Check out:"
@@ -184,6 +191,7 @@ en:
       room_name: "Room name:"
       price: "Price:"
       sale: "Sale:"
+      clean: "Clean fee:"
       total_price: "Total price:"
       checkin: "Check in:"
       checkout: "Check out:"

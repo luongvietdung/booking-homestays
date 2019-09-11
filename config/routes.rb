@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/favorite_spaces/:id", to: "home#show"
   get "/autocomplete", to: "search#show"
   post "/mailpayment/:id", to: "mailpayment#create", as: :mailpayment
+  get "/paypal/:id", to: "mailpayment#edit", as: :check_payment
   post "/payment_update", to: "payment_booking#create", as: :payment_bookings
   get "/payment_booking/:id", to: "payment_booking#show", as: :payment_booking
   get "/payment_booking", to: "payment_booking#index", as: :thank_payment

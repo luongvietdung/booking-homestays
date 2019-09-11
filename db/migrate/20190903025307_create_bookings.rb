@@ -18,6 +18,8 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.text :request
       t.time :intend_time
       t.decimal :total_price
+      t.string :booking_digest
+      t.datetime :booking_sent_at
 
       t.timestamps
     end
