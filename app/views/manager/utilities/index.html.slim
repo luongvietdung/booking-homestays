@@ -4,7 +4,7 @@
     .card
       .card-header
         h4.card-title
-          = link_to t(".new"), new_manager_favorite_space_path, class: "btn btn-primary btn-xs right"
+          = link_to t(".new_location"), new_manager_utility_path, class: "btn btn-primary btn-xs right"
       .card-body
         table.table.table-hover.table-striped
           thead
@@ -12,5 +12,5 @@
             th= t ".name"
             th= t ".action"
           tbody
-            = render @favorite_spaces
-        = paginate @favorite_spaces, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"
+            = render @utilities
+        = paginate @utilities, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"

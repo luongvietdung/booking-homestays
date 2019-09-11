@@ -19,7 +19,7 @@ class RoomsController < ApplicationController
     rooms.each{|rooms| @rooms << Room.find(rooms)}
     @comment = @room.comments.build
     @comments = @room.comments.newest
-    @average_comment = @room.comments.average(:rate).round(2) if @room.comments.present?
+    @average_comment = @room.comments.average(:rate) if @room.comments.present?
   end
 
   def create

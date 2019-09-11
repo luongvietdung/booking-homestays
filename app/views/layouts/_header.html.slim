@@ -13,7 +13,7 @@ nav.custom-nav
           = link_to("#") do
             span
               = image_tag current_member.avatar.url, class: "custom-avatar-drop"
-              = truncate(current_member.name, length: 10)
+              = current_member.name
           #hidden-dropdown
             = link_to "Profile", index_profile_path(current_member)
             = link_to "Wish List", wishlist_path

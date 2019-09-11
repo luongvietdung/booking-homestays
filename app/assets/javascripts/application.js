@@ -9,9 +9,10 @@
 //= require jquery-ui
 //= require custom
 //= require cocoon
-//= require bootstrap-datepicker
-//= require intlTelInput
 //= require jquery.raty
+//= require bootstrap-datepicker
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 
 /*global toastr*/
 toastr.options = {

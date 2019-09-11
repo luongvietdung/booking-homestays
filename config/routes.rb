@@ -25,9 +25,7 @@ Rails.application.routes.draw do
 
   resources :favorite_spaces, only: [:show]
   resources :search, only: :index
-  resources :autocomplete, only: :index
   resources :trends
-  resources :rooms
   resources :bookings
 
   namespace :manager do
@@ -41,16 +39,12 @@ Rails.application.routes.draw do
     resources :admins
     resources :members
     resources :bookings
-
     resources :locations do
       resources :areas, except: %i[destroy edit update]
     end
 
-    resources :trends do
-      patch :convert_status, on: :member
-    end
-
-    resources :addresses, except: %i[new create]
+    resources :areas
+    resources :trends
     resources :utilities
   end
 end

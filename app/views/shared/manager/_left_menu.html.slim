@@ -15,13 +15,12 @@ ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordio
       i.fa.fa-map-marker
       span = t ".location"
   li.nav-item
-    = link_to manager_favorite_spaces_path, class: "nav-link collapsed" do
-      i.fa.fa-star
-      span = t ".favorite_space"
-  li.nav-item
     = link_to manager_bookings_path, class: "nav-link collapsed" do
       i.fa.fa-book
       span = t ".booking"
+    = link_to manager_utilities_path, class: "nav-link collapsed" do
+      i.fa.fa-grav
+      span = t ".utility"
   li.nav-item
     = link_to manager_favorite_spaces_path, class: "nav-link collapsed" do
       i.fa.fa-thumbs-o-up

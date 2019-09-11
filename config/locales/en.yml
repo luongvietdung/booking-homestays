@@ -75,6 +75,7 @@ en:
         prices: "Manager Prices & Vouchers"
         manager_admin: "Manager admins"
         manager_member: "Manager members"
+        utility: "Manager Utilities"
       top:
         logout: "Logout"
         settings: "Settings"
@@ -90,7 +91,6 @@ en:
       simple_des: "Save card information in My Cards, much safer and convenient for the next payment."
       promo_title: "New promotions every day"
       promo_des: "Update promotions from Booking and choose great accommodation at your budget."
-
   sessions:
     new_form:
       login_btn: "Log in"
@@ -283,3 +283,7 @@ en:
       call: "Gọi"
       sdt: "18006586 (miễn phí)"
       supplier: "để được hỗ trợ 24/7"
+    room:
+      people: "người -"
+      bed_room: "phòng ngủ -"
+      bath_room: "phòng tắm"

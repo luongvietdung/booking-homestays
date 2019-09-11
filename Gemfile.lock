@@ -155,9 +155,6 @@ GEM
     image_processing (1.9.3)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.13, < 3)
-    intl-tel-input-rails (12.3.0)
-      railties (>= 3.1)
-      sass-rails
     io-like (0.3.0)
     jaro_winkler (1.5.3)
     jbuilder (2.9.1)
@@ -168,7 +165,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    json (2.2.0)
+    jquery-validation-rails (1.19.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -255,8 +252,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    recaptcha (5.1.0)
-      json
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -379,10 +374,10 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
-  intl-tel-input-rails (~> 12.3)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
+  jquery-validation-rails
   kaminari (~> 1.1, >= 1.1.1)
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.3)
@@ -391,7 +386,6 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.3)
   ransack
-  recaptcha (~> 5.1)
   rspec-rails (~> 3.8)
   rubocop (~> 0.74.0)
   sass-rails (~> 5.0)

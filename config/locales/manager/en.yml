@@ -74,6 +74,10 @@ en:
       create:
         success: "Create area successfully!"
         error: "Create area has problem!"
+    utilities:
+      create:
+        success: "Create utility successfully!"
+        error: "Create utility has problem!"
       edit:
         title: "Edit Areas"
         name: "Name"
@@ -97,6 +101,28 @@ en:
       address:
         delete: "Delete"
         sure: "Are you sure?"
+        success: "Update utility successfully!"
+        danger: "Update utility has problem!"
+      destroy:
+        success: "Destroy utility successfully!"
+        danger: "Destroy utility has problem!"
+      index:
+        new_location: "New Utilities"
+        title: "Utilities"
+        key: "#"
+        name: "Name"
+        action: "Action"
+      utility:
+        delete: "Delete"
+        sure: "Are you sure?"
+      new:
+        title: "New Utilities"
+        add: "New Utilities"
+      edit:
+        title: "Edit Utilities"
+      form:
+        name: "Name"
+        submit: "Save Changes"
     areas:
       create:
         success: "Create area successfully!"

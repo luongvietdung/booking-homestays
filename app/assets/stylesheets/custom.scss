@@ -2,7 +2,6 @@
 @import "toastr";
 @import 'font-awesome';
 @import 'bootstrap-datepicker';
-@import 'intlTelInput';
 @import 'jquery-ui';
 
 /* ----------------------------
@@ -568,6 +567,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   margin-left: -.5rem;
   margin-right: -.5rem;
+  margin-top: 2rem;
 }
 
 @media (min-width: 992px) {
@@ -1122,6 +1122,19 @@ p.p--big-2 {
   color: #fff;
 }
 
+.btn-code {
+  width: 20%;
+  box-shadow: 0 4px 12px 0 rgba(246,116,57,.4);
+  background-image: linear-gradient(90deg,#f65e38 0,#f68a39 51%,#f65e38);
+  background-size: 200% auto;
+  text-align: center;
+  padding: 0 1.875rem;
+  height: 3rem;
+  line-height: 3rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
 .input-group__label {
   position: relative;
   width: 100%;
@@ -1245,7 +1258,7 @@ h3 {
   width: 100%;
 }
 
-#phone {
+#phoneNumber {
   background-color: rgba(0,0,0,.07);
   margin-top: 1rem;
   border-radius: 5px;
@@ -2152,7 +2165,7 @@ ul.ui-autocomplete {
   height: 100vh;
 }
 
-#booking_country {
+#booking_country_code {
   width: 100%;
   display: block;
   background-color: rgba(0,0,0,.07);
@@ -2181,6 +2194,10 @@ ul.ui-autocomplete {
   flex: 1;
 }
 
+.checkup__header {
+  padding: 20px;
+}
+
 .checkup__title {
   margin-bottom: .5rem;
   line-height: 1.5rem;
@@ -2205,7 +2222,6 @@ h4 {
   color: inherit;
   vertical-align: middle;
   fill: none;
-  stroke: currentColor;
 }
 
 .checkup__add span {
@@ -2248,6 +2264,29 @@ h4 {
 /******Show all rooms*******/
 .carousel-item {
   width: 100px;
+}
+
+.checkup_bottom {
+  margin-bottom: 10px;
+}
+
+.icon--24 {
+  width: 24px;
+  height: 24px;
+}
+.border-1 {
+  margin-top: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.error {
+  color: red;
+  width: 100%;
+}
+
+/******Show all rooms*******/
+.carousel-item {
+  width: 100%;
   height: auto;
 }
 
@@ -2397,6 +2436,22 @@ h4 {
 }
 
 /*******kaminari*******/
+.checkup__body {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 1.475rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  padding: 1.5rem;
+  font-size: .875rem;
+  padding-top: 1.475rem;
+}
+
+#code_promotion {
+  width: 100%;
+}
+
+/*******kaminari*******/
+
 .room_paginate {
   margin: 0 auto;
   margin-top: 28px;
@@ -2408,4 +2463,12 @@ h4 {
 
 #comment_content {
   width: 100%;
+}
+
+.error_code {
+  width: 100%;
+}
+
+.event_disable {
+  opacity: 0.6;
 }

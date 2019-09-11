@@ -3,7 +3,7 @@
 class HomeController < ApplicationController
   def index
     @favorite_spaces = FavoriteSpace.newest
-    @trends = Trend.newest
+    @trends = Trend.includes(:rooms, :trend_rooms).newest
   end
 
   def show

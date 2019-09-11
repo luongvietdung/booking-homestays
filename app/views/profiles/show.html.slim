@@ -43,7 +43,8 @@
     #menu2.tab-pane.fade
       h3 = t ".utility"
       - @room_utilities.each do |room_utility|
-        = room_utility.name
+        .utiliti-show
+          = room_utility.name
     #menu3.tab-pane.fade
       h3 = t ".image"
       - @room.room_images.each do |img|
@@ -51,7 +52,20 @@
     #menu4.tab-pane.fade
       h3 = t ".price"
       - if @room.price.present?
-        = @room.price.cost
-        - @room.price.bills.each do |f|
-          = bill_vouchers(f)
-        = link_to "Edit Price", edit_room_price_path(@room, @room.price), class: "btn btn-primary"
+        table.table.table-bordered#show-room-member
+          thead.thead-dark
+            tr
+              th Cost
+              th Sale Off
+              th Action
+          tbody
+            tr [style="text-align: center;"]
+              td = @room.price.cost
+              td
+                - @room.price.bills.each do |f|
+                  .price-sticke[style="text-decoration: line-through;"]
+                    = @room.price.cost
+                  = bill_vouchers(f)
+              td
+                = link_to "Edit Price", edit_manager_room_price_path(@room, @room.price),
+                  class: "btn btn-primary"

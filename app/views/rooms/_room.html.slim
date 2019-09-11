@@ -6,7 +6,7 @@
     = image_tag load_limit_image(room), class: "card-img-top image-content"
   .card-body.promo-content
     .card-favorite-spaces = room.favorite_space.name
-    .room-title = link_to room.name, "#", class: "trend-title"
+    .room-title = link_to room.name, room_path(room), class: "trend-title"
     .room-details
       = room.guest
       | #{t ".people"} #{room.bed_room} #{t ".bed_room"} #{room.bath_room} #{t ".bath_room"}

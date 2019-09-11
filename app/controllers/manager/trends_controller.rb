@@ -41,17 +41,6 @@ module Manager
       end
     end
 
-    def convert_status
-      respond_to do |format|
-        @trend.status = @trend.active? ? :inactive : :active
-        if @trend.save
-          format.js { flash.now[:success] = t ".success" }
-        else
-          format.js { flash.now[:danger] = t ".danger" }
-        end
-      end
-    end
-
     private
 
     def trend_params

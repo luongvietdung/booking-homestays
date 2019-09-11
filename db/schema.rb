@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_044921) do
     t.bigint "voucher_id"
     t.datetime "checkin"
     t.datetime "checkout"
-    t.integer "status", null: false
+    t.integer "status"
     t.integer "number_guest"
     t.string "name_booking"
     t.string "phone_booking"
@@ -100,14 +100,6 @@ ActiveRecord::Schema.define(version: 2019_09_09_044921) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "room_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_images_on_room_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -195,7 +187,6 @@ ActiveRecord::Schema.define(version: 2019_09_09_044921) do
   create_table "trends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -243,7 +234,6 @@ ActiveRecord::Schema.define(version: 2019_09_09_044921) do
   add_foreign_key "bookings", "vouchers"
   add_foreign_key "comments", "rooms"
   add_foreign_key "comments", "users"
-  add_foreign_key "images", "rooms"
   add_foreign_key "likes", "rooms"
   add_foreign_key "likes", "users"
   add_foreign_key "location_favorites", "favorite_spaces"

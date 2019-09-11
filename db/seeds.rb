@@ -86,8 +86,7 @@ end
 
 3.times do |n|
   Trend.create!(name: Faker::Lorem.sentence,
-    description: Faker::Lorem.paragraph,
-    status: 0)
+    description: Faker::Lorem.paragraph)
 end
 
 20.times do |n|
@@ -102,10 +101,6 @@ end
 20.times do |n|
   RoomUtility.create!(room_id: Room.all.sample.id,
     utility_id: Utility.all.sample.id)
-end
-
-["Wifi","May Giat", "Tu Lanh", "Ho Boi", "Dieu Hoa"].each do |utility|
-  Utility.create! name: utility
 end
 
 10.times do |voucher|
@@ -133,4 +128,8 @@ end
                   request: request,
                   voucher_id: voucher_id,
                   total_price: total_price)
+end
+
+30.times do |n|
+  Bill.create!(voucher_id: Voucher.all.sample.id, price_id: Price.all.sample.id)
 end
