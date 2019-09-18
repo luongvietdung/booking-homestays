@@ -6,8 +6,8 @@ class User < ApplicationRecord
   devise :registerable, :database_authenticatable, :recoverable, :rememberable,
          :validatable, :timeoutable
   has_many :rooms
-  has_many :bookings, dependent: :destroy
-
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   validates :name, presence: true, length: { in: 8..45 }
   validates :address, presence: true, length: { maximum: 255 }
   validates :type, presence: true

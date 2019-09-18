@@ -1,26 +1,20 @@
-.banner-room-details
-  = image_tag "banner_showroom_detail", class: "image-banner"
 .container
+  .info-rooms
+    | #{t ".present"} #{@favorite_space.rooms.size} #{t ".allow"} #{link_to t(".booking"), "#"}
   .row
-    .col-12
-      .icon
-        = image_tag "house", class: "icon-favorite"
-        p.text-secondary.font-weight-bold.text-title
-          = t ".available_room", total_count: "#{ @favorite_space.rooms.count }"
-  .row.main-content style="margin-top: 10px"
-    - @room_favorite_space.each do |f|
-      .col-md-3
-        .card.mb-2
-          img.card-img-top = image_tag "location_8.png"
-          .card-body.body-room.custom-size
-            h6.card-title.text-center = f.name
-            .card-text
-              p.small
-                = t ".description_room", guest: "#{ f.guest }",
-                  bed_room: "#{ f.bed_room }", bath_room: "#{ f.bath_room }"
-            .card-text
-              p.small.bold.text-center = number_to_currency(f.price.cost)
-            .card-text
-              p.small.text-center = f.location.name
-  .custom-paginate
-    = paginate @room_favorite_space, theme: "twitter-bootstrap-4"
+    - @room_favorite_space.each do |room|
+      .card.col-md-3 style=("width: 18rem;")
+        = link_to room_path(room), class: "room-image" do
+          = image_tag load_limit_image(room), class: "card-img-top image-content"
+        .card-body.promo-content
+          .card-favorite-spaces = room.favorite_space.name
+          .room-title = link_to room.name, room_path(room), class: "trend-title"
+          .room-details
+            = room.guest
+            |  #{t ".people"} #{room.bed_room} #{t ".bed_room"} #{room.bath_room} #{t ".bath_room"}
+          .room-prices = number_to_currency(room.price_cost) if room.price.present?
+          .room-locations
+            = room.location_name
+            | , #{room.address}
+    .room_paginate
+      = paginate @room_favorite_space, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm"

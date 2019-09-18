@@ -27,12 +27,19 @@ table.body border="0" cellpadding="0" cellspacing="0" role="presentation"
                         = t ".price"
                       .col-7
                         = number_to_currency(@room.price.cost)
+                    - if @booking.voucher_id.present?
+                      .row
+                        .col-2
+                        .col-3 style="font-weight: bold;"
+                          = t ".sale"
+                        .col-7
+                          = number_to_percentage(@booking.voucher.sale, precision: 0)
                     .row
                       .col-2
                       .col-3 style="font-weight: bold;"
-                        = t ".sale"
+                        = t ".clean"
                       .col-7
-                        = number_to_percentage(@booking.voucher.sale, precision: 0)
+                        = number_to_currency(@room.price.cleaning_fee)
                     .row
                       .col-2
                       .col-3 style="font-weight: bold;"

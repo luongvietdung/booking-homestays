@@ -61,15 +61,68 @@ en:
       update:
         success: "Update location successfully!"
         danger: "Update location has problem!"
+      area:
+        delete: "Delete"
+        sure: "Are you sure?"
       new_area:
         save: "Save Changes"
         name: "Enter name..."
         new: "New Areas"
         btn: "×"
         close: "Close"
-      area:
+    areas:
+      create:
+        success: "Create area successfully!"
+        error: "Create area has problem!"
+    utilities:
+      create:
+        success: "Create utility successfully!"
+        error: "Create utility has problem!"
+      edit:
+        title: "Edit Areas"
+        name: "Name"
+        address: "Address"
+        new_address: "New Address"
+        key: "#"
+        action: "Action"
+        save: "Save Changes"
+      update:
+        success: "Update area successfully!"
+        danger: "Update area has problem!"
+      destroy:
+        success: "Destroy area successfully!"
+        danger: "Destroy area has problem!"
+      new_address:
+        save: "Save Changes"
+        enter_name: "Enter address..."
+        new: "New Address"
+        close: "Close"
+        btn: "×"
+      address:
         delete: "Delete"
         sure: "Are you sure?"
+        success: "Update utility successfully!"
+        danger: "Update utility has problem!"
+      destroy:
+        success: "Destroy utility successfully!"
+        danger: "Destroy utility has problem!"
+      index:
+        new_location: "New Utilities"
+        title: "Utilities"
+        key: "#"
+        name: "Name"
+        action: "Action"
+      utility:
+        delete: "Delete"
+        sure: "Are you sure?"
+      new:
+        title: "New Utilities"
+        add: "New Utilities"
+      edit:
+        title: "Edit Utilities"
+      form:
+        name: "Name"
+        submit: "Save Changes"
     areas:
       create:
         success: "Create area successfully!"
@@ -100,6 +153,15 @@ en:
         edit: "Edit Address"
         save: "Save Changes"
         close: "Close"
+      index:
+        create: "Create"
+        all_admin: "All admins"
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        address: "Address"
+        type: "Type"
+        action: "Action"
     addresses:
       create:
         success: "Create address successfully!"
@@ -202,10 +264,6 @@ en:
       edit:
         update: "Update"
         edit_member: "Edit Member"
-    addresses:
-      create:
-        success: "Create address successfully!"
-        danger: "Create address has problem!"
     passwords:
       new:
         title: "Forgot Your Password?"
@@ -275,6 +333,44 @@ en:
       booking:
         send_email: "Send Email"
         destroy: "Destroy"
+        type: "Type"
+        action: "Action"
+        create: "Create"
+        new_member: "New Member"
+    trends:
+      form:
+        name: "Name"
+        description: "Description"
+        submit: "Save Changes"
+        trend_room: "Trend Rooms"
+        status: "Status"
+      new:
+        title: "New Trends"
+      edit:
+        title: "New Trends"
+      create:
+        success: "Create trend successfully!"
+        danger: "Create trend has problem!"
+      trend:
+        delete: "Delete"
+        sure: "Are you sure?"
+      index:
+        title: "Trends"
+        new_trend: "New Trends"
+        key: "#"
+        name: "Name"
+        description: "Description"
+        status: "Status"
+        action: "Action"
+      update:
+        success: "Update trend successfully!"
+        danger: "Update trend has problem!"
+      destroy:
+        success: "Destroy trend successfully!"
+        danger: "Destroy trend has problem!"
+      convert_status:
+        success: "Convert status successfully!"
+        danger: "Convert status has problem!"
   messages:
     success:
       admins:

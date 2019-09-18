@@ -7,3 +7,6 @@ favorite_per: 10
 default_email: bookinghomestay@example.com
 COMPLETE: Completed
 thank_path: /payment_booking
+trend_per: 10
+room_per: 20
+trend_limit: 4

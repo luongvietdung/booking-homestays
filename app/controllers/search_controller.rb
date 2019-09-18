@@ -11,7 +11,7 @@ class SearchController < ApplicationController
 
   def show
     @items = @location + @area + @room
-    render json: @items
+    render json: @items.sort
   end
 
   private

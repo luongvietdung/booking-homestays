@@ -27,12 +27,19 @@ table.body border="0" cellpadding="0" cellspacing="0" role="presentation"
                         = t ".cost"
                       .col-7
                         = number_to_currency(@room.price.cost)
+                    - if @booking.voucher_id.present?
+                      .row
+                        .col-2
+                        .col-3 style="font-weight: bold;"
+                          = t ".sale"
+                        .col-7
+                          = number_to_percentage(@booking.voucher.sale, precision: 0)
                     .row
                       .col-2
                       .col-3 style="font-weight: bold;"
-                        = t ".sale"
+                        = t ".clean"
                       .col-7
-                        = number_to_percentage(@booking.voucher.sale, precision: 0)
+                        = number_to_currency(@room.price.cleaning_fee)
                     .row
                       .col-2
                       .col-3 style="font-weight: bold;"
@@ -74,7 +81,7 @@ table.body border="0" cellpadding="0" cellspacing="0" role="presentation"
                     p = t ".end_mail"
           /! END MAIN CONTENT AREA
         = link_to t(".payment_now"),
-          @booking.paypal_url(payment_booking_url(@booking)),
+          check_payment_url(id: @booking.booking_digest, booking: @booking.id),
           class: "btn btn-primary", style: "text-decoration: none;"
         /! END CENTERED WHITE CONTAINER
         /! START FOOTER

@@ -11,6 +11,12 @@ Member.create!(email: "member@gmail.com",
               address: "Member page!",
               confirmed_at: Time.now)
 
+Member.create!(email: "member2@gmail.com",
+              name: "MemberBot2",
+              password: "123123",
+              address: "Member page!",
+              confirmed_at: Time.now)
+
 50.times do |n|
   name = Faker::Name.name
   email = "admin#{n+1}@example.com"
@@ -48,12 +54,6 @@ end
   FavoriteSpace.create! name: favorite_space
 end
 
-20.times do |price|
-  price = rand(1..5000)
-  Price.create!(cost: price,
-                cleaning_fee: price)
-end
-
 100.times do |n|
   name = Faker::Company.name.upcase
   area_id = Area.all.sample.id
@@ -66,7 +66,6 @@ end
   acreage = 100
   bed_room = rand(1..15)
   bath_room = rand(1..6)
-  price = Price.all.sample.id
   Room.create!(name: name,
     user_id: user_id,
     area_id: area_id,
@@ -77,12 +76,31 @@ end
     guest: guest,
     acreage: acreage,
     bed_room: bed_room,
-    bath_room: bath_room,
-    price_id: price)
+    bath_room: bath_room)
 end
 
-["Wifi","May Giat", "Tu Lanh", "Ho Boi", "Dieu Hoa"].each do |utility|
+Room.ids.each do |ids|
+  price = rand(1..5000)
+  Price.create!(cost: price, cleaning_fee: price, room_id: ids)
+end
+
+3.times do |n|
+  Trend.create!(name: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph)
+end
+
+20.times do |n|
+  TrendRoom.create!(trend_id: Trend.all.sample.id,
+    room_id: Room.all.sample.id)
+end
+
+["wifi", "TiVi", "Tủ Lạnh", "Máy Giặt", "Hồ Bơi", "Lò Vi Sóng", "Câu Cá", "BBQ", "Cho Thú Cưng"].each do |utility|
   Utility.create! name: utility
+end
+
+20.times do |n|
+  RoomUtility.create!(room_id: Room.all.sample.id,
+    utility_id: Utility.all.sample.id)
 end
 
 10.times do |voucher|
@@ -110,4 +128,8 @@ end
                   request: request,
                   voucher_id: voucher_id,
                   total_price: total_price)
+end
+
+30.times do |n|
+  Bill.create!(voucher_id: Voucher.all.sample.id, price_id: Price.all.sample.id)
 end

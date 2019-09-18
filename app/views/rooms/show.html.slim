@@ -1,0 +1,180 @@
+.wapper.is-scrolling-top
+  .gallery
+    #demo.carousel.slide data-ride="carousel"
+      ul.carousel-indicators
+        - @room.room_images.each_with_index do |room, index|
+          li[class="#{'active' if index.zero?}" data-slide-to="" data-target="#demo"]
+      .carousel-inner
+        - @room.room_images.each_with_index do |room, index|
+          .carousel-item[class="#{'active' if index.zero?}"]
+            = image_tag room.image.url
+            .carousel-caption
+              h3 = @room.name
+              p = @room.location_name
+                | , #{@room.area_name}
+      a.carousel-control-prev data-slide="prev" href="#demo"
+        span.carousel-control-prev-icon
+      a.carousel-control-next data-slide="next" href="#demo"
+        span.carousel-control-next-icon
+.container
+  .row
+    .col-md-8
+      .title-room-detail
+        .title-room
+          = @room.name
+        .number-code
+          = t ".code_room"
+            |  #{@room.code_room}
+        .average_review-rating [data-score="#{@average_comment}"]
+
+        .detail-location
+          svg.svg-icon.svg-fill style=("width: 24px; height: 24px;") version="1.1" viewbox=("0 0 24 24")
+            g fill="none" fill-rule="evenodd"
+              circle cx="12" cy="12" fill="#000" fill-opacity=".2" fill-rule="nonzero" pid="0" r="12"
+              path d=("M11.92 6c2.87 0 5.218 2.335 5.218 5.205a5.112 5.112 0 0 1-1.055 3.137c-.97 1.252-3.77 3.461-3.882 3.56a.43.43 0 0 1-.282.098.43.43 0 0 1-.281-.098c-.113-.099-2.912-2.308-3.883-3.546a5.182 5.182 0 0 1-1.055-3.15C6.7 8.335 9.05 6 11.92 6zm0 7.203a2.104 2.104 0 0 0 0-4.207 2.104 2.104 0 0 0 0 4.206z") fill="#FFF" pid="1"
+          span.room-location
+            = @room.location_name
+            | , #{@room.address}, #{t ".country"}
+          = link_to t(".map"), "#", class: "room-map"
+        .detail-favorite-space
+          svg.svg-icon.svg-fill style=("width: 24px; height: 24px;") version="1.1" viewbox=("0 0 24 24")
+            g fill="none" fill-rule="evenodd"
+              circle cx="12" cy="12" fill="#000" fill-opacity=".2" pid="0" r="12"
+              path d=("M7 17V8a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v9M8 7V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1m-6 1a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm-4 3a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 1 1 0-2zm-4 3a1 1 0 0 1 0 2 1 1 0 1 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-7 3h10a1 1 0 0 1 1 1v1H6v-1a1 1 0 0 1 1-1z") fill="#FFF" pid="1"
+          span.room-favorite-space = @room.favorite_space_name.downcase.titleize
+          | ·
+          span.room-acreage = @room.acreage
+          | m
+          sub 2
+        .detail-bed-room
+          span
+            = @room.bed_room
+            |  #{t ".bed_room"}
+          span.ml-1
+            = @room.bath_room
+            |  #{t ".bath_room"}
+          span.ml-1
+            = @room.guest
+            |  #{t ".guest"}
+        .detail-description
+          h3.title-utility = t ".room_details"
+          = @room.description
+        .detail-utility
+          h3.title-utility = t ".title_utility"
+          span = t ".paragraph"
+          ul.list-utility
+            - @room.utilities.each do |utility|
+              li.each-utility
+                i.fa.fa-grav
+                span.ml-2 = utility.name
+        .detail-utility
+          h3.title-utility = t ".room_price"
+          span = t ".price_voucher"
+          .room-price
+            .jbetween.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room = t ".date"
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = number_to_currency(@room.price.cost)
+            .jbetween.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room = t ".date_room"
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = number_to_currency(@room.price.cost + 100)
+            .jbetween.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room = t ".cleaning"
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = number_to_currency(@room.price.cleaning_fee)
+            .jbetween.py--12.px--18
+              span.c-gray-3.fl-item-50.date-room = t ".number_bed"
+              span.c-gray-3.fl-item-50.pl--12.bold.text-right.cost-price
+                = t ".min_bed"
+        .detail-utility
+          - if member_signed_in?
+            div#review
+              .new-review-form
+                = render partial: "comments/form", local:{room_id: @room}
+
+              .tg-descriptionid#reviews
+                = render partial: "comments/comment", collection: @comments, as: :comment
+          - else
+            p Please log in to comments
+        .detail-utility
+          h3.title-utility = t ".same_room"
+          .row
+            - @rooms.each do |room|
+              .card.col-md-4 style=("width: 18rem;")
+                = link_to room_path(room), class: "room-image" do
+                  = image_tag load_limit_image(room), class: "card-img-top image-content"
+                .card-body.promo-content
+                  .card-favorite-spaces = room.favorite_space.name
+                  .room-title = link_to room.name, room_path(room), class: "trend-title"
+                  .room-details
+                    = room.guest
+                    |  #{t ".people"} - #{room.bed_room} #{t ".bed"} - #{room.bath_room} #{t ".bath"}
+                  .room-prices
+                    | #{number_to_currency(@room.price_cost)}#{t ".nigth"}
+                  .room-locations
+                    = room.location_name
+                    | , #{room.address}
+    .col-md-4.right-room
+      .room-sidebar
+        .room-booking
+          p.room-sidebar__pricing
+            span.bold = number_to_currency(@room.price_cost)
+            span.p--small.ml-2
+              | #{t ".nigth"}
+          input.price_cost type="hidden" value="#{@room.price_cost}"
+          input.cleaning type="hidden" value="#{@room.price_cleaning_fee}"
+          .room-datepicker
+            = form_tag do
+              = hidden_field_tag :room_id, @room.id, id: "booking_room_id"
+              span.room-sidebar__pricing = t ".checkin"
+              #datepicker-1.input-group.date.datepicker data-date-format="dd-mm-yyyy"
+                = text_field_tag :checkin, nil, class: "form-control date-info", id: "booking_checkin", placeholder: "dd-mm-yyyy"
+                span.input-group-addon
+                  i.fa.fa-calendar.is-calendar
+              span.room-sidebar__pricing = t ".checkout"
+              #datepicker-2.input-group.date.datepicker data-date-format="dd-mm-yyyy"
+                = text_field_tag :checkout, nil, class: "form-control date-info", id: "booking_checkout", placeholder: "dd-mm-yyyy"
+                span.input-group-addon
+                  i.fa.fa-calendar.is-calendar
+              .room-guest
+                select#guest_number.form-control name="booking[number_guest]"
+                  - for i in 1..@room.guest
+                    option value="#{i}"
+                      = i
+                      |  #{t ".guest"}
+              .info-booking
+                .error_message
+                .checkup__price
+                  .is-flex.middle-xs.between-xs
+                    .is-flex.align-center
+                      span.pr--6.sum_date
+                    span.price_cost
+                  .is-flex.middle-xs.between-xs
+                    .is-relative
+                      span = t ".clear"
+                    span = @room.price_cleaning_fee
+                  .is-flex.middle-xs.between-xs
+                    div
+                      b = t ".sum_price"
+                    b.sum_price
+              = link_to "#", id: "addtocart-btn", class: "btn btn-grad--primary bold rounded shadow-primary disable_class" do
+                svg.mr--6.svg-icon.svg-fill style=("width: 20px; height: 20px;") version="1.1" viewbox=("0 0 20 20")
+                  g fill="none" fill-rule="evenodd" transform=("translate(-2 -2)")
+                    path d=("M0 0h24v24H0z") pid="0"
+                    circle cx="12" cy="12" fill="#FFF" opacity=".3" pid="1" r="10"
+                    path d=("M12.42 17.158l3.037-6.073a.75.75 0 0 0-.67-1.085H12V7.177a.75.75 0 0 0-1.42-.335l-3.037 6.073A.75.75 0 0 0 8.213 14H11v2.823a.75.75 0 0 0 1.42.335z") fill="#FFF" pid="2"
+                span.ml-2 = t ".btn"
+        .room-user
+          .room-user-info
+            = link_to "#", class: "host-intro" do
+              = image_tag @room.user.avatar.url, class: "image-circle"
+              .host-intro-name
+                p.p--big-2 = @room.user_name
+                p.p--small-2 #{t ".joining"} #{format_time @room.user.created_at}
+                p.p--small-2 = @room.user_type
+        .room-contact
+          p
+            | #{t ".call"}
+            b.ml-1> = t ".sdt"
+            | #{t ".supplier"}
